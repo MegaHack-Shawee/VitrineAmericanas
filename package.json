@@ -20,7 +20,8 @@
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.7.0",
     "react-navigation": "^4.3.8",
-    "react-navigation-stack": "^2.3.13"
+    "react-navigation-stack": "^2.3.13",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
