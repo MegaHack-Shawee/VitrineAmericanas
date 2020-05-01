@@ -16,11 +16,11 @@ const handleSearch = () => {
     console.warn('search input enabled');
 };
 
-const handleQRCode = (navigation) => {
+const handleQRCode = navigation => {
     navigation.navigate('ScannedProductScreem');
 };
 
-const handleCartButton = (navigation) => {
+const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
 };
 
