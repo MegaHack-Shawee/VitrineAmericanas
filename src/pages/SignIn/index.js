@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
+import auth from '@react-native-firebase/auth';
 
 import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas5.png';
 
