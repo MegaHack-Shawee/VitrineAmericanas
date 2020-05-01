@@ -6,5 +6,4 @@ export default styled.View`
     border-top-right-radius: 40px;
     flex: 1;
     padding: 20px 20px;
-    margin-top: 30px;
 `;

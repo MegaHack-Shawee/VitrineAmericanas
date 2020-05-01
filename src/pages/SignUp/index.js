@@ -1,20 +1,18 @@
 import React, {useState, useRef} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Logo from '../../assets/logo_home.png';
 import Background from '../../components/Background';
+import Logo from '../../components/Logo';
 import Main from '../../components/Main';
 
 import {
     Form,
     FormInput,
     SubmitButton,
-    SignLink,
     SignLinkText,
-    LogoView,
-    Image,
     FormTitle,
     FormInputTitle,
+    FormInputMasked,
     Row,
 } from './styles';
 
@@ -37,7 +35,9 @@ export default function Signup({navigation}) {
     const [confirmEmail, setConfirmEmail] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    function handleSubmit() {}
+    function handleSubmit() {
+        console.log(name);
+    }
 
     function handleReturn() {
         navigation.navigate('SignInScreem');
@@ -53,9 +53,7 @@ export default function Signup({navigation}) {
                     onPress={handleReturn}
                 />
             </Row>
-            <LogoView>
-                <Image source={Logo} />
-            </LogoView>
+            <Logo />
             <Main>
                 <Form showsVerticalScrollIndicator={false}>
                     <FormTitle>Crie uma conta</FormTitle>
@@ -66,44 +64,51 @@ export default function Signup({navigation}) {
                         placeholder="Nome"
                         ref={nameRef}
                         returnKeyType="next"
-                        onSubmitEditing={() => cpfRef.current.focus()}
+                        // onSubmitEditing={() => cpfRef.current.focus()}
+                        //Problemas ao direcionar para o input de CPF automaticamente
+                        //Resolvendo: Como incluir a REF na tag TextInputMask
                         value={name}
                         onChangeText={setName}
                     />
 
                     <FormInputTitle>CPF</FormInputTitle>
-                    <FormInput
-                        maxLength={11}
-                        keyboardType="numeric"
-                        autoCorrect={false}
-                        autoCapitalize="none"
-                        placeholder="CPF"
-                        returnKeyType="next"
-                        ref={cpfRef}
-                        onSubmitEditing={() => birthDateRef.current.focus()}
+                    <FormInputMasked
+                        placeholderTextColor="#e3e3e3"
+                        type="cpf"
                         value={cpf}
                         onChangeText={setCpf}
+                        placeholder={'CPF'}
+                        // ref={cpfRef}
+                        onSubmitEditing={() => birthDateRef.current.focus()}
                     />
 
                     <FormInputTitle>Data de nascimento</FormInputTitle>
-                    <FormInput
-                        keyboardType="numeric"
-                        placeholder="Data"
-                        returnKeyType="send"
-                        ref={birthDateRef}
-                        onSubmitEditing={() => cellphoneRef.current.focus()}
+                    <FormInputMasked
+                        placeholderTextColor="#e3e3e3"
+                        type={'datetime'}
+                        options={{
+                            format: 'DD/MM/YYYY',
+                        }}
                         value={birthDate}
                         onChangeText={setBirthDate}
+                        placeholder={'Data de nascimento'}
+                        // ref={birthDateRef}
+                        onSubmitEditing={() => cellphoneRef.current.focus()}
                     />
 
                     <FormInputTitle>Telefone</FormInputTitle>
-                    <FormInput
-                        placeholder="Telefone"
-                        ref={cellphoneRef}
-                        returnKeyType="send"
-                        onSubmitEditing={() => cellphoneRef.current.focus()}
+                    <FormInputMasked
+                        type={'cel-phone'}
+                        options={{
+                            maskType: 'BRL',
+                            withDDD: true,
+                            dddMask: '(99) ',
+                        }}
+                        placeholder="(22) 55555-5555"
+                        placeholderTextColor="#e3e3e3"
                         value={cellphone}
                         onChangeText={setCellphone}
+                        onSubmitEditing={() => emailRef.current.focus()}
                     />
 
                     <FormInputTitle>E-mail</FormInputTitle>
@@ -163,10 +168,6 @@ export default function Signup({navigation}) {
                         <SignLinkText>Enviar</SignLinkText>
                     </SubmitButton>
                 </Form>
-
-                {/* <SignLink onPress={() => navigation.navigate('SignInScreem')}>
-                    <SignLinkText>Already have an account</SignLinkText>
-                </SignLink> */}
             </Main>
         </Background>
     );

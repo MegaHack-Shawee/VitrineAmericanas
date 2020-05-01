@@ -65,7 +65,7 @@ export default function SignIn({navigation}) {
                     onSubmitEditing={() => handleSignIn()}
                 />
             </ViewInput>
-            <ButtonLogin onPress={() => handleSignIn()}>
+            <ButtonLogin onPress={() => handleSignIn(navigation)}>
                 <ButtonLoginText>LOGIN</ButtonLoginText>
             </ButtonLogin>
             <ButtonFacebook>
