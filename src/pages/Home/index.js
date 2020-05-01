@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 
 import qrCodeIcon from '../../assets/qrcode_icon.png';
-import btnPay from '../../assets/btn_pay.png';
 import btnCart from '../../assets/btn_cart.png';
 
 import Background from '../../components/Background';
@@ -23,10 +22,6 @@ const handleQRCode = navigation => {
 
 const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
-};
-
-const handlePaymentButton = navigation => {
-    navigation.navigate('PaymentScreem');
 };
 
 const handleSignOut = navigation => {
@@ -59,9 +54,6 @@ export default function Home({navigation}) {
                 <Row align="center" justify="center">
                     <Button onPress={() => handleCartButton(navigation)}>
                         <Image source={btnCart} />
-                    </Button>
-                    <Button onPress={() => handlePaymentButton(navigation)}>
-                        <Image source={btnPay} />
                     </Button>
                 </Row>
             </Main>
