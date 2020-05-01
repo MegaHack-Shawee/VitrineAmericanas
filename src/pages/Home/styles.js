@@ -8,12 +8,6 @@ export const Image = styled.Image.attrs({
     resizeMode: 'cover',
 })``;
 
-export const QRCodeReader = styled.View`
-    flex: 2;
-    align-items: center;
-    justify-content: center;
-`;
-
 export const Row = styled.View`
     flex-direction: row;
     align-items: ${props => props.align};
@@ -29,4 +23,31 @@ export const Button = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+`;
+
+export const QRCodeReader = styled.View`
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ButtonQrCode = styled.TouchableOpacity`
+    height: 90%;
+    width: 90%;
+    margin: 10px 10px 0 10px;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ImageQrCode = styled.Image.attrs({
+    resizeMode: 'cover',
+})`
+    height: 100%;
+    width: 100%;
+`;
+
+export const TextQrCode = styled.Text`
+    color: #9e9e9e;
+    font-size: 18px;
+    position: absolute;
 `;
