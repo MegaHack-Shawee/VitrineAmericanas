@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import logo from '../../assets/logo_home.png';
@@ -16,11 +16,11 @@ const handleSearch = () => {
     console.warn('search input enabled');
 };
 
-const handleQRCode = (navigation) => {
+const handleQRCode = navigation => {
     navigation.navigate('ScannedProductScreem');
 };
 
-const handleCartButton = (navigation) => {
+const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
 };
 

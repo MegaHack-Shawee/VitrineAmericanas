@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "mobile",
     "version": "0.0.1",
     "private": true,
@@ -24,6 +23,8 @@
         "react-native-vector-icons": "^6.6.0",
         "react-navigation": "^4.3.8",
         "react-navigation-stack": "^2.3.13",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
         "styled-components": "^5.1.0"
     },
     "devDependencies": {
@@ -39,3 +40,4 @@
     "jest": {
         "preset": "react-native"
     }
+}

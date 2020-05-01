@@ -15,19 +15,27 @@ import {
     CreateAccountText,
 } from './styles';
 
-export default function SignIn() {
+export default function SignIn({navigation}) {
+    const handleSignIn = nav => {
+        nav.navigate('HomeScreem');
+    };
+
+    const handleSignUp = nav => {
+        nav.navigate('SignUpScreem');
+    };
+
     return (
         <Container>
             <ImageView>
                 <Logo source={logoVitrineAmericanas} />
             </ImageView>
-            <ButtonLogin>
+            <ButtonLogin onPress={() => handleSignIn(navigation)}>
                 <ButtonLoginText>LOGIN</ButtonLoginText>
             </ButtonLogin>
             <ButtonFacebook>
                 <ButtonTextFacebook>ENTRAR COM FACEBOOK</ButtonTextFacebook>
             </ButtonFacebook>
-            <CreateAccountButton>
+            <CreateAccountButton onPress={() => handleSignUp(navigation)}>
                 <CreateAccountText>Não sou cadastrado</CreateAccountText>
             </CreateAccountButton>
         </Container>
