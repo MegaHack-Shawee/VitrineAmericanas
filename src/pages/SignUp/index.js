@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Logo from '../../assets/logo_home.png';
 import Background from '../../components/Background';
@@ -14,6 +15,7 @@ import {
     Image,
     FormTitle,
     FormInputTitle,
+    Row,
 } from './styles';
 
 export default function Signup({navigation}) {
@@ -37,8 +39,20 @@ export default function Signup({navigation}) {
 
     function handleSubmit() {}
 
+    function handleReturn() {
+        navigation.navigate('SignInScreem');
+    }
+
     return (
         <Background>
+            <Row>
+                <Icon
+                    name="arrow-back"
+                    size={30}
+                    color="#fff"
+                    onPress={handleReturn}
+                />
+            </Row>
             <LogoView>
                 <Image source={Logo} />
             </LogoView>

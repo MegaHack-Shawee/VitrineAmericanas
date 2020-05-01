@@ -7,7 +7,6 @@ export const LogoView = styled.View`
     width: 100px;
     align-self: center;
     align-items: center;
-    margin-top: 40px;
 `;
 
 export const Image = styled.Image.attrs({
@@ -63,4 +62,9 @@ export const SignLinkText = styled.Text`
     color: #fff;
     font-weight: bold;
     font-size: 16px;
+`;
+
+export const Row = styled.View`
+    flex-direction: row;
+    margin: 10px 20px 0px 20px;
 `;
