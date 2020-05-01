@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 
@@ -23,8 +23,28 @@ export default function SignIn({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSignIn = nav => {
-        nav.navigate('HomeScreem');
+    useEffect(() => {
+        if (auth().currentUser != null) {
+            navigation.replace('HomeScreem');
+        }
+    });
+
+    const handleSignIn = () => {
+        try {
+            auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(user => {
+                    if (user) {
+                        navigation.replace('HomeScreem');
+                    }
+                })
+                .catch(e => {
+                    console.warn('email ou senha inválidos');
+                    setPassword('');
+                });
+        } catch (e) {
+            console.warn(e);
+        }
     };
 
     const handleSignUp = nav => {

@@ -1,5 +1,7 @@
 import React, {useState, useRef} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
+import database from '@react-native-firebase/database';
 
 import Background from '../../components/Background';
 import Logo from '../../components/Logo';
@@ -36,7 +38,24 @@ export default function Signup({navigation}) {
     const [confirmPassword, setConfirmPassword] = useState('');
 
     function handleSubmit() {
-        console.log(name);
+        try {
+            auth()
+                .createUserWithEmailAndPassword(email, password)
+                .then(async () => {
+                    const user = auth().currentUser;
+                    await user.updateProfile({
+                        displayName: name,
+                    });
+                    let uId = user.uid;
+                    database()
+                        .ref('/users')
+                        .push({uId, name, cpf, birthDate, cellphone});
+                });
+            console.warn('Cadastro realizado com sucesso');
+            navigation.replace('HomeScreem');
+        } catch (e) {
+            console.warn(e);
+        }
     }
 
     function handleReturn() {

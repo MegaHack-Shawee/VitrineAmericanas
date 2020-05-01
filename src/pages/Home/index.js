@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
 
 import qrCodeIcon from '../../assets/qrCode190px.png';
 import btnPay from '../../assets/btn_pay.png';
@@ -37,10 +38,21 @@ const handlePaymentButton = navigation => {
     navigation.navigate('PaymentScreem');
 };
 
+const handleSignOut = navigation => {
+    auth()
+        .signOut()
+        .then(() => {
+            navigation.replace('SignInScreem');
+        });
+};
+
 export default function Home({navigation}) {
     return (
         <Background>
             <Row align="flex-end" justify="flex-end">
+                <Search onPress={() => handleSignOut(navigation)}>
+                    <Icon name="close" size={40} color="#fff" />
+                </Search>
                 <Search onPress={() => handleSearch()}>
                     <Icon name="search" size={40} color="#fff" />
                 </Search>
