@@ -1,6 +1,7 @@
-import LinearGradient from 'react-native-linear-gradient';
+import {TextInputMask} from 'react-native-masked-text';
 import styled from 'styled-components/native';
 import {TextInput} from 'react-native';
+import {RectButton} from 'react-native-gesture-handler';
 
 export const LogoView = styled.View`
     height: 100px;
@@ -33,29 +34,31 @@ export const Form = styled.ScrollView`
     height: 100%;
 `;
 
-export const FormInput = styled(TextInput).attrs({
-    placeholderTextColor: '#9e9e9e',
-})`
+export const FormInputMasked = styled(TextInputMask)`
     padding-left: 20px;
-    color: #333;
+    color: #424242;
     margin-bottom: 20px;
-    border: 1px solid #111;
+    border: 1px solid #9e9e9e;
     border-radius: 50px;
 `;
 
-export const SubmitButton = styled(LinearGradient).attrs({
-    colors: ['#F57C00', '#D84315'],
+export const FormInput = styled(TextInput).attrs({
+    placeholderTextColor: '#e3e3e3',
 })`
+    padding-left: 20px;
+    color: #424242;
+    margin-bottom: 20px;
+    border: 1px solid #9e9e9e;
+    border-radius: 50px;
+`;
+
+export const SubmitButton = styled(RectButton)`
+    background: #d84315;
     color: #fff;
     border-radius: 50px;
     align-items: center;
-    flex: 1;
     height: 40px;
     justify-content: center;
-`;
-
-export const SignLink = styled.TouchableOpacity`
-    margin-top: 20px;
 `;
 
 export const SignLinkText = styled.Text`
