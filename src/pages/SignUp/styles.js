@@ -3,17 +3,6 @@ import styled from 'styled-components/native';
 import {TextInput} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 
-export const LogoView = styled.View`
-    height: 100px;
-    width: 100px;
-    align-self: center;
-    align-items: center;
-`;
-
-export const Image = styled.Image.attrs({
-    resizeMode: 'cover',
-})``;
-
 export const FormInputTitle = styled.Text`
     color: #424242;
     font-weight: bold;

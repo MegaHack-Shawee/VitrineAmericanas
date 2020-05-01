@@ -4,13 +4,6 @@ export const Search = styled.TouchableOpacity`
     padding: 5px 5px 0 0;
 `;
 
-export const LogoView = styled.View`
-    height: 100px;
-    width: 100px;
-    align-self: center;
-    align-items: center;
-`;
-
 export const Image = styled.Image.attrs({
     resizeMode: 'cover',
 })``;
