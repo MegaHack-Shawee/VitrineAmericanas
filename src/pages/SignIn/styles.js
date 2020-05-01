@@ -24,7 +24,7 @@ export const ButtonLogin = styled.TouchableOpacity`
 export const ButtonLoginText = styled.Text`
     font-family: sans-serif;
     color: #f57c00;
-    font-size: 18px;
+    font-size: 14px;
 `;
 
 export const ButtonFacebook = styled.TouchableOpacity`
@@ -41,7 +41,7 @@ export const ButtonFacebook = styled.TouchableOpacity`
 export const ButtonTextFacebook = styled.Text`
     font-family: sans-serif;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
 `;
 
 export const CreateAccountButton = styled.TouchableOpacity`
