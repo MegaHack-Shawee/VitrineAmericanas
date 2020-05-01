@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {Image} from 'react-native';
 
 import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas.svg';
 
