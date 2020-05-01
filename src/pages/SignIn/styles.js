@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {Platform} from 'react-native';
 
 import Background from '../../components/Background';
 
@@ -7,7 +6,7 @@ export const Container = styled(Background)`
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding: 0 40px ${Platform.OS === 'android' ? 150 : 40}px;
+    padding: 0 40px 10px;
     background: #f57c00;
 `;
 
@@ -19,7 +18,7 @@ export const ButtonLogin = styled.TouchableOpacity`
 
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 20px;
 `;
 
 export const ButtonLoginText = styled.Text`
@@ -36,7 +35,7 @@ export const ButtonFacebook = styled.TouchableOpacity`
 
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 15px;
 `;
 
 export const ButtonTextFacebook = styled.Text`
@@ -52,5 +51,15 @@ export const CreateAccountButton = styled.TouchableOpacity`
 export const CreateAccountText = styled.Text`
     color: #f4ede8;
     font-size: 16px;
-    font-family: 'RobotoSlab-Regular';
+    font-family: sans-serif;
 `;
+
+export const ImageView = styled.View`
+    width: 100%;
+    margin-bottom: 70px;
+    align-items: center;
+`;
+
+export const Logo = styled.Image.attrs({
+    resizeMode: 'cover',
+})``;

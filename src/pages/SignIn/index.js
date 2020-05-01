@@ -1,10 +1,12 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {View, Image} from 'react-native';
 
-import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas.svg';
+import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas5.png';
 
 import {
     Container,
+    ImageView,
+    Logo,
     ButtonLogin,
     ButtonLoginText,
     ButtonFacebook,
@@ -16,7 +18,9 @@ import {
 export default function SignIn() {
     return (
         <Container>
-            <Image source={logoVitrineAmericanas} />
+            <ImageView>
+                <Logo source={logoVitrineAmericanas} />
+            </ImageView>
             <ButtonLogin>
                 <ButtonLoginText>LOGIN</ButtonLoginText>
             </ButtonLogin>
