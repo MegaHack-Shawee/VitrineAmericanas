@@ -11,16 +11,7 @@ const Stack = createStackNavigator();
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName="SignInScreem"
-                screenOptions={{
-                    // headerStyle: {
-                    //     backgroundColor: 'rgb(21, 32, 43)',
-                    // },
-                    headerTintColor: '#fff',
-                    headerTitleAlign: 'center',
-                    headerStatusBarHeight: 1,
-                }}>
+            <Stack.Navigator initialRouteName="SignUpScreem" headerMode="none">
                 <Stack.Screen
                     name="SignInScreem"
                     component={SignIn}
