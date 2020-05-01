@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import Details from './pages/Details';
 import ScannedProduct from './pages/ScannedProduct';
 import Cart from './pages/Cart';
+import Payment from './pages/Payment';
 
 const Stack = createStackNavigator();
 
@@ -46,6 +47,12 @@ export default function Routes() {
                     component={Cart}
                     opti
                     ons={{title: 'Carrinho'}}
+                />
+                <Stack.Screen
+                    name="PaymentScreem"
+                    component={Payment}
+                    opti
+                    ons={{title: 'Pagamento'}}
                 />
             </Stack.Navigator>
         </NavigationContainer>
