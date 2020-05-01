@@ -1,10 +1,31 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
-import {Container} from '../../Styles';
+import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas.svg';
 
-//import { Container } from './styles';
+import {
+    Container,
+    ButtonLogin,
+    ButtonLoginText,
+    ButtonFacebook,
+    ButtonTextFacebook,
+    CreateAccountButton,
+    CreateAccountText,
+} from './styles';
 
-export default function Signin() {
-    return <Container />;
+export default function SignIn() {
+    return (
+        <Container>
+            <Image source={logoVitrineAmericanas} />
+            <ButtonLogin>
+                <ButtonLoginText>LOGIN</ButtonLoginText>
+            </ButtonLogin>
+            <ButtonFacebook>
+                <ButtonTextFacebook>ENTRAR COM FACEBOOK</ButtonTextFacebook>
+            </ButtonFacebook>
+            <CreateAccountButton>
+                <CreateAccountText>Não sou cadastrado</CreateAccountText>
+            </CreateAccountButton>
+        </Container>
+    );
 }

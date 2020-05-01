@@ -12,7 +12,7 @@ export default function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Signin"
+                initialRouteName="SignInScreem"
                 screenOptions={{
                     headerStyle: {
                         backgroundColor: 'rgb(21, 32, 43)',
@@ -22,14 +22,14 @@ export default function Routes() {
                     headerStatusBarHeight: 1,
                 }}>
                 <Stack.Screen
-                    name="HomeScreem"
-                    component={Home}
-                    options={{title: 'Home'}}
-                />
-                <Stack.Screen
                     name="SignInScreem"
                     component={SignIn}
                     options={{title: 'Entrar'}}
+                />
+                <Stack.Screen
+                    name="HomeScreem"
+                    component={Home}
+                    options={{title: 'Home'}}
                 />
                 <Stack.Screen
                     name="SignUpScreem"
