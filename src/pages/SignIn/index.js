@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useRef} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 
 import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas5.png';
@@ -17,22 +17,22 @@ import {
     TextInput,
 } from './styles';
 
-export default function SignIn() {
+export default function SignIn({navigation}) {
+    const passRef = useRef();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = useCallback(() => {
-        console.log(email);
-        console.log(password);
-    }, [email, password]);
+    const handleSignIn = nav => {
+        nav.navigate('HomeScreem');
+    };
 
-    const handleCreateAccount = useCallback(() => {
-        console.log('Clicou não sou cadastrado');
-    }, []);
+    const handleSignUp = nav => {
+        nav.navigate('SignUpScreem');
+    };
 
-    const handleSignInFacebook = useCallback(() => {
-        console.log('Clicou Entrar com Facebook');
-    }, []);
+    const handleSignInFacebook = () => {
+        console.log('Clicou login facebook');
+    };
 
     return (
         <Container>
@@ -47,20 +47,25 @@ export default function SignIn() {
                     placeholder="E-mail"
                     autoCorrect={false}
                     autoCapitalize="none"
+                    returnKeyType="next"
                     keyboardType="email-address"
+                    onSubmitEditing={() => passRef.current.focus()}
                 />
             </ViewInput>
             <ViewInput>
                 <Icon name="lock" size={20} color="#ff9000" />
                 <TextInput
+                    ref={passRef}
                     value={password}
                     onChangeText={setPassword}
                     placeholder="Senha"
                     secureTextEntry
                     autoCapitalize="none"
+                    returnKeyType="send"
+                    onSubmitEditing={() => handleSignIn()}
                 />
             </ViewInput>
-            <ButtonLogin onPress={() => handleLogin()}>
+            <ButtonLogin onPress={() => handleSignIn()}>
                 <ButtonLoginText>LOGIN</ButtonLoginText>
             </ButtonLogin>
             <ButtonFacebook>
@@ -71,13 +76,8 @@ export default function SignIn() {
                     ENTRAR COM FACEBOOK
                 </ButtonTextFacebook>
             </ButtonFacebook>
-            <CreateAccountButton>
-                <CreateAccountText
-                    onPress={() => {
-                        handleCreateAccount();
-                    }}>
-                    Não sou cadastrado
-                </CreateAccountText>
+            <CreateAccountButton onPress={() => handleSignUp(navigation)}>
+                <CreateAccountText>Não sou cadastrado</CreateAccountText>
             </CreateAccountButton>
         </Container>
     );

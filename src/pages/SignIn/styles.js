@@ -30,7 +30,7 @@ export const ButtonLoginText = styled.Text`
 export const ButtonFacebook = styled.TouchableOpacity`
     width: 100%;
     height: 45px;
-    background: #c51618;
+    background: #2c4e96;
     border-radius: 40px;
 
     justify-content: center;
@@ -74,7 +74,7 @@ export const TextInput = styled.TextInput`
 
 export const ViewInput = styled.View`
     width: 100%;
-    height: 45px;
+    height: 50px;
     padding: 0 16px;
     background: #fff;
     border-radius: 40px;

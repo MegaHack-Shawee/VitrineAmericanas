@@ -17,13 +17,15 @@
         "react-native": "0.62.2",
         "react-native-gesture-handler": "^1.6.1",
         "react-native-linear-gradient": "^2.5.6",
+        "react-native-masked-text": "^1.13.0",
         "react-native-reanimated": "^1.8.0",
         "react-native-safe-area-context": "^0.7.3",
         "react-native-screens": "^2.7.0",
         "react-native-vector-icons": "^6.6.0",
         "react-navigation": "^4.3.8",
         "react-navigation-stack": "^2.3.13",
-        "react-vector-icons": "^0.0.1",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
         "styled-components": "^5.1.0"
     },
     "devDependencies": {
