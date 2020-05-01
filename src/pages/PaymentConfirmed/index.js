@@ -1,23 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import logo from '../../assets/logo_home.png';
 
-import qrCodeIcon from '../../assets/qrcode_icon.png';
-import btnPay from '../../assets/btn_pay.png';
-import btnCart from '../../assets/btn_cart.png';
 import phone from '../../assets/phone.png';
 
+import Logo from '../../components/Logo';
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
 import {
     RowButtons,
     BackButton,
-    LogoView,
-    Image,
     Text,
     Button,
-    ProductsList,
     StatusView,
     SearchButton,
     HeaderView,
@@ -29,6 +23,7 @@ import {
     OrderMainView,
     ProductOrder,
     TextProduct,
+    ButtonText,
 } from './styles';
 
 const products = {
@@ -50,21 +45,11 @@ const handleBackButton = navigation => {
     navigation.goBack();
 };
 
-const handleQRCodeButton = navigation => {
+const handleKeepBuying = navigation => {
     navigation.navigate('HomeScreem');
 };
 
-const handleCartButton = () => {
-    console.warn(
-        'Não faço do pq q tem um botão pra ir pro carrinho sendo q está é a tela de carrinho',
-    );
-};
-
-const handlePaymentButton = () => {
-    console.warn('redirecionar para tela de pagamento');
-};
-
-export default function Payment({navigation}) {
+export default function PaymentConfirmed({navigation}) {
     return (
         <Background>
             <HeaderView>
@@ -75,9 +60,9 @@ export default function Payment({navigation}) {
                     <Icon name="search" size={35} color="#fff" />
                 </SearchButton>
             </HeaderView>
-            <LogoView>
-                <Image source={logo} />
-            </LogoView>
+
+            <Logo />
+
             <Main>
                 <Scroll showsVerticalScrollIndicator={false}>
                     <StatusView background="#18B237">
@@ -152,14 +137,11 @@ export default function Payment({navigation}) {
                     </OrderMainView>
 
                     <RowButtons>
-                        <Button onPress={() => handleQRCodeButton(navigation)}>
-                            <Image source={qrCodeIcon} />
-                        </Button>
-                        <Button onPress={() => handleCartButton(navigation)}>
-                            <Image source={btnCart} />
-                        </Button>
-                        <Button onPress={() => handlePaymentButton()}>
-                            <Image source={btnPay} />
+                        <Button>
+                            <ButtonText
+                                onPress={() => handleKeepBuying(navigation)}>
+                                Continue Comprando
+                            </ButtonText>
                         </Button>
                     </RowButtons>
                 </Scroll>

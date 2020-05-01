@@ -25,8 +25,8 @@ const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
 };
 
-const handlePaymentButton = () => {
-    console.warn('Indo para a tela de pagamento');
+const handlePaymentButton = navigation => {
+    navigation.navigate('PaymentScreem');
 };
 
 const handleSignOut = navigation => {
@@ -60,7 +60,7 @@ export default function Home({navigation}) {
                     <Button onPress={() => handleCartButton(navigation)}>
                         <Image source={btnCart} />
                     </Button>
-                    <Button onPress={() => handlePaymentButton()}>
+                    <Button onPress={() => handlePaymentButton(navigation)}>
                         <Image source={btnPay} />
                     </Button>
                 </Row>

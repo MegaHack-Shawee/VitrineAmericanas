@@ -99,14 +99,20 @@ export const ProductOrder = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    height: 90px;
-    width: 90px;
-    border-radius: 55px;
-    margin: 10px 10px 0 10px;
-    border: 1px solid orange;
-    align-items: center;
+    width: 100%;
+    height: 45px;
+    background: #f57c00;
+    border-radius: 40px;
+
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
+    margin-top: 20px;
+`;
+
+export const ButtonText = styled.Text`
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 14px;
 `;
 
 export const RowButtons = styled.View`
@@ -116,5 +122,3 @@ export const RowButtons = styled.View`
     justify-content: center;
     bottom: 0;
 `;
-
-export const ProductsList = styled.FlatList``;
