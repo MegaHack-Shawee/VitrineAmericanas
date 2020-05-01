@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 92 92">
+  <g id="Grupo_115" data-name="Grupo 115" transform="translate(-470 -1943)">
+    <g id="Grupo_114" data-name="Grupo 114">
+      <g id="pagar" transform="translate(470 1943)">
+        <g id="Grupo_8" data-name="Grupo 8" transform="translate(-42 -671)">
+          <g id="Retângulo_5" data-name="Retângulo 5" transform="translate(42 671)" fill="none" stroke="#ef6c00" stroke-width="1">
+            <rect width="92" height="92" rx="46" stroke="none"/>
+            <rect x="0.5" y="0.5" width="91" height="91" rx="45.5" fill="none"/>
+          </g>
+        </g>
+        <text id="QR_CODE" data-name="QR CODE" transform="translate(15 61)" fill="#ef6c00" font-size="13" font-family="OpenSans-SemiBold, Open Sans" font-weight="600"><tspan x="2.407" y="14">QR CODE</tspan></text>
+      </g>
+      <g id="Grupo_113" data-name="Grupo 113" transform="translate(0 -2)">
+        <path id="Caminho_250" data-name="Caminho 250" d="M499,1972.133v-7h7" transform="translate(1031 3963.267) rotate(180)" fill="none" stroke="#ef6c00" stroke-width="3"/>
+        <g id="Grupo_112" data-name="Grupo 112">
+          <path id="Caminho_248" data-name="Caminho 248" d="M499,1972.133v-7h7" transform="translate(1 1)" fill="none" stroke="#ef6c00" stroke-width="3"/>
+          <path id="Caminho_249" data-name="Caminho 249" d="M499,1972.133v-7h7" transform="translate(2497.133 1467.133) rotate(90)" fill="none" stroke="#ef6c00" stroke-width="3"/>
+          <path id="Caminho_251" data-name="Caminho 251" d="M499,1972.133v-7h7" transform="translate(-1465.133 2497.133) rotate(-90)" fill="none" stroke="#ef6c00" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
