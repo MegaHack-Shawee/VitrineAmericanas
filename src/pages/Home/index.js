@@ -34,10 +34,6 @@ const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
 };
 
-const handlePaymentButton = navigation => {
-    navigation.navigate('PaymentScreem');
-};
-
 const handleSignOut = navigation => {
     auth()
         .signOut()
@@ -69,9 +65,6 @@ export default function Home({navigation}) {
                 <Row align="center" justify="center">
                     <Button onPress={() => handleCartButton(navigation)}>
                         <Image source={btnCart} />
-                    </Button>
-                    <Button onPress={() => handlePaymentButton(navigation)}>
-                        <Image source={btnPay} />
                     </Button>
                 </Row>
             </Main>
