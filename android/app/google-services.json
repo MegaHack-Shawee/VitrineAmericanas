@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "260552141514",
+    "firebase_url": "https://megahack-945b2.firebaseio.com",
+    "project_id": "megahack-945b2",
+    "storage_bucket": "megahack-945b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260552141514:android:6f594848edc420ba53a233",
+        "android_client_info": {
+          "package_name": "com.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260552141514-46cojhormvh1uiir0oq8kki84tc11ipq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATPjGoMGfsKIpZAMBZMB_JTg1oZNK5Mvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260552141514-46cojhormvh1uiir0oq8kki84tc11ipq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
