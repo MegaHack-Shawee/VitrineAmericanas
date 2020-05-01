@@ -3,7 +3,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import qrCodeIcon from '../../assets/qrcode_icon.png';
 import btnPay from '../../assets/btn_pay.png';
-import btnCart from '../../assets/btn_cart.png';
 import phone from '../../assets/phone.png';
 
 import Background from '../../components/Background';
@@ -46,12 +45,6 @@ const handleBackButton = navigation => {
 
 const handleQRCodeButton = navigation => {
     navigation.navigate('HomeScreem');
-};
-
-const handleCartButton = () => {
-    console.warn(
-        'Não faço do pq q tem um botão pra ir pro carrinho sendo q está é a tela de carrinho',
-    );
 };
 
 const handlePaymentButton = () => {
@@ -138,9 +131,6 @@ export default function Cart({navigation}) {
                 <Row align="center" justify="center">
                     <Button onPress={() => handleQRCodeButton(navigation)}>
                         <Image source={qrCodeIcon} />
-                    </Button>
-                    <Button onPress={() => handleCartButton(navigation)}>
-                        <Image source={btnCart} />
                     </Button>
                     <Button onPress={() => handlePaymentButton()}>
                         <Image source={btnPay} />

@@ -3,14 +3,23 @@ import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 
-import qrCodeIcon from '../../assets/qrcode_icon.png';
+import qrCodeIcon from '../../assets/qrCode190px.png';
 import btnPay from '../../assets/btn_pay.png';
 import btnCart from '../../assets/btn_cart.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
-import {Search, Image, QRCodeReader, Row, Button} from './styles';
+import {
+    Search,
+    Image,
+    QRCodeReader,
+    Row,
+    Button,
+    ButtonQrCode,
+    ImageQrCode,
+    TextQrCode,
+} from './styles';
 import Logo from '../../components/Logo';
 
 const handleSearch = () => {
@@ -23,10 +32,6 @@ const handleQRCode = navigation => {
 
 const handleCartButton = navigation => {
     navigation.navigate('CartScreem');
-};
-
-const handlePaymentButton = navigation => {
-    navigation.navigate('PaymentScreem');
 };
 
 const handleSignOut = navigation => {
@@ -50,18 +55,16 @@ export default function Home({navigation}) {
             </Row>
             <Logo />
             <Main>
-                <Text style={{color: 'grey'}}>Aponte para um produto,</Text>
+                <Text style={{color: 'grey'}}>Aponte para um produto</Text>
                 <QRCodeReader>
-                    <Button onPress={() => handleQRCode(navigation)}>
-                        <Image source={qrCodeIcon} />
-                    </Button>
+                    <ButtonQrCode onPress={() => handleQRCode(navigation)}>
+                        <TextQrCode>Leitor QR Code</TextQrCode>
+                        <ImageQrCode source={qrCodeIcon} />
+                    </ButtonQrCode>
                 </QRCodeReader>
                 <Row align="center" justify="center">
                     <Button onPress={() => handleCartButton(navigation)}>
                         <Image source={btnCart} />
-                    </Button>
-                    <Button onPress={() => handlePaymentButton(navigation)}>
-                        <Image source={btnPay} />
                     </Button>
                 </Row>
             </Main>
