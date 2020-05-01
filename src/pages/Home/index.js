@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-// import { Container } from './styles';
+import Background from '../../components/Background';
 
 export default function Home() {
     return (
-        <View>
+        <Background>
             <Text>
                 JDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJJDOIASJDOIASJOAIJ
             </Text>
-        </View>
+        </Background>
     );
 }
