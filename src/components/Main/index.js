@@ -5,6 +5,5 @@ export default styled.View`
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     flex: 1;
-    padding: 50px 20px;
-    margin-top: 30px;
+    padding: 20px 20px;
 `;

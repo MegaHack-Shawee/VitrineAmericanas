@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import logo from '../../assets/logo_home.png';
 
 import qrCodeIcon from '../../assets/qrcode_icon.png';
 import btnPay from '../../assets/btn_pay.png';
@@ -14,7 +12,6 @@ import Main from '../../components/Main';
 import {
     Row,
     Search,
-    LogoView,
     Image,
     Text,
     AddressView,
@@ -26,6 +23,7 @@ import {
     ProductsList,
 } from './styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Logo from '../../components/Logo';
 
 const products = {
     cellphone: {
@@ -73,15 +71,12 @@ export default function Cart({navigation}) {
             <Row align="flex-end" justify="space-between">
                 <Search onPress={() => handleBackButton(navigation)}>
                     <Icon name="arrow-back" size={30} color="#fff" />
-                    <Text color="#fff">Vitrine americanas</Text>
                 </Search>
                 <Search onPress={() => handleSearch()}>
                     <Icon name="search" size={35} color="#fff" />
                 </Search>
             </Row>
-            <LogoView>
-                <Image source={logo} />
-            </LogoView>
+            <Logo />
             <Main>
                 <AddressView>
                     <AddressButtonsView>

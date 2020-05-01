@@ -1,8 +1,8 @@
 import React, {useState, useRef} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Logo from '../../assets/logo_home.png';
 import Background from '../../components/Background';
+import Logo from '../../components/Logo';
 import Main from '../../components/Main';
 
 import {
@@ -10,8 +10,6 @@ import {
     FormInput,
     SubmitButton,
     SignLinkText,
-    LogoView,
-    Image,
     FormTitle,
     FormInputTitle,
     FormInputMasked,
@@ -55,9 +53,7 @@ export default function Signup({navigation}) {
                     onPress={handleReturn}
                 />
             </Row>
-            <LogoView>
-                <Image source={Logo} />
-            </LogoView>
+            <Logo />
             <Main>
                 <Form showsVerticalScrollIndicator={false}>
                     <FormTitle>Crie uma conta</FormTitle>
