@@ -1,5 +1,5 @@
 import {produce} from 'immer';
-import phone from '../../../assets/phone.png';
+import phone from '../../../assets/images/phone.png';
 
 const INITIAL_STATE = [
     {
@@ -22,7 +22,7 @@ const INITIAL_STATE = [
 
 export default function Cart(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'ADD_TO_CART': {
+        case '@Cart/ADD_TO_CART': {
             return produce(state, draft => {
                 draft.push(action.product);
             });

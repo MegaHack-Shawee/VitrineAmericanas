@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 
-import logoVitrineAmericanas from '../../assets/logoVitrineAmericanas5.png';
+import logoVitrineAmericanas from '../../assets/images/logoVitrineAmericanas5.png';
 
 import {
     Container,

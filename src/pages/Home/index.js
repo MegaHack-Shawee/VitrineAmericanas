@@ -3,8 +3,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-import qrCodeIcon from '../../assets/qrCode190px.png';
-import btnCart from '../../assets/btn_cart.png';
+import qrCodeIcon from '../../assets/images/qrCode190px.png';
+import btnCart from '../../assets/images/btn_cart.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
