@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -24,26 +24,34 @@ import Logo from '../../components/Logo';
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
 
-    //O QUE ISSO VAI FAZER??????????
-    function handleSearch() {
-        console.warn('search input enabled');
-    }
+    useEffect(() => {
+        setShouldShow(false);
+    }, []);
 
-    function handleSignOut() {
+    //O QUE ISSO VAI FAZER??????????
+    const handleSearch = () => {
+        console.warn('search input enabled');
+    };
+
+    const handleSignOut = () => {
         auth()
             .signOut()
             .then(() => {
                 navigation.replace('SignInScreen');
             });
-    }
+    };
 
-    function handleCartButton() {
+    const handleCartButton = () => {
         navigation.navigate('CartScreen');
-    }
+    };
 
-    function handleOpenScannedProduct() {
+    const handleOpenScannedProduct = () => {
         navigation.navigate('ScannedProductScreen');
-    }
+    };
+
+    const handleReadSucess = e => {
+        console.log(e);
+    };
 
     return (
         <Background>
@@ -67,13 +75,15 @@ export default function Home({navigation}) {
                         {shouldShow ? (
                             <>
                                 <QRCodeScanner
-                                // cameraStyle={{
-                                //     height: 330,
-                                //     marginTop: 20,
-                                //     width: 320,
-                                //     alignSelf: 'center',
-                                //     justifyContent: 'center',
-                                // }}
+                                    onRead={handleReadSucess}
+                                    // Properties for change the camera size
+                                    // cameraStyle={{
+                                    //     height: 330,
+                                    //     marginTop: 20,
+                                    //     width: 320,
+                                    //     alignSelf: 'center',
+                                    //     justifyContent: 'center',
+                                    // }}
                                 />
                                 <TextQrCode>Leitor QR Code</TextQrCode>
                                 <ImageQrCode source={qrCodeIcon} />
