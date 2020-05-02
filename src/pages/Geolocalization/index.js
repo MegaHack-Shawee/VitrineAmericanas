@@ -1,26 +1,24 @@
 import React, {useState, useEffect} from 'react';
-import {Text, Alert, PermissionsAndroid} from 'react-native';
+import {Alert, PermissionsAndroid} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import auth from '@react-native-firebase/auth';
 import {Marker} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
-import {Search, Row, MapViewGoogle, ViewAboveMap} from './styles';
+import {
+    HeaderView,
+    SearchButton,
+    BackButton,
+    MapViewGoogle,
+    ViewAboveMap,
+    Text,
+} from './styles';
 import Logo from '../../components/Logo';
 
 const handleSearch = () => {
     console.warn('search input enabled');
-};
-
-const handleSignOut = navigation => {
-    auth()
-        .signOut()
-        .then(() => {
-            navigation.replace('SignInScreen');
-        });
 };
 
 const stores = [
@@ -82,6 +80,10 @@ export default function Geolocalization({navigation}) {
         longitudeDelta: 0.0421,
     });
 
+    const handleBackButton = nav => {
+        nav.navigate('HomeScreen');
+    };
+
     const RequestPermission = async () => {
         try {
             const permission = await PermissionsAndroid.request(
@@ -133,17 +135,17 @@ export default function Geolocalization({navigation}) {
 
     return (
         <Background>
-            <Row align="flex-end" justify="flex-end">
-                <Search onPress={() => handleSignOut(navigation)}>
-                    <Icon name="close" size={40} color="#fff" />
-                </Search>
-                <Search onPress={() => handleSearch()}>
-                    <Icon name="search" size={40} color="#fff" />
-                </Search>
-            </Row>
+            <HeaderView>
+                <BackButton onPress={() => handleBackButton(navigation)}>
+                    <Icon name="arrow-back" size={30} color="#fff" />
+                </BackButton>
+                <SearchButton onPress={() => handleSearch()}>
+                    <Icon name="search" size={35} color="#fff" />
+                </SearchButton>
+            </HeaderView>
             <Logo />
             <Main>
-                <Text style={{color: 'grey'}}>
+                <Text color="#9e9e9e" size="16px">
                     Encontre uma loja perto de você
                 </Text>
                 <ViewAboveMap>

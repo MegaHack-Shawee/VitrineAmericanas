@@ -5,6 +5,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import qrCodeIcon from '../../assets/images/qrCode190px.png';
 import btnCart from '../../assets/images/btn_cart.png';
+import localizationIcon from '../../assets/Icons/localization/iconLocalization190px.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
@@ -18,6 +19,7 @@ import {
     ButtonQrCode,
     ImageQrCode,
     TextQrCode,
+    ImageIconLocalization,
 } from './styles';
 import Logo from '../../components/Logo';
 
@@ -50,6 +52,10 @@ export default function Home({navigation}) {
         setQrCode(e.data);
         setShouldShow(!shouldShow);
         navigation.navigate('ScannedProductScreen', {qrCode});
+    };
+
+    const handleFindStore = () => {
+        navigation.navigate('GeolocalizationScreen');
     };
 
     return (
@@ -93,6 +99,9 @@ export default function Home({navigation}) {
                 <Row align="center" justify="center">
                     <Button onPress={handleCartButton}>
                         <Image source={btnCart} />
+                    </Button>
+                    <Button onPress={handleFindStore}>
+                        <ImageIconLocalization source={localizationIcon} />
                     </Button>
                 </Row>
             </Main>
