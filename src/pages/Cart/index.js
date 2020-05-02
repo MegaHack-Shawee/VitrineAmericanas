@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-import qrCodeIcon from '../../assets/qrcode_icon.png';
+import qrCodeIcon from '../../assets/qrCode_icon.png';
 import btnPay from '../../assets/btn_pay.png';
-import phone from '../../assets/phone.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
@@ -54,11 +53,10 @@ const handlePaymentButton = navigation => {
 
 export default function Cart({navigation}) {
     const [activeButton, setActiveButton] = useState('addressesList');
-    const [total, setTotal] = useState(2000.0);
     const [changeAddress, setChangeAddress] = useState(false);
     const [currentAddress, setCurrentAddress] = useState('');
     const [cep, setCep] = useState('');
-
+    const [total, setTotal] = useState(0);
     const addresses = useSelector(state => state.Addresses);
     const products = useSelector(state => state.Cart);
 
@@ -66,11 +64,22 @@ export default function Cart({navigation}) {
         setCurrentAddress(addresses[0]);
     }, [addresses]);
 
+    useEffect(() => {
+        setTotal(calculateTotal());
+    }, [calculateTotal, products]);
+
     function handleAdressButton(active) {
         if (activeButton !== active) {
             setActiveButton(active);
         }
     }
+    const calculateTotal = useCallback(() => {
+        let total = 0;
+        products.forEach(p => {
+            total += p.total;
+        });
+        return total;
+    }, [products]);
 
     function YourAddresses() {
         if (changeAddress) {

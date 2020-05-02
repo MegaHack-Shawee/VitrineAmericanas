@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Text, Picker} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {updateProductQuantity} from '../../store/actions/Cart';
 
 import {
     Container,
@@ -12,7 +14,26 @@ import {
 } from './styles';
 
 export default function Product({product}) {
-    const [qtd, setQtd] = useState(product.qtd);
+    const [qtd, setQtd] = useState(1);
+    const dispatch = useDispatch();
+    const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    function PickerOptions() {
+        return options.map(option => {
+            return (
+                <Picker.Item
+                    key={option}
+                    label={option + ' un'}
+                    value={option}
+                />
+            );
+        });
+    }
+
+    function handleQtdChanged(qtd) {
+        dispatch(updateProductQuantity(qtd, product.code));
+        setQtd(qtd);
+    }
     return (
         <Container>
             <MainView>
@@ -25,11 +46,12 @@ export default function Product({product}) {
                 <Picker
                     selectedValue={qtd}
                     style={{height: 50, width: 120}}
-                    onValueChange={(itemValue, itemIndex) => setQtd(itemValue)}>
-                    <Picker.Item label="1un" value="1" />
-                    <Picker.Item label="2un" value="2" />
+                    onValueChange={(itemValue, itemIndex) =>
+                        handleQtdChanged(itemValue)
+                    }>
+                    {PickerOptions()}
                 </Picker>
-                <ProductPrice>R$ {product.price}</ProductPrice>
+                <ProductPrice>R$ {product.total.toString()}</ProductPrice>
             </SubtotalView>
         </Container>
     );

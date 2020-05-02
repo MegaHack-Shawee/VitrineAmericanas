@@ -4,3 +4,11 @@ export const startAddresses = product => {
         product,
     };
 };
+
+export const updateProductQuantity = (qtd, code) => {
+    return {
+        type: 'UPDATE_PRODUCT_QUANTITY',
+        qtd,
+        code,
+    };
+};
