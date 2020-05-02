@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import phone from '../../assets/images/phone.png';
 import specifications from '../../assets/images/specifications.png';
+import getProduct from '../../utils/products';
 
 import {
     Container,
@@ -20,29 +20,22 @@ import {
 } from './styles';
 import Modal from '../../components/Modal';
 
-const product = {
-    title:
-        'Celular Motorola Moto G8 Plus Cereja 64GB Camêra Tripla 48MP + 5MP + 16MP',
-    photo: phone,
-    price: '2.000,00',
-    installment: '10 x 200,00 s/ juros',
-    brand: 'Sansung',
-    code: '999909999',
-    color: 'Cereja',
-    memory: '6GB',
-    weight: '150g',
-    dimensions: '14,5 x 6,9 x 0,7 cm',
-};
+export default function ScannedProduct({route, navigation}) {
+    const {qrCode} = route.params;
+    const [product, setProduct] = useState(null);
 
-const handleSpecificationsButton = navigation => {
-    navigation.navigate('DetailsScreen', {product});
-};
+    useEffect(() => {
+        setProduct(getProduct(qrCode));
+    }, [qrCode]);
 
-const handleCloseButton = navigation => {
-    navigation.goBack();
-};
+    const handleCloseButton = () => {
+        navigation.goBack();
+    };
 
-export default function ScannedProduct({navigation}) {
+    const handleSpecificationsButton = () => {
+        navigation.navigate('DetailsScreen', {product});
+    };
+
     return (
         <Container>
             <Modal>
@@ -51,13 +44,13 @@ export default function ScannedProduct({navigation}) {
                         <Icon name="close" size={30} color="#9e9e9e" />
                     </Touch>
                 </Row>
-                <Title>{product.title}</Title>
+                <Title>{product?.title}</Title>
                 <Info>
                     <PhotoView>
-                        <Image source={product.photo} />
+                        <Image source={product?.photo} />
                     </PhotoView>
-                    <Price>R$ {product.price}</Price>
-                    <Text color="#9e9e9e">{product.installment}</Text>
+                    <Price>R$ {product?.price}</Price>
+                    <Text color="#9e9e9e">{product?.installment}</Text>
                     <Button>
                         <Text color="#fff" weight="bold">
                             Adicionar ao carrinho

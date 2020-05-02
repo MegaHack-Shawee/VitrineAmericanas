@@ -1,4 +1,4 @@
-export const addToCart = product => {
+export const startAddresses = product => {
     return {
         type: '@Cart/ADD_TO_CART',
         product,

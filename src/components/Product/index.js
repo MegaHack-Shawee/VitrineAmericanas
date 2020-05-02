@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, Picker} from 'react-native';
+import {Picker} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {updateProductQuantity} from '../../store/modules/Cart/actions';
 

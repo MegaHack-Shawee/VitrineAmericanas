@@ -5,8 +5,15 @@ export const Search = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image.attrs({
-    resizeMode: 'cover',
+    resizeMode: 'contain',
 })``;
+
+export const ImageIconLocalization = styled.Image.attrs({
+    resizeMode: 'contain',
+})`
+    height: 200px;
+    width: 200px;
+`;
 
 export const Row = styled.View`
     flex-direction: row;
