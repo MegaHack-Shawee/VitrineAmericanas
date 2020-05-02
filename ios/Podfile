@@ -79,6 +79,8 @@ target 'mobile' do
 
   pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
 
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'mobileTests' do
     inherit! :complete
     # Pods for testing

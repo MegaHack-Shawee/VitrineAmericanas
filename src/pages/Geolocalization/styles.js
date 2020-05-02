@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+
 export const Search = styled.TouchableOpacity`
     padding: 5px 5px 0 0;
 `;
@@ -26,15 +28,15 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const QRCodeReader = styled.View`
-    flex: 2;
+    flex: 1;
     align-items: center;
     justify-content: center;
 `;
 
 export const ButtonQrCode = styled.TouchableOpacity`
-    height: 80%;
+    height: 90%;
     width: 90%;
-    margin: 10px 20px 0 20px;
+    margin: 10px 10px 0 10px;
     align-items: center;
     justify-content: center;
 `;
@@ -48,6 +50,17 @@ export const ImageQrCode = styled.Image.attrs({
 
 export const TextQrCode = styled.Text`
     color: #9e9e9e;
-    font-size: 15px;
+    font-size: 18px;
     position: absolute;
+`;
+
+export const ViewAboveMap = styled.View`
+    border-radius: 20px;
+    margin-bottom: 50px;
+`;
+
+export const MapViewGoogle = styled(MapView)`
+    margin-top: 15px;
+    height: 100%;
+    width: 100%;
 `;
