@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-import qrCodeIcon from '../../assets/images/qrcode_icon.png';
-import btnPay from '../../assets/images/btn_pay.png';
+import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeBigPNG.png';
+import btnPay from '../../assets/Icons/payment/iconPaymentBigPNG.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
@@ -47,32 +47,25 @@ const handleQRCodeButton = navigation => {
     navigation.navigate('HomeScreen');
 };
 
-const handlePaymentButton = navigation => {
-    navigation.navigate('PaymentScreen');
-};
-
 export default function Cart({navigation}) {
     const [activeButton, setActiveButton] = useState('addressesList');
     const [changeAddress, setChangeAddress] = useState(false);
     const [currentAddress, setCurrentAddress] = useState('');
     const [cep, setCep] = useState('');
     const [total, setTotal] = useState(0);
-    const addresses = useSelector(state => state.Addresses);
+    const addresses = useSelector(state => state.Address);
     const products = useSelector(state => state.Cart);
 
     useEffect(() => {
         setCurrentAddress(addresses[0]);
+        setActiveButton('addressesList');
+        setChangeAddress(false);
     }, [addresses]);
 
     useEffect(() => {
         setTotal(calculateTotal());
     }, [calculateTotal, products]);
 
-    function handleAdressButton(active) {
-        if (activeButton !== active) {
-            setActiveButton(active);
-        }
-    }
     const calculateTotal = useCallback(() => {
         let total = 0;
         products.forEach(p => {
@@ -80,6 +73,16 @@ export default function Cart({navigation}) {
         });
         return total;
     }, [products]);
+
+    function handlePaymentButton(navigation) {
+        navigation.navigate('PaymentScreen', {address: currentAddress});
+    }
+
+    function handleAdressButton(active) {
+        if (activeButton !== active) {
+            setActiveButton(active);
+        }
+    }
 
     function YourAddresses() {
         if (changeAddress) {
@@ -156,56 +159,52 @@ export default function Cart({navigation}) {
             </Row>
             <Logo />
             <Main>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <AddressView>
-                        <AddressButtonsView>
-                            <AddressButton
-                                bgColor={
-                                    activeButton === 'addressesList'
-                                        ? '#f57c00'
-                                        : '#fff'
-                                }
-                                onPress={() =>
-                                    handleAdressButton('addressesList')
-                                }>
-                                <Text
-                                    color={
-                                        activeButton == 'addressesList'
-                                            ? '#fff'
-                                            : '#f57c00'
-                                    }>
-                                    Seus endereços
-                                </Text>
-                            </AddressButton>
-                            <AddressButton
-                                bgColor={
-                                    activeButton === 'addressesList'
+                <AddressView>
+                    <AddressButtonsView>
+                        <AddressButton
+                            bgColor={
+                                activeButton === 'addressesList'
+                                    ? '#f57c00'
+                                    : '#fff'
+                            }
+                            onPress={() => handleAdressButton('addressesList')}>
+                            <Text
+                                color={
+                                    activeButton == 'addressesList'
                                         ? '#fff'
                                         : '#f57c00'
-                                }
-                                onPress={() =>
-                                    handleAdressButton('newAddress')
                                 }>
-                                <Text
-                                    color={
-                                        activeButton == 'addressesList'
-                                            ? '#f57c00'
-                                            : '#fff'
-                                    }>
-                                    Novo endereço
-                                </Text>
-                            </AddressButton>
-                        </AddressButtonsView>
-                        {activeButton === 'addressesList' && YourAddresses()}
-                        {activeButton === 'newAddress' && (
-                            <CEPInput
-                                type={'zip-code'}
-                                value={cep}
-                                onChangeText={setCep}
-                                placeholder="digite o novo CEP de entrega"
-                            />
-                        )}
-                    </AddressView>
+                                Seus endereços
+                            </Text>
+                        </AddressButton>
+                        <AddressButton
+                            bgColor={
+                                activeButton === 'addressesList'
+                                    ? '#fff'
+                                    : '#f57c00'
+                            }
+                            onPress={() => handleAdressButton('newAddress')}>
+                            <Text
+                                color={
+                                    activeButton == 'addressesList'
+                                        ? '#f57c00'
+                                        : '#fff'
+                                }>
+                                Novo endereço
+                            </Text>
+                        </AddressButton>
+                    </AddressButtonsView>
+                    {activeButton === 'addressesList' && YourAddresses()}
+                    {activeButton === 'newAddress' && (
+                        <CEPInput
+                            type={'zip-code'}
+                            value={cep}
+                            onChangeText={setCep}
+                            placeholder="digite o novo CEP de entrega"
+                        />
+                    )}
+                </AddressView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     {activeButton === 'addressesList' ? (
                         <>
                             <ProductsList

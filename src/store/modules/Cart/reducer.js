@@ -29,7 +29,7 @@ export default function Cart(state = INITIAL_STATE, action) {
                 draft.push(action.product);
             });
         }
-        case 'UPDATE_PRODUCT_QUANTITY': {
+        case '@Cart/UPDATE_PRODUCT_QUANTITY': {
             return produce(state, draft => {
                 const index = draft.findIndex(p => p.code === action.code);
                 draft[index].qtd = action.qtd;

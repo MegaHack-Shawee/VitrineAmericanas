@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 import {
     FormRow,
@@ -13,6 +13,7 @@ import {
     Form,
 } from './styles';
 import {ScrollView} from 'react-native';
+import {addAddress} from '../../store/modules/Address/actions';
 
 export default function NewAddressForm({cep}) {
     const [street, setStreet] = useState('');
@@ -20,6 +21,8 @@ export default function NewAddressForm({cep}) {
     const [county, setCounty] = useState('');
     const [extra, setExtra] = useState('');
     const [state, setState] = useState('');
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         finfAddressByCep();
@@ -37,17 +40,21 @@ export default function NewAddressForm({cep}) {
             .ref(`/addresses/${uId}`)
             .push().key;
 
+        const address = {
+            street,
+            number,
+            county,
+            extra,
+            state,
+            zipCode: cep,
+            key,
+        };
+
         database()
             .ref(`/addresses/${uId}/${key}`)
-            .set({
-                street,
-                number,
-                county,
-                extra,
-                state,
-                zipCode: cep,
-                key,
-            });
+            .set(address);
+
+        dispatch(addAddress(address));
     }
 
     const inputs = [];

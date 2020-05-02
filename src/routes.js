@@ -17,7 +17,9 @@ const Stack = createStackNavigator();
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignInScreem" headerMode="none">
+            <Stack.Navigator
+                initialRouteName="LoadDataScreen"
+                headerMode="none">
                 <Stack.Screen
                     name="LoadDataScreen"
                     component={LoadData}
@@ -46,26 +48,22 @@ export default function Routes() {
                 <Stack.Screen
                     name="ScannedProductScreen"
                     component={ScannedProduct}
-                    opti
-                    ons={{title: 'Produto lido'}}
+                    options={{title: 'Produto lido'}}
                 />
                 <Stack.Screen
                     name="CartScreen"
                     component={Cart}
-                    opti
-                    ons={{title: 'Carrinho'}}
+                    options={{title: 'Carrinho'}}
                 />
                 <Stack.Screen
                     name="PaymentScreen"
                     component={PaymentConfirmed}
-                    opti
-                    ons={{title: 'Pagamento confirmado'}}
+                    options={{title: 'Pagamento confirmado'}}
                 />
                 <Stack.Screen
                     name="GeolocalizationScreen"
                     component={Geolocalization}
-                    opti
-                    ons={{title: 'Geolocalização'}}
+                    options={{title: 'Geolocalização'}}
                 />
             </Stack.Navigator>
         </NavigationContainer>
