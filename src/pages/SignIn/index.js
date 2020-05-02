@@ -23,12 +23,6 @@ export default function SignIn({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        if (auth().currentUser != null) {
-            navigation.replace('HomeScreem');
-        }
-    });
-
     const handleSignIn = () => {
         try {
             auth()

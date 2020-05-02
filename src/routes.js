@@ -9,13 +9,21 @@ import Details from './pages/Details';
 import ScannedProduct from './pages/ScannedProduct';
 import Cart from './pages/Cart';
 import PaymentConfirmed from './pages/PaymentConfirmed';
+import LoadData from './pages/LoadData';
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignInScreem" headerMode="none">
+            <Stack.Navigator
+                initialRouteName="LoadDataScreem"
+                headerMode="none">
+                <Stack.Screen
+                    name="LoadDataScreem"
+                    component={LoadData}
+                    options={{title: 'Loading data'}}
+                />
                 <Stack.Screen
                     name="SignInScreem"
                     component={SignIn}
