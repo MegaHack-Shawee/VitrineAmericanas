@@ -9,13 +9,14 @@ import Details from './pages/Details';
 import ScannedProduct from './pages/ScannedProduct';
 import Cart from './pages/Cart';
 import PaymentConfirmed from './pages/PaymentConfirmed';
+import Geolocalization from './pages/Geolocalization';
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignInScreem" headerMode="none">
+            <Stack.Navigator initialRouteName="HomeScreem" headerMode="none">
                 <Stack.Screen
                     name="SignInScreem"
                     component={SignIn}
@@ -53,6 +54,12 @@ export default function Routes() {
                     component={PaymentConfirmed}
                     opti
                     ons={{title: 'Pagamento confirmado'}}
+                />
+                <Stack.Screen
+                    name="GeolocalizationScreem"
+                    component={Geolocalization}
+                    opti
+                    ons={{title: 'Geolocalização'}}
                 />
             </Stack.Navigator>
         </NavigationContainer>
