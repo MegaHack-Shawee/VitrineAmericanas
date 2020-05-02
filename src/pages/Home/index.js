@@ -1,10 +1,9 @@
 import React from 'react';
-import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
+import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import qrCodeIcon from '../../assets/qrCode190px.png';
-import btnPay from '../../assets/btn_pay.png';
 import btnCart from '../../assets/btn_cart.png';
 
 import Background from '../../components/Background';
@@ -55,9 +54,9 @@ export default function Home({navigation}) {
             </Row>
             <Logo />
             <Main>
-                <Text style={{color: 'grey'}}>Aponte para um produto</Text>
                 <QRCodeReader>
                     <ButtonQrCode onPress={() => handleQRCode(navigation)}>
+                        <QRCodeScanner />
                         <TextQrCode>Leitor QR Code</TextQrCode>
                         <ImageQrCode source={qrCodeIcon} />
                     </ButtonQrCode>

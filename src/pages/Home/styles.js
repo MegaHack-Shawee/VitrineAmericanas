@@ -34,7 +34,7 @@ export const QRCodeReader = styled.View`
 export const ButtonQrCode = styled.TouchableOpacity`
     height: 90%;
     width: 90%;
-    margin: 10px 10px 0 10px;
+    margin: 10px 20px 0 20px;
     align-items: center;
     justify-content: center;
 `;
