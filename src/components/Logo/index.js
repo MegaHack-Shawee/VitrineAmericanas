@@ -1,5 +1,5 @@
 import React from 'react';
-import logoVitrine from '../../assets/images/logo_home.png';
+import logoVitrine from '../../assets/Icons/logo/logo_home.png';
 
 import {Image, LogoView} from './styles';
 

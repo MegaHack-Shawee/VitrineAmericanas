@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="1231" viewBox="0 0 375 1231">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-BOX_DATA_DE_NASCIMENTO);
+      }
+
+      .cls-2 {
+        fill: #dfdcdc;
+      }
+
+      .cls-12, .cls-3, .cls-4, .cls-6 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke: #9e9e9e;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        stroke: #707070;
+      }
+
+      .cls-7, .cls-9 {
+        fill: #424242;
+      }
+
+      .cls-10, .cls-7, .cls-8, .cls-9 {
+        font-size: 13px;
+      }
+
+      .cls-7, .cls-8 {
+        font-family: SegoeUI-Semibold, Segoe UI;
+        font-weight: 600;
+      }
+
+      .cls-8 {
+        fill: #9e9e9e;
+      }
+
+      .cls-10, .cls-9 {
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-10 {
+        fill: #f57c00;
+      }
+
+      .cls-11 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-BOX_DATA_DE_NASCIMENTO">
+      <rect width="375" height="1231"/>
+    </clipPath>
+  </defs>
+  <g id="BOX_DATA_DE_NASCIMENTO" data-name="BOX DATA DE NASCIMENTO" class="cls-1">
+    <g id="Grupo_15" data-name="Grupo 15" transform="translate(0 -51)">
+      <g id="Grupo_89" data-name="Grupo 89" transform="translate(0 245)">
+        <g id="Grupo_88" data-name="Grupo 88">
+          <g id="BOTTOM" transform="translate(0 985)">
+            <rect id="Retângulo_8" data-name="Retângulo 8" class="cls-2" width="375" height="52"/>
+          </g>
+          <g id="Grupo_10" data-name="Grupo 10" transform="translate(0.5 225)">
+            <g id="Retângulo_9" data-name="Retângulo 9" class="cls-3" transform="translate(178 774)">
+              <rect class="cls-11" width="20" height="20" rx="6"/>
+              <rect class="cls-12" x="1" y="1" width="18" height="18" rx="5"/>
+            </g>
+            <g id="Grupo_9" data-name="Grupo 9" transform="translate(0 -1.5)">
+              <line id="Linha_2" data-name="Linha 2" class="cls-4" y2="15" transform="translate(77.5 778.5)"/>
+              <line id="Linha_3" data-name="Linha 3" class="cls-4" y2="15" transform="translate(85.5 778.5)"/>
+              <line id="Linha_4" data-name="Linha 4" class="cls-4" y2="15" transform="translate(92.5 778.5)"/>
+            </g>
+            <path id="Caminho_11" data-name="Caminho 11" class="cls-4" d="M872.2,762.8l-7.6,7.6,7.6,7.6" transform="translate(-575 13.7)"/>
+            <path id="Caminho_20" data-name="Caminho 20" class="cls-4" d="M872.2,762.8l-7.6,7.6,7.6,7.6" transform="translate(-575 13.7)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Grupo_96" data-name="Grupo 96" transform="translate(0 -175)">
+      <g id="Retângulo_1469" data-name="Retângulo 1469" class="cls-5" transform="translate(84 443)">
+        <rect class="cls-11" width="210" height="249"/>
+        <rect class="cls-12" x="0.5" y="0.5" width="209" height="248"/>
+      </g>
+      <line id="Linha_7" data-name="Linha 7" class="cls-6" x2="45" transform="translate(97.5 525.5)"/>
+      <line id="Linha_8" data-name="Linha 8" class="cls-6" x2="45" transform="translate(167.5 525.5)"/>
+      <line id="Linha_9" data-name="Linha 9" class="cls-6" x2="45" transform="translate(236.5 525.5)"/>
+      <line id="Linha_10" data-name="Linha 10" class="cls-6" x2="45" transform="translate(97.5 567.5)"/>
+      <line id="Linha_11" data-name="Linha 11" class="cls-6" x2="45" transform="translate(167.5 567.5)"/>
+      <line id="Linha_12" data-name="Linha 12" class="cls-6" x2="45" transform="translate(236.5 567.5)"/>
+      <text id="_05" data-name="05" class="cls-7" transform="translate(103 538)"><tspan x="10.283" y="14">05</tspan></text>
+      <text id="_07" data-name="07" class="cls-7" transform="translate(170 538)"><tspan x="10.406" y="14">07</tspan></text>
+      <text id="_1983" data-name="1983" class="cls-7" transform="translate(242 538)"><tspan x="4.04" y="14">1983</tspan></text>
+      <text id="_04" data-name="04" class="cls-8" transform="translate(103 496)"><tspan x="10.146" y="14">04</tspan></text>
+      <text id="_06" data-name="06" class="cls-8" transform="translate(103 583)"><tspan x="10.264" y="14">06</tspan></text>
+      <text id="_06-2" data-name="06" class="cls-8" transform="translate(170 496)"><tspan x="10.264" y="14">06</tspan></text>
+      <text id="_08" data-name="08" class="cls-8" transform="translate(170 583)"><tspan x="10.283" y="14">08</tspan></text>
+      <text id="_1982" data-name="1982" class="cls-8" transform="translate(242 496)"><tspan x="4.04" y="14">1982</tspan></text>
+      <text id="_1984" data-name="1984" class="cls-8" transform="translate(242 583)"><tspan x="3.903" y="14">1984</tspan></text>
+      <text id="cancelar" class="cls-9" transform="translate(188 652)"><tspan x="4.882" y="14">cancelar</tspan></text>
+      <text id="ok" class="cls-10" transform="translate(255 652)"><tspan x="9.892" y="14">ok</tspan></text>
+    </g>
+  </g>
+</svg>
