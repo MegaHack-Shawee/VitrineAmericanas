@@ -25,7 +25,6 @@ export default function Routes() {
                     component={LoadData}
                     options={{title: 'Loading data'}}
                 />
-            <Stack.Navigator initialRouteName="HomeScreem" headerMode="none">
                 <Stack.Screen
                     name="SignInScreem"
                     component={SignIn}

@@ -84,7 +84,7 @@ export const Select = styled.View`
 `;
 
 export const Address = styled.View`
-    width: 80%;
+    width: ${props => props.width || '80%'};
     margin-left: 10px;
 `;
 
@@ -128,4 +128,11 @@ export const CEPInput = styled(TextInputMask).attrs({
     background-color: #fff;
     margin-top: 15px;
     padding: 2px 10px;
+`;
+
+export const ChangeAddress = styled.TouchableOpacity`
+    padding: 2px;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
 `;

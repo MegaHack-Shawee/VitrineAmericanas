@@ -4,9 +4,10 @@ import {RectButton} from 'react-native-gesture-handler';
 
 export const Container = styled.View``;
 
-export const Form = styled.ScrollView`
+export const Form = styled.View`
     align-self: stretch;
     height: 100%;
+    margin-bottom: 30px;
 `;
 
 export const Label = styled.Text`
