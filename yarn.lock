@@ -1005,6 +1005,11 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
+"@react-native-community/geolocation@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-1.4.2.tgz#7228c6d37c2f55017af9c49c2b9ad586d9bcb9f8"
+  integrity sha512-9x9dHDeUXnh2larA4zTT3y/tXPmRnysh5o9fsNbGcnUKPj1BUCIHnGGPxEIDnwP1DNIMP2DN9DmuMHImtTbX6A==
+
 "@react-native-community/masked-view@^0.1.10":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
@@ -5342,6 +5347,18 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1, react-
   resolved "git+https://git@github.com/react-native-community/react-native-camera.git#48a3a4dfd86a3ca064cb7166a720d7ee7b716653"
   dependencies:
     prop-types "^15.6.2"
+
+react-native-geocoding@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-geocoding/-/react-native-geocoding-0.4.0.tgz#e22c97500bfccc25273499ab3af87c27ac6ede8f"
+  integrity sha512-iXIqdLHDGVyhWLJyWGRFRdvQa3hDQoCX4MLwKA9zja3gQxZ91v51CLGrbvxCckOGzoxu2/WA6e8TM74rrPxlsA==
+
+react-native-geolocation-service@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-4.0.1.tgz#de8d13b99e26d1f5e1d5b7703829fed5d61741fe"
+  integrity sha512-Q77behZcXwFdoo6d+muGizpwR4FDcyEdOzxUWoA/xZXJ2sv5ZLZR+/CXOdnea8w5I4RCGYqJ9IK2tM4YhjahLw==
+  dependencies:
+    "@react-native-community/geolocation" "^1.4.2"
 
 react-native-gesture-handler@^1.6.1:
   version "1.6.1"
