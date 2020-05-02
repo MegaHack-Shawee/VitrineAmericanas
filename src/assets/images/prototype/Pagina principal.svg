@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-LOGIN_-_iPhone_X_XS_11_Pro_2);
+      }
+
+      .cls-10, .cls-11, .cls-14, .cls-19, .cls-2, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-13, .cls-16, .cls-4, .cls-5, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-5, .cls-9 {
+        stroke-linecap: round;
+      }
+
+      .cls-6 {
+        stroke: rgba(0,0,0,0);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7 {
+        fill: #dfdcdc;
+      }
+
+      .cls-8, .cls-9 {
+        stroke: #9e9e9e;
+        stroke-width: 2px;
+      }
+
+      .cls-10, .cls-12 {
+        font-size: 15px;
+      }
+
+      .cls-10 {
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .cls-11 {
+        font-size: 25px;
+      }
+
+      .cls-11, .cls-12 {
+        font-family: SegoeUI-Semibold, Segoe UI;
+      }
+
+      .cls-11, .cls-12, .cls-17, .cls-19 {
+        font-weight: 600;
+      }
+
+      .cls-12 {
+        fill: #9e9e9e;
+      }
+
+      .cls-15, .cls-17, .cls-18 {
+        fill: #f57c00;
+      }
+
+      .cls-17, .cls-19 {
+        font-size: 13px;
+        font-family: OpenSans-SemiBold, Open Sans;
+      }
+
+      .cls-20, .cls-21 {
+        stroke: none;
+      }
+
+      .cls-21 {
+        fill: #ef6c00;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f57c00"/>
+      <stop offset="1" stop-color="#d84315"/>
+    </linearGradient>
+    <clipPath id="clip-LOGIN_-_iPhone_X_XS_11_Pro_2">
+      <rect width="375" height="812"/>
+    </clipPath>
+  </defs>
+  <g id="LOGIN_-_iPhone_X_XS_11_Pro_2" data-name="LOGIN - iPhone X/XS/11 Pro – 2" class="cls-1">
+    <path id="Icon_awesome-arrow-left" data-name="Icon awesome-arrow-left" class="cls-2" d="M6.95,13.648l-.6.6a.645.645,0,0,1-.915,0L.187,9a.645.645,0,0,1,0-.915L5.435,2.838a.645.645,0,0,1,.915,0l.6.6a.649.649,0,0,1-.011.926l-3.253,3.1h7.759a.646.646,0,0,1,.648.648v.864a.646.646,0,0,1-.648.648H3.686l3.253,3.1A.644.644,0,0,1,6.95,13.648Z" transform="translate(36.004 41.353)"/>
+    <rect id="topo" class="cls-3" width="375" height="808"/>
+    <path id="bg_branco" data-name="bg branco" class="cls-2" d="M36,0H339a36,36,0,0,1,36,36V647a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V36A36,36,0,0,1,36,0Z" transform="translate(0 165)"/>
+    <g id="lupa" transform="translate(470 321)">
+      <g id="lupa-2" data-name="lupa">
+        <g id="Elipse_2" data-name="Elipse 2" class="cls-4" transform="translate(-137 -277)">
+          <circle class="cls-20" cx="9" cy="9" r="9"/>
+          <circle class="cls-13" cx="9" cy="9" r="7.5"/>
+        </g>
+        <line id="Linha_1" data-name="Linha 1" class="cls-5" x2="7" y2="7" transform="translate(-122.5 -262.5)"/>
+      </g>
+    </g>
+    <g id="LOGO" transform="translate(-257.005 -80.124)">
+      <g id="Grupo_5" data-name="Grupo 5" transform="translate(451.5 158.035)">
+        <g id="Grupo_4" data-name="Grupo 4" transform="translate(0 0)">
+          <g id="Grupo_3" data-name="Grupo 3">
+            <path id="Exclusão_1" data-name="Exclusão 1" class="cls-6" d="M5.139,12.4h0L1.884,9.144a.915.915,0,0,1-.089-.1A5.138,5.138,0,0,1,4.775.013C4.9,0,5.019,0,5.14,0A5.138,5.138,0,0,1,8.484,9.04a.911.911,0,0,1-.089.1L5.14,12.4Zm0-10.226A2.866,2.866,0,1,0,8.005,5.039,2.869,2.869,0,0,0,5.14,2.174Z"/>
+          </g>
+        </g>
+      </g>
+      <path id="Caminho_4" data-name="Caminho 4" class="cls-2" d="M407.67,180.7h3.769l-5.984,17.6h-4.07l-5.973-17.6h3.769l3.311,10.476q.277.927.572,2.161t.368,1.715a30.81,30.81,0,0,1,.9-3.877Z" transform="translate(0 -8.849)"/>
+      <path id="Caminho_5" data-name="Caminho 5" class="cls-2" d="M427.217,198.306V180.7h3.733v17.6Z" transform="translate(-12.416 -8.849)"/>
+      <path id="Caminho_6" data-name="Caminho 6" class="cls-2" d="M446.3,198.306h-3.733v-14.5h-4.78V180.7h13.293v3.107H446.3Z" transform="translate(-16.541 -8.849)"/>
+      <path id="Caminho_7" data-name="Caminho 7" class="cls-2" d="M467.766,191.551v6.755h-3.733V180.7h5.129a8.777,8.777,0,0,1,5.31,1.306,5.207,5.207,0,0,1,.867,6.731,5.66,5.66,0,0,1-2.42,1.9q3.973,5.936,5.178,7.67h-4.142l-4.2-6.755Zm0-3.034h1.2a4.6,4.6,0,0,0,2.612-.59,2.1,2.1,0,0,0,.844-1.854,1.926,1.926,0,0,0-.861-1.782,5.226,5.226,0,0,0-2.667-.53h-1.131Z" transform="translate(-26.788 -8.849)"/>
+      <path id="Caminho_8" data-name="Caminho 8" class="cls-2" d="M492.618,198.306V180.7h3.733v17.6Z" transform="translate(-37.946 -8.849)"/>
+      <path id="Caminho_9" data-name="Caminho 9" class="cls-2" d="M523.507,198.306h-4.745L511.1,184.988H511q.229,3.529.229,5.033v8.284H507.89V180.7H512.6l7.646,13.185h.085q-.182-3.432-.181-4.853V180.7h3.36Z" transform="translate(-43.908 -8.849)"/>
+      <path id="Caminho_10" data-name="Caminho 10" class="cls-2" d="M550.914,198.306H540.775V180.7h10.139v3.058h-6.406v3.865h5.96v3.059h-5.96v4.539h6.406Z" transform="translate(-56.746 -8.849)"/>
+    </g>
+    <g id="Grupo_15" data-name="Grupo 15">
+      <g id="BOTTOM" transform="translate(0 760)">
+        <rect id="Retângulo_8" data-name="Retângulo 8" class="cls-7" width="375" height="52"/>
+      </g>
+      <g id="Grupo_10" data-name="Grupo 10" transform="translate(0.5)">
+        <g id="Retângulo_9" data-name="Retângulo 9" class="cls-8" transform="translate(178 774)">
+          <rect class="cls-20" width="20" height="20" rx="6"/>
+          <rect class="cls-13" x="1" y="1" width="18" height="18" rx="5"/>
+        </g>
+        <g id="Grupo_9" data-name="Grupo 9" transform="translate(0 -1.5)">
+          <line id="Linha_2" data-name="Linha 2" class="cls-9" y2="15" transform="translate(77.5 778.5)"/>
+          <line id="Linha_3" data-name="Linha 3" class="cls-9" y2="15" transform="translate(85.5 778.5)"/>
+          <line id="Linha_4" data-name="Linha 4" class="cls-9" y2="15" transform="translate(92.5 778.5)"/>
+        </g>
+        <path id="Caminho_11" data-name="Caminho 11" class="cls-9" d="M872.2,762.8l-7.6,7.6,7.6,7.6" transform="translate(-575 13.7)"/>
+        <path id="Caminho_20" data-name="Caminho 20" class="cls-9" d="M872.2,762.8l-7.6,7.6,7.6,7.6" transform="translate(-575 13.7)"/>
+      </g>
+    </g>
+    <g id="TOPO_HORÁRIO" data-name="TOPO HORÁRIO" transform="translate(19 2)">
+      <g id="Grupo_14" data-name="Grupo 14" transform="translate(-17 -14)">
+        <path id="Icon_awesome-battery-three-quarters" data-name="Icon awesome-battery-three-quarters" class="cls-2" d="M17.341,8.79v2.04h1.02v2.04h-1.02v2.04H2.04V8.79h15.3m.51-2.04H1.53A1.53,1.53,0,0,0,0,8.28v7.14a1.53,1.53,0,0,0,1.53,1.53H17.851a1.53,1.53,0,0,0,1.53-1.53v-.51h.255a.765.765,0,0,0,.765-.765V9.555a.765.765,0,0,0-.765-.765h-.255V8.28A1.53,1.53,0,0,0,17.851,6.75Zm-4.59,3.06H3.06v4.08h10.2Z" transform="translate(333.118 13.05)"/>
+        <path id="Icon_awesome-wifi" data-name="Icon awesome-wifi" class="cls-2" d="M15.508,5.251a11.357,11.357,0,0,0-15.383,0,.388.388,0,0,0-.009.561l.836.83a.4.4,0,0,0,.547.009,9.371,9.371,0,0,1,12.634,0,.4.4,0,0,0,.547-.009l.836-.83a.388.388,0,0,0-.009-.561ZM7.816,10.066a1.563,1.563,0,1,0,1.563,1.563A1.563,1.563,0,0,0,7.816,10.066Zm4.95-2.042a7.5,7.5,0,0,0-9.9,0,.386.386,0,0,0-.014.565l.841.83a.4.4,0,0,0,.539.02,5.5,5.5,0,0,1,7.168,0,.4.4,0,0,0,.539-.02l.841-.83A.386.386,0,0,0,12.766,8.024Z" transform="translate(306.487 16.808)"/>
+        <text id="_16:00" data-name="16:00" class="cls-10" transform="translate(17 30)"><tspan x="0" y="0">16:00</tspan></text>
+        <text id="_16:00-2" data-name="16:00" class="cls-10" transform="translate(17 30)"><tspan x="0" y="0">16:00</tspan></text>
+      </g>
+    </g>
+    <text id="Tatiana" class="cls-11" transform="translate(147 142)"><tspan x="0" y="0">Tatiana</tspan></text>
+    <g id="Grupo_26" data-name="Grupo 26">
+      <text id="vitrine_americanas" data-name="vitrine americanas" class="cls-10" transform="translate(59 56)"><tspan x="0" y="0">vitrine americanas</tspan></text>
+      <path id="Icon_awesome-arrow-left-2" data-name="Icon awesome-arrow-left" class="cls-2" d="M6.95,13.648l-.6.6a.645.645,0,0,1-.915,0L.187,9a.645.645,0,0,1,0-.915L5.435,2.838a.645.645,0,0,1,.915,0l.6.6a.649.649,0,0,1-.011.926l-3.253,3.1h7.759a.646.646,0,0,1,.648.648v.864a.646.646,0,0,1-.648.648H3.686l3.253,3.1A.644.644,0,0,1,6.95,13.648Z" transform="translate(36.004 41.353)"/>
+    </g>
+    <text id="Aponte_para_um_produto_" data-name="Aponte para um produto," class="cls-12" transform="translate(32 235)"><tspan x="0" y="0">Aponte para um produto,</tspan></text>
+    <rect id="Retângulo_10" data-name="Retângulo 10" class="cls-13" width="193" height="193" transform="translate(88 296)"/>
+    <text id="Leitor_QR_code" data-name="Leitor QR code" class="cls-12" transform="translate(137 402)"><tspan x="0" y="0">Leitor QR code</tspan></text>
+    <g id="Subtração_1" data-name="Subtração 1" class="cls-14" transform="translate(533 296)">
+      <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+      <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+    </g>
+    <g id="Subtração_2" data-name="Subtração 2" class="cls-14" transform="translate(281 741) rotate(90)">
+      <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+      <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+    </g>
+    <g id="Grupo_27" data-name="Grupo 27">
+      <g id="Subtração_3" data-name="Subtração 3" class="cls-15" transform="translate(533 296)">
+        <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+        <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+      </g>
+      <g id="Subtração_4" data-name="Subtração 4" class="cls-15" transform="translate(281 741) rotate(90)">
+        <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+        <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+      </g>
+      <g id="Subtração_5" data-name="Subtração 5" class="cls-15" transform="translate(-164 489) rotate(180)">
+        <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+        <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+      </g>
+      <g id="Subtração_6" data-name="Subtração 6" class="cls-15" transform="translate(88 44) rotate(-90)">
+        <path class="cls-20" d="M-443,17h-2V0h17V2h-15V17Z"/>
+        <path class="cls-21" d="M -442.9998168945313 17.00009918212891 L -443.0008239746094 17.00009918212891 L -444.9996032714844 17.00009918212891 L -444.9996032714844 -4.089355343239731e-07 L -428.0003967285156 -4.089355343239731e-07 L -428.0003967285156 1.999799609184265 L -442.9998168945313 1.999799609184265 L -442.9998168945313 16.99909973144531 L -442.9998168945313 17.00009918212891 Z"/>
+      </g>
+    </g>
+    <g id="sacola" transform="translate(91 632)">
+      <g id="Grupo_8" data-name="Grupo 8" transform="translate(-42 -671)">
+        <g id="Caminho_27" data-name="Caminho 27" class="cls-16" transform="translate(42 671)">
+          <path class="cls-20" d="M46,0A46,46,0,1,1,0,46,46,46,0,0,1,46,0Z"/>
+          <path class="cls-21" d="M 46 1 C 39.92459869384766 1 34.03146362304688 2.189651489257813 28.48427581787109 4.535911560058594 C 23.12582397460938 6.802352905273438 18.31324005126953 10.04714965820313 14.18019866943359 14.18019866943359 C 10.04714965820313 18.31324005126953 6.802352905273438 23.12582397460938 4.535911560058594 28.48427581787109 C 2.189651489257813 34.03146362304688 1 39.92459869384766 1 46 C 1 52.07540130615234 2.189651489257813 57.96853637695313 4.535911560058594 63.51572418212891 C 6.802352905273438 68.87417602539063 10.04714965820313 73.68675994873047 14.18019866943359 77.81980133056641 C 18.31324005126953 81.95285034179688 23.12582397460938 85.19764709472656 28.48427581787109 87.46408843994141 C 34.03146362304688 89.81034851074219 39.92459869384766 91 46 91 C 52.07540130615234 91 57.96853637695313 89.81034851074219 63.51572418212891 87.46408843994141 C 68.87417602539063 85.19764709472656 73.68675994873047 81.95285034179688 77.81980133056641 77.81980133056641 C 81.95285034179688 73.68675994873047 85.19764709472656 68.87417602539063 87.46408843994141 63.51572418212891 C 89.81034851074219 57.96853637695313 91 52.07540130615234 91 46 C 91 39.92459869384766 89.81034851074219 34.03146362304688 87.46408843994141 28.48427581787109 C 85.19764709472656 23.12582397460938 81.95285034179688 18.31324005126953 77.81980133056641 14.18019866943359 C 73.68675994873047 10.04714965820313 68.87417602539063 6.802352905273438 63.51572418212891 4.535911560058594 C 57.96853637695313 2.189651489257813 52.07540130615234 1 46 1 M 46 0 C 71.40509796142578 0 92 20.59490203857422 92 46 C 92 71.40509796142578 71.40509796142578 92 46 92 C 20.59490203857422 92 0 71.40509796142578 0 46 C 0 20.59490203857422 20.59490203857422 0 46 0 Z"/>
+        </g>
+      </g>
+      <text id="Sacola-2" data-name="Sacola" class="cls-17" transform="translate(15 61)"><tspan x="10.884" y="14">Sacola</tspan></text>
+      <g id="cesta_de_compras" data-name="cesta de compras" transform="translate(103.205 301.267)">
+        <path id="Caminho_2" data-name="Caminho 2" class="cls-18" d="M176.367,156.328H169.34l-9.366-9.366a2.438,2.438,0,0,0,.561-1.547,2.464,2.464,0,0,0-4.927,0,2.438,2.438,0,0,0,.561,1.547l-9.366,9.366h-7.027v3.785h1.543V175.16a3.847,3.847,0,0,0,3.9,3.785h25.708a3.847,3.847,0,0,0,3.9-3.785V160.113h1.544Zm-22.657,5.221V175.16H150.7V161.549Zm2.776,0H159.5V175.16h-3.011Zm5.785,0h3.012V175.16h-3.012Zm-4.2-13.671a2.452,2.452,0,0,0,.868-.165l8.615,8.615H148.588l8.615-8.615A2.454,2.454,0,0,0,158.072,147.878Zm-12.855,25.627V161.549h2.706V175.16h-1.051A1.656,1.656,0,0,1,145.218,173.505Zm23.933,1.655h-1.093V161.549h2.868l0,11.834A1.778,1.778,0,0,1,169.15,175.16Z" transform="translate(-215.777 -424.952)"/>
+      </g>
+    </g>
+    <g id="Componente_13_2" data-name="Componente 13 – 2" transform="translate(193 632)">
+      <g id="pagar">
+        <g id="Grupo_8-2" data-name="Grupo 8" transform="translate(-42 -671)">
+          <rect id="Retângulo_5" data-name="Retângulo 5" class="cls-18" width="92" height="92" rx="46" transform="translate(42 671)"/>
+        </g>
+        <text id="Pagar-2" data-name="Pagar" class="cls-19" transform="translate(15 61)"><tspan x="13.042" y="14">Pagar</tspan></text>
+      </g>
+      <path id="Caminho_26" data-name="Caminho 26" class="cls-2" d="M1083.039,669.189h.1a2.611,2.611,0,0,1,1.837.757l7.029,6.982.122.121a3.324,3.324,0,0,1,.063,4.375c-1.11,1.1-20.918,20.78-21.122,20.983a2.638,2.638,0,0,1-3.71,0l-21.124-20.984a3.325,3.325,0,0,1,.062-4.37l.124-.123,7.029-6.982a2.612,2.612,0,0,1,1.837-.757h.093a2.472,2.472,0,0,1,1.741.718l.622.618,6.962,6.916a6.357,6.357,0,0,0,4.508,1.856h0a6.358,6.358,0,0,0,4.509-1.856l6.962-6.916.625-.621a2.46,2.46,0,0,1,1.733-.714h0m.111-1.883H1055.27a4.493,4.493,0,0,0-3.152,1.3l-7.029,6.982v-.008a5.206,5.206,0,0,0-.237,7.121c.009.011,21.175,21.036,21.175,21.036a4.521,4.521,0,0,0,6.364,0s21.166-21.025,21.175-21.036a5.207,5.207,0,0,0-.237-7.121v.008l-7.029-6.982a4.494,4.494,0,0,0-3.152-1.3Zm-13.94,10.108a4.5,4.5,0,0,1-3.182-1.309l-6.962-6.916h20.287l-6.962,6.916a4.5,4.5,0,0,1-3.182,1.309Z" transform="translate(-1022.998 -646.239)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="818" viewBox="0 0 375 818">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-LOGIN_-_iPhone_X_XS_11_Pro_4);
+      }
+
+      .cls-2, .cls-4, .cls-7 {
+        fill: #424242;
+      }
+
+      .cls-2 {
+        opacity: 0.15;
+        mix-blend-mode: multiply;
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke: #dfdcdc;
+      }
+
+      .cls-4 {
+        font-size: 13px;
+        font-family: SegoeUI-Semibold, Segoe UI;
+        font-weight: 600;
+      }
+
+      .cls-5 {
+        fill: #ef6c00;
+      }
+
+      .cls-5, .cls-6 {
+        font-family: SegoeUI-Light, Segoe UI;
+        font-weight: 300;
+      }
+
+      .cls-11, .cls-8 {
+        fill: none;
+      }
+
+      .cls-8 {
+        stroke: #9e9e9e;
+        stroke-linecap: round;
+        stroke-width: 2px;
+      }
+
+      .cls-9 {
+        fill: #9e9e9e;
+      }
+
+      .cls-10 {
+        stroke: none;
+      }
+
+      .cls-12 {
+        filter: url(#Retângulo_11);
+      }
+    </style>
+    <filter id="Retângulo_11" x="19" y="179" width="341" height="478" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-LOGIN_-_iPhone_X_XS_11_Pro_4">
+      <rect width="375" height="818"/>
+    </clipPath>
+  </defs>
+  <g id="LOGIN_-_iPhone_X_XS_11_Pro_4" data-name="LOGIN - iPhone X/XS/11 Pro – 4" class="cls-1">
+    <rect id="bg_multiplay" data-name="bg multiplay" class="cls-2" width="378" height="818"/>
+    <g class="cls-12" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <g id="Retângulo_11-2" data-name="Retângulo 11" class="cls-3" transform="translate(28 185)">
+        <rect class="cls-10" width="323" height="460"/>
+        <rect class="cls-11" x="0.5" y="0.5" width="322" height="459"/>
+      </g>
+    </g>
+    <g id="Grupo_24" data-name="Grupo 24">
+      <text id="Celular_Motorola_Moto_G8_Plus_Cereja_64GB_Câmera_Tripla_48MP_5MP_16MP_Código_999909999_Marca_Samsung_Cor_Cereja_Memória_6GB_Peso_aproximado_kg_150g_Dimensões_aproximadas_AxLxP_14_5_x_6_9_x_0_7_cm_" data-name="Celular Motorola Moto G8 Plus Cereja 64GB Câmera Tripla 48MP + 5MP + 16MP
+
+Código
+999909999
+
+Marca
+Samsung
+
+Cor
+Cereja
+
+Memória
+6GB
+
+Peso aproximado (kg)
+150g
+
+Dimensões aproximadas (AxLxP)
+14,5 x 6,9 x 0,7 cm
+
+
+
+" class="cls-4" transform="translate(59 245)"><tspan x="0" y="14">Celular Motorola Moto G8 Plus Cereja </tspan><tspan x="0" y="31">64GB Câmera Tripla 48MP + 5MP + 16MP</tspan><tspan x="0" y="48"></tspan><tspan class="cls-5"><tspan x="0" y="65">Código</tspan></tspan><tspan class="cls-6"><tspan x="0" y="82">999909999</tspan><tspan x="0" y="99"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="116">Marca</tspan></tspan><tspan class="cls-6"><tspan x="0" y="133">Samsung</tspan><tspan x="0" y="150"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="167">Cor</tspan></tspan><tspan class="cls-6"><tspan x="0" y="184">Cereja</tspan><tspan x="0" y="201"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="218">Memória</tspan></tspan><tspan class="cls-6"><tspan x="0" y="235">6GB</tspan><tspan x="0" y="252"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="269">Peso aproximado (kg)</tspan><tspan class="cls-7" y="269"></tspan></tspan><tspan class="cls-6"><tspan x="0" y="286">150g</tspan><tspan x="0" y="303"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="320">Dimensões aproximadas (AxLxP)</tspan></tspan><tspan class="cls-6"><tspan x="0" y="337">14,5 x 6,9 x 0,7 cm</tspan><tspan x="0" y="354"></tspan></tspan><tspan class="cls-5"><tspan x="0" y="371"></tspan></tspan><tspan class="cls-6"><tspan x="0" y="388"></tspan><tspan x="0" y="405"></tspan></tspan></text>
+    </g>
+    <g id="Grupo_25" data-name="Grupo 25">
+      <g id="Grupo_19" data-name="Grupo 19" transform="translate(-12.5 14)">
+        <line id="Linha_5" data-name="Linha 5" class="cls-8" x2="8" y2="8.091" transform="translate(331.5 194.204)"/>
+        <line id="Linha_6" data-name="Linha 6" class="cls-8" x1="8" y2="8.091" transform="translate(331.5 194.204)"/>
+      </g>
+      <path id="Icon_awesome-arrow-left" data-name="Icon awesome-arrow-left" class="cls-9" d="M6.95,13.648l-.6.6a.645.645,0,0,1-.915,0L.187,9a.645.645,0,0,1,0-.915L5.435,2.838a.645.645,0,0,1,.915,0l.6.6a.649.649,0,0,1-.011.926l-3.253,3.1h7.759a.646.646,0,0,1,.648.648v.864a.646.646,0,0,1-.648.648H3.686l3.253,3.1A.644.644,0,0,1,6.95,13.648Z" transform="translate(59.004 205.353)"/>
+    </g>
+  </g>
+</svg>

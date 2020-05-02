@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import phone from '../../assets/phone.png';
+import phone from '../../assets/images/phone.png';
 
 import Logo from '../../components/Logo';
 import Background from '../../components/Background';

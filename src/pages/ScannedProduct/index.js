@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import phone from '../../assets/phone.png';
-import specifications from '../../assets/specifications.png';
+import phone from '../../assets/images/phone.png';
+import specifications from '../../assets/images/specifications.png';
 
 import {
     Container,
