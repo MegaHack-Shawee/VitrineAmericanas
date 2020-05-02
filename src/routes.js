@@ -17,55 +17,56 @@ const Stack = createStackNavigator();
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName="LoadDataScreem"
+            {/* <Stack.Navigator
+                initialRouteName="LoadDataScreen"
                 headerMode="none">
                 <Stack.Screen
-                    name="LoadDataScreem"
+                    name="LoadDataScreen"
                     component={LoadData}
-                    options={{title: 'Loading data'}}
+                    options={{title: 'Loading'}}
                 />
-            <Stack.Navigator initialRouteName="HomeScreem" headerMode="none">
+            </Stack.Navigator> */}
+            <Stack.Navigator initialRouteName="HomeScreen" headerMode="none">
                 <Stack.Screen
-                    name="SignInScreem"
+                    name="SignInScreen"
                     component={SignIn}
                     options={{title: 'Entrar'}}
                 />
                 <Stack.Screen
-                    name="HomeScreem"
+                    name="HomeScreen"
                     component={Home}
                     options={{title: 'Home'}}
                 />
                 <Stack.Screen
-                    name="SignUpScreem"
+                    name="SignUpScreen"
                     component={SignUp}
                     options={{title: 'Cadastrar'}}
                 />
                 <Stack.Screen
-                    name="DetailsScreem"
+                    name="DetailsScreen"
                     component={Details}
                     options={{title: 'Detalhes'}}
                 />
                 <Stack.Screen
-                    name="ScannedProductScreem"
+                    name="ScannedProductScreen"
                     component={ScannedProduct}
                     opti
                     ons={{title: 'Produto lido'}}
                 />
                 <Stack.Screen
-                    name="CartScreem"
+                    name="CartScreen"
                     component={Cart}
                     opti
                     ons={{title: 'Carrinho'}}
                 />
                 <Stack.Screen
-                    name="PaymentScreem"
+                    name="PaymentScreen"
                     component={PaymentConfirmed}
                     opti
                     ons={{title: 'Pagamento confirmado'}}
                 />
                 <Stack.Screen
-                    name="GeolocalizationScreem"
+                    name="GeolocalizationScreen"
                     component={Geolocalization}
                     opti
                     ons={{title: 'Geolocalização'}}

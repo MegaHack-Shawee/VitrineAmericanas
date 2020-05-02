@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 
-import qrCodeIcon from '../../assets/qrCode_icon.png';
+import qrCodeIcon from '../../assets/qrcode_icon.png';
 import btnPay from '../../assets/btn_pay.png';
 import phone from '../../assets/phone.png';
 
