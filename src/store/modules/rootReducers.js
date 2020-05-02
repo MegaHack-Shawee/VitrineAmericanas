@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 
-import Addresses from './Addresses/reducer';
+import Address from './Address/reducer';
 import Cart from './Cart/reducer';
 
 const rootReducer = combineReducers({
-    Addresses,
+    Address,
     Cart,
 });
 
