@@ -32,9 +32,9 @@ export const QRCodeReader = styled.View`
 `;
 
 export const ButtonQrCode = styled.TouchableOpacity`
-    height: 90%;
+    height: 80%;
     width: 90%;
-    margin: 10px 10px 0 10px;
+    margin: 10px 20px 0 20px;
     align-items: center;
     justify-content: center;
 `;
@@ -48,6 +48,6 @@ export const ImageQrCode = styled.Image.attrs({
 
 export const TextQrCode = styled.Text`
     color: #9e9e9e;
-    font-size: 18px;
+    font-size: 15px;
     position: absolute;
 `;
