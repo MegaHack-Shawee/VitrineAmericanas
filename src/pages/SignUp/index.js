@@ -52,14 +52,14 @@ export default function Signup({navigation}) {
                         .push({uId, name, cpf, birthDate, cellphone});
                 });
             console.warn('Cadastro realizado com sucesso');
-            navigation.replace('HomeScreem');
+            navigation.replace('HomeScreen');
         } catch (e) {
             console.warn(e);
         }
     }
 
     function handleReturn() {
-        navigation.navigate('SignInScreem');
+        navigation.navigate('SignInScreen');
     }
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import phone from '../../assets/phone.png';
@@ -46,7 +46,7 @@ const handleBackButton = navigation => {
 };
 
 const handleKeepBuying = navigation => {
-    navigation.navigate('HomeScreem');
+    navigation.navigate('HomeScreen');
 };
 
 export default function PaymentConfirmed({navigation}) {

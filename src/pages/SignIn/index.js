@@ -23,19 +23,13 @@ export default function SignIn({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        if (auth().currentUser != null) {
-            navigation.replace('HomeScreem');
-        }
-    });
-
     const handleSignIn = () => {
         try {
             auth()
                 .signInWithEmailAndPassword(email, password)
                 .then(user => {
                     if (user) {
-                        navigation.replace('HomeScreem');
+                        navigation.replace('HomeScreen');
                     }
                 })
                 .catch(e => {
@@ -48,7 +42,7 @@ export default function SignIn({navigation}) {
     };
 
     const handleSignUp = nav => {
-        nav.navigate('SignUpScreem');
+        nav.navigate('SignUpScreen');
     };
 
     const handleSignInFacebook = () => {

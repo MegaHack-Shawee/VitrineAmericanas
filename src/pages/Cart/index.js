@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {RadioButton} from 'react-native-paper';
+import {ScrollView} from 'react-native';
 
 import qrCodeIcon from '../../assets/qrcode_icon.png';
 import btnPay from '../../assets/btn_pay.png';
@@ -7,6 +10,8 @@ import phone from '../../assets/phone.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
+import Product from '../../components/Product';
+import NewAddressForm from '../../components/NewAddressForm';
 
 import {
     Row,
@@ -18,22 +23,18 @@ import {
     AddressButton,
     CurrentAddressView,
     Address,
+    Select,
+    ChangeAddressView,
     Button,
     ProductsList,
+    BottomView,
+    BottomText,
+    CEPInput,
+    ChangeAddress,
 } from './styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import Logo from '../../components/Logo';
 
-const products = {
-    cellphone: {
-        code: '647386253',
-        photo: phone,
-        title:
-            'Celular Motorola Moto G8 Plus 64GB Camêra Tripla 48MP + 5MP + 13MP',
-        qtd: 1,
-        price: '2.000,00',
-    },
-};
+const lista = ['teste 1', 'teste 2', 'teste 3'];
 
 const handleSearch = () => {
     console.warn('Search input enabled');
@@ -44,19 +45,94 @@ const handleBackButton = navigation => {
 };
 
 const handleQRCodeButton = navigation => {
-    navigation.navigate('HomeScreem');
+    navigation.navigate('HomeScreen');
 };
 
-const handlePaymentButton = () => {
-    console.warn('redirecionar para tela de pagamento');
+const handlePaymentButton = navigation => {
+    navigation.navigate('PaymentScreen');
 };
 
 export default function Cart({navigation}) {
-    const [activeButton, setActiveButton] = useState('adressList');
+    const [activeButton, setActiveButton] = useState('addressesList');
+    const [total, setTotal] = useState(2000.0);
+    const [changeAddress, setChangeAddress] = useState(false);
+    const [currentAddress, setCurrentAddress] = useState('');
+    const [cep, setCep] = useState('');
+
+    const addresses = useSelector(state => state.Addresses);
+    const products = useSelector(state => state.Cart);
+
+    useEffect(() => {
+        setCurrentAddress(addresses[0]);
+    }, [addresses]);
 
     function handleAdressButton(active) {
         if (activeButton !== active) {
             setActiveButton(active);
+        }
+    }
+
+    function YourAddresses() {
+        if (changeAddress) {
+            if (addresses == null) {
+                return (
+                    <Text color="#000" weight="bold" size="10px">
+                        Nenhum endereço cadastrado
+                    </Text>
+                );
+            }
+            return (
+                <ChangeAddressView
+                    data={addresses}
+                    keyExtractor={item => item.street}
+                    renderItem={({item}) => (
+                        <Select>
+                            <RadioButton
+                                value="first"
+                                status={
+                                    item.key === currentAddress.key
+                                        ? 'checked'
+                                        : 'unchecked'
+                                }
+                                onPress={() => {
+                                    setCurrentAddress(item);
+                                    setChangeAddress(false);
+                                }}
+                            />
+                            <Address>
+                                <Text color="#000" weight="bold" size="10px">
+                                    {item.county}
+                                </Text>
+                                <Text color="#000" size="10px">
+                                    {item.zipCode}
+                                </Text>
+                                <Text color="#000" size="10px">
+                                    {item.street}, {item.number}
+                                </Text>
+                            </Address>
+                        </Select>
+                    )}
+                />
+            );
+        } else {
+            return (
+                <CurrentAddressView>
+                    <Address width="70%">
+                        <Text color="#000" size="10px">
+                            {currentAddress.county}
+                        </Text>
+                        <Text color="#000" weight="bold">
+                            CEP {currentAddress.zipCode}
+                        </Text>
+                        <Text color="#000" size="10px">
+                            {currentAddress.street}, {currentAddress.number}
+                        </Text>
+                    </Address>
+                    <ChangeAddress onPress={() => setChangeAddress(true)}>
+                        <Text color="#f57c00">TROCAR</Text>
+                    </ChangeAddress>
+                </CurrentAddressView>
+            );
         }
     }
     return (
@@ -71,71 +147,90 @@ export default function Cart({navigation}) {
             </Row>
             <Logo />
             <Main>
-                <AddressView>
-                    <AddressButtonsView>
-                        <AddressButton
-                            bgColor={
-                                activeButton === 'adressList'
-                                    ? '#f57c00'
-                                    : '#fff'
-                            }
-                            onPress={() => handleAdressButton('adressList')}>
-                            <Text
-                                color={
-                                    activeButton == 'adressList'
-                                        ? '#fff'
-                                        : '#f57c00'
-                                }>
-                                Seus endereços
-                            </Text>
-                        </AddressButton>
-                        <AddressButton
-                            bgColor={
-                                activeButton === 'adressList'
-                                    ? '#fff'
-                                    : '#f57c00'
-                            }
-                            onPress={() => handleAdressButton('newAdress')}>
-                            <Text
-                                color={
-                                    activeButton == 'adressList'
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <AddressView>
+                        <AddressButtonsView>
+                            <AddressButton
+                                bgColor={
+                                    activeButton === 'addressesList'
                                         ? '#f57c00'
                                         : '#fff'
+                                }
+                                onPress={() =>
+                                    handleAdressButton('addressesList')
                                 }>
-                                Novo endereço
-                            </Text>
-                        </AddressButton>
-                    </AddressButtonsView>
-                    <CurrentAddressView>
-                        <Address>
-                            <Text color="#000" size="10px">
-                                casa da vó
-                            </Text>
-                            <Text color="#000" weight="bold">
-                                CEP 28970-000
-                            </Text>
-                            <Text color="#000" size="10px">
-                                Travessa guimarães, 10
-                            </Text>
-                        </Address>
-                        <TouchableOpacity>
-                            <Text color="#f57c00">TROCAR</Text>
-                        </TouchableOpacity>
-                    </CurrentAddressView>
-                </AddressView>
-                {/*<ProductsList
-                    data={products}
-                    keyExtractor={item => item.code}
-                    renderItem={({item}) => <Text>{item.title}</Text>}
-                />*/}
-                <Row align="center" justify="center">
-                    <Button onPress={() => handleQRCodeButton(navigation)}>
-                        <Image source={qrCodeIcon} />
-                    </Button>
-                    <Button onPress={() => handlePaymentButton()}>
-                        <Image source={btnPay} />
-                    </Button>
-                </Row>
+                                <Text
+                                    color={
+                                        activeButton == 'addressesList'
+                                            ? '#fff'
+                                            : '#f57c00'
+                                    }>
+                                    Seus endereços
+                                </Text>
+                            </AddressButton>
+                            <AddressButton
+                                bgColor={
+                                    activeButton === 'addressesList'
+                                        ? '#fff'
+                                        : '#f57c00'
+                                }
+                                onPress={() =>
+                                    handleAdressButton('newAddress')
+                                }>
+                                <Text
+                                    color={
+                                        activeButton == 'addressesList'
+                                            ? '#f57c00'
+                                            : '#fff'
+                                    }>
+                                    Novo endereço
+                                </Text>
+                            </AddressButton>
+                        </AddressButtonsView>
+                        {activeButton === 'addressesList' && YourAddresses()}
+                        {activeButton === 'newAddress' && (
+                            <CEPInput
+                                type={'zip-code'}
+                                value={cep}
+                                onChangeText={setCep}
+                                placeholder="digite o novo CEP de entrega"
+                            />
+                        )}
+                    </AddressView>
+                    {activeButton === 'addressesList' ? (
+                        <>
+                            <ProductsList
+                                data={products}
+                                keyExtractor={item => item.code}
+                                renderItem={({item}) => (
+                                    <Product product={item} />
+                                )}
+                            />
+                            <BottomView>
+                                <BottomText>
+                                    R$ {total} em até 12x de{' '}
+                                    {(total / 12).toFixed(2)} s/ juros no cartão
+                                    de crédito com ame e receba R${' '}
+                                    {(total / 50).toFixed(2)}
+                                    <BottomText color="orange">
+                                        {' '}
+                                        (2% de volta){' '}
+                                    </BottomText>
+                                </BottomText>
+                            </BottomView>
+                        </>
+                    ) : (
+                        <NewAddressForm cep={cep} />
+                    )}
+                    <Row align="center" justify="center">
+                        <Button onPress={() => handleQRCodeButton(navigation)}>
+                            <Image source={qrCodeIcon} />
+                        </Button>
+                        <Button onPress={() => handlePaymentButton(navigation)}>
+                            <Image source={btnPay} />
+                        </Button>
+                    </Row>
+                </ScrollView>
             </Main>
         </Background>
     );
