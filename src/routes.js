@@ -23,10 +23,10 @@ export default function Routes() {
                 <Stack.Screen
                     name="LoadDataScreen"
                     component={LoadData}
-                    options={{title: 'Loading'}}
+                    options={{title: 'Loading data'}}
                 />
             </Stack.Navigator> */}
-            <Stack.Navigator initialRouteName="HomeScreen" headerMode="none">
+            <Stack.Navigator initialRouteName="SignInScreen" headerMode="none">
                 <Stack.Screen
                     name="SignInScreen"
                     component={SignIn}

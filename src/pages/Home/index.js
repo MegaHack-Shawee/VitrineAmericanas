@@ -21,36 +21,37 @@ import {
 } from './styles';
 import Logo from '../../components/Logo';
 
-const handleSearch = () => {
-    console.warn('search input enabled');
-};
-
-const handleQRCode = navigation => {
-    navigation.navigate('ScannedProductScreen');
-};
-
-const handleCartButton = navigation => {
-    navigation.navigate('CartScreen');
-};
-
-const handleSignOut = navigation => {
-    auth()
-        .signOut()
-        .then(() => {
-            navigation.replace('SignInScreen');
-        });
-};
-
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
+
+    //O QUE ISSO VAI FAZER??????????
+    function handleSearch() {
+        console.warn('search input enabled');
+    }
+
+    function handleSignOut() {
+        auth()
+            .signOut()
+            .then(() => {
+                navigation.replace('SignInScreen');
+            });
+    }
+
+    function handleCartButton() {
+        navigation.navigate('CartScreen');
+    }
+
+    function handleOpenScannedProduct() {
+        navigation.navigate('ScannedProductScreen');
+    }
 
     return (
         <Background>
             <Row align="flex-end" justify="flex-end">
-                <Search onPress={() => handleSignOut(navigation)}>
+                <Search onPress={handleSignOut}>
                     <Icon name="close" size={40} color="#fff" />
                 </Search>
-                <Search onPress={() => handleSearch()}>
+                <Search onPress={handleSearch}>
                     <Icon name="search" size={40} color="#fff" />
                 </Search>
             </Row>
@@ -60,7 +61,7 @@ export default function Home({navigation}) {
                     <ButtonQrCode
                         onPress={
                             shouldShow
-                                ? () => handleQRCode(navigation)
+                                ? () => handleOpenScannedProduct()
                                 : () => setShouldShow(!shouldShow)
                         }>
                         {shouldShow ? (
@@ -86,7 +87,7 @@ export default function Home({navigation}) {
                     </ButtonQrCode>
                 </QRCodeReader>
                 <Row align="center" justify="center">
-                    <Button onPress={() => handleCartButton(navigation)}>
+                    <Button onPress={handleCartButton}>
                         <Image source={btnCart} />
                     </Button>
                 </Row>
