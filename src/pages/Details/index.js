@@ -4,25 +4,25 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Container, Row, Touch, Title, Deatail, Text} from './styles';
 import Modal from '../../components/Modal';
 
-const handleBackButton = navigation => {
-    navigation.goBack();
-};
-
-const handleCloseButton = navigation => {
-    navigation.popToTop();
-};
-
 export default function Details({route, navigation}) {
     const {product} = route.params;
+
+    function handleBackButton() {
+        navigation.goBack();
+    }
+
+    function handleCloseButton() {
+        navigation.popToTop();
+    }
 
     return (
         <Container>
             <Modal>
                 <Row>
-                    <Touch onPress={() => handleBackButton(navigation)}>
+                    <Touch onPress={handleBackButton}>
                         <Icon name="arrow-back" size={30} color="#9e9e9e" />
                     </Touch>
-                    <Touch onPress={() => handleCloseButton(navigation)}>
+                    <Touch onPress={handleCloseButton}>
                         <Icon name="close" size={30} color="#9e9e9e" />
                     </Touch>
                 </Row>

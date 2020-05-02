@@ -56,7 +56,15 @@ export default function Home({navigation}) {
             <Main>
                 <QRCodeReader>
                     <ButtonQrCode onPress={() => handleQRCode(navigation)}>
-                        <QRCodeScanner />
+                        <QRCodeScanner
+                        // cameraStyle={{
+                        //     height: 330,
+                        //     marginTop: 20,
+                        //     width: 320,
+                        //     alignSelf: 'center',
+                        //     justifyContent: 'center',
+                        // }}
+                        />
                         <TextQrCode>Leitor QR Code</TextQrCode>
                         <ImageQrCode source={qrCodeIcon} />
                     </ButtonQrCode>
