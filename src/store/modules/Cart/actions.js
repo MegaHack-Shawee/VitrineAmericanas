@@ -4,3 +4,11 @@ export const addToCart = product => {
         product,
     };
 };
+
+export const updateProductQuantity = (qtd, code) => {
+    return {
+        type: '@Cart/UPDATE_PRODUCT_QUANTITY',
+        qtd,
+        code,
+    };
+};
