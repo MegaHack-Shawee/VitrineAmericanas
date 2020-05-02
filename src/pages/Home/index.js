@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -21,36 +21,45 @@ import {
 } from './styles';
 import Logo from '../../components/Logo';
 
-const handleSearch = () => {
-    console.warn('search input enabled');
-};
-
-const handleQRCode = navigation => {
-    navigation.navigate('ScannedProductScreem');
-};
-
-const handleCartButton = navigation => {
-    navigation.navigate('CartScreem');
-};
-
-const handleSignOut = navigation => {
-    auth()
-        .signOut()
-        .then(() => {
-            navigation.replace('SignInScreem');
-        });
-};
-
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
+
+    useEffect(() => {
+        setShouldShow(false);
+    }, []);
+
+    //O QUE ISSO VAI FAZER??????????
+    const handleSearch = () => {
+        console.warn('search input enabled');
+    };
+
+    const handleSignOut = () => {
+        auth()
+            .signOut()
+            .then(() => {
+                navigation.replace('SignInScreen');
+            });
+    };
+
+    const handleCartButton = () => {
+        navigation.navigate('CartScreen');
+    };
+
+    const handleOpenScannedProduct = () => {
+        navigation.navigate('ScannedProductScreen');
+    };
+
+    const handleReadSucess = e => {
+        console.log(e);
+    };
 
     return (
         <Background>
             <Row align="flex-end" justify="flex-end">
-                <Search onPress={() => handleSignOut(navigation)}>
+                <Search onPress={handleSignOut}>
                     <Icon name="close" size={40} color="#fff" />
                 </Search>
-                <Search onPress={() => handleSearch()}>
+                <Search onPress={handleSearch}>
                     <Icon name="search" size={40} color="#fff" />
                 </Search>
             </Row>
@@ -60,19 +69,21 @@ export default function Home({navigation}) {
                     <ButtonQrCode
                         onPress={
                             shouldShow
-                                ? () => handleQRCode(navigation)
+                                ? () => handleOpenScannedProduct()
                                 : () => setShouldShow(!shouldShow)
                         }>
                         {shouldShow ? (
                             <>
                                 <QRCodeScanner
-                                // cameraStyle={{
-                                //     height: 330,
-                                //     marginTop: 20,
-                                //     width: 320,
-                                //     alignSelf: 'center',
-                                //     justifyContent: 'center',
-                                // }}
+                                    onRead={handleReadSucess}
+                                    // Properties for change the camera size
+                                    // cameraStyle={{
+                                    //     height: 330,
+                                    //     marginTop: 20,
+                                    //     width: 320,
+                                    //     alignSelf: 'center',
+                                    //     justifyContent: 'center',
+                                    // }}
                                 />
                                 <TextQrCode>Leitor QR Code</TextQrCode>
                                 <ImageQrCode source={qrCodeIcon} />
@@ -86,7 +97,7 @@ export default function Home({navigation}) {
                     </ButtonQrCode>
                 </QRCodeReader>
                 <Row align="center" justify="center">
-                    <Button onPress={() => handleCartButton(navigation)}>
+                    <Button onPress={handleCartButton}>
                         <Image source={btnCart} />
                     </Button>
                 </Row>

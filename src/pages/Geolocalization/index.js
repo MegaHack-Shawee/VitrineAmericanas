@@ -28,7 +28,7 @@ const handleSignOut = navigation => {
     auth()
         .signOut()
         .then(() => {
-            navigation.replace('SignInScreem');
+            navigation.replace('SignInScreen');
         });
 };
 

@@ -29,7 +29,7 @@ export default function SignIn({navigation}) {
                 .signInWithEmailAndPassword(email, password)
                 .then(user => {
                     if (user) {
-                        navigation.replace('HomeScreem');
+                        navigation.replace('HomeScreen');
                     }
                 })
                 .catch(e => {
@@ -42,7 +42,7 @@ export default function SignIn({navigation}) {
     };
 
     const handleSignUp = nav => {
-        nav.navigate('SignUpScreem');
+        nav.navigate('SignUpScreen');
     };
 
     const handleSignInFacebook = () => {

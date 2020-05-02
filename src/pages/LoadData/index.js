@@ -3,7 +3,6 @@ import {View} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import {useDispatch} from 'react-redux';
-// import { Container } from './styles';
 
 import {startAddresses} from '../../store/actions/Addresses';
 
@@ -15,7 +14,7 @@ export default function LoadData({navigation}) {
             const ref = database().ref(`/addresses/${user.uid}`);
             ref.orderByKey().once('value', onAddressesSnapshot);
         }
-        navigation.replace(user ? 'HomeScreem' : 'SignInScreem');
+        navigation.replace(user ? 'HomeScreen' : 'SignInScreen');
     });
 
     function onAddressesSnapshot(snapshot) {
