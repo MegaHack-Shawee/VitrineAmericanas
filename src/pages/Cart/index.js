@@ -4,13 +4,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-import qrCodeIcon from '../../assets/qrCode_icon.png';
-import btnPay from '../../assets/btn_pay.png';
+import qrCodeIcon from '../../assets/images/qrcode_icon.png';
+import btnPay from '../../assets/images/btn_pay.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 import Product from '../../components/Product';
 import NewAddressForm from '../../components/NewAddressForm';
+import Logo from '../../components/Logo';
 
 import {
     Row,
@@ -31,7 +32,6 @@ import {
     CEPInput,
     ChangeAddress,
 } from './styles';
-import Logo from '../../components/Logo';
 
 const lista = ['teste 1', 'teste 2', 'teste 3'];
 
