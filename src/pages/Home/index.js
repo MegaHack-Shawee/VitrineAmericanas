@@ -23,6 +23,7 @@ import Logo from '../../components/Logo';
 
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
+    const [qrCode, setQrCode] = useState('');
 
     useEffect(() => {
         setShouldShow(false);
@@ -45,12 +46,10 @@ export default function Home({navigation}) {
         navigation.navigate('CartScreen');
     };
 
-    const handleOpenScannedProduct = () => {
-        navigation.navigate('ScannedProductScreen');
-    };
-
     const handleReadSucess = e => {
-        console.log(e);
+        setQrCode(e.data);
+        setShouldShow(!shouldShow);
+        navigation.navigate('ScannedProductScreen', {qrCode});
     };
 
     return (
@@ -66,12 +65,7 @@ export default function Home({navigation}) {
             <Logo />
             <Main>
                 <QRCodeReader>
-                    <ButtonQrCode
-                        onPress={
-                            shouldShow
-                                ? () => handleOpenScannedProduct()
-                                : () => setShouldShow(!shouldShow)
-                        }>
+                    <ButtonQrCode onPress={() => setShouldShow(!shouldShow)}>
                         {shouldShow ? (
                             <>
                                 <QRCodeScanner

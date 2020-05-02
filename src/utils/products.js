@@ -1,7 +1,7 @@
 /**
  * PRODUTS THAT SHOULD BE IN AMERICANAS DATABASE
  */
-import phone from '../../assets/phone.png';
+import phone from '../assets/images/phone.png';
 
 const products = [
     {
@@ -20,7 +20,7 @@ const products = [
 ];
 
 const getProduct = search => {
-    return products.find(product => product.code === search.code);
+    return products.find(product => product.code === String(search));
 };
 
 export default getProduct;
