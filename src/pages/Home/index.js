@@ -26,18 +26,18 @@ const handleSearch = () => {
 };
 
 const handleQRCode = navigation => {
-    navigation.navigate('ScannedProductScreem');
+    navigation.navigate('ScannedProductScreen');
 };
 
 const handleCartButton = navigation => {
-    navigation.navigate('CartScreem');
+    navigation.navigate('CartScreen');
 };
 
 const handleSignOut = navigation => {
     auth()
         .signOut()
         .then(() => {
-            navigation.replace('SignInScreem');
+            navigation.replace('SignInScreen');
         });
 };
 

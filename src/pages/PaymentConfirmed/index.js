@@ -46,7 +46,7 @@ const handleBackButton = navigation => {
 };
 
 const handleKeepBuying = navigation => {
-    navigation.navigate('HomeScreem');
+    navigation.navigate('HomeScreen');
 };
 
 export default function PaymentConfirmed({navigation}) {

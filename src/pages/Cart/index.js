@@ -63,11 +63,11 @@ const handleBackButton = navigation => {
 };
 
 const handleQRCodeButton = navigation => {
-    navigation.navigate('HomeScreem');
+    navigation.navigate('HomeScreen');
 };
 
 const handlePaymentButton = navigation => {
-    navigation.navigate('PaymentScreem');
+    navigation.navigate('PaymentScreen');
 };
 
 export default function Cart({navigation}) {

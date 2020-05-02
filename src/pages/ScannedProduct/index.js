@@ -35,7 +35,7 @@ const product = {
 };
 
 const handleSpecificationsButton = navigation => {
-    navigation.navigate('DetailsScreem', {product});
+    navigation.navigate('DetailsScreen', {product});
 };
 
 const handleCloseButton = navigation => {
