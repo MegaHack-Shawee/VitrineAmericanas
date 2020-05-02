@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Container, Row, Touch, Title, Deatail, Text} from './styles';
+import {Container, Row, Touch, Title, Detail, Text} from './styles';
 import Modal from '../../components/Modal';
 
 export default function Details({route, navigation}) {
@@ -27,26 +27,16 @@ export default function Details({route, navigation}) {
                     </Touch>
                 </Row>
                 <Title>{product.title}</Title>
-                <Deatail>
-                    <Text color="#f57c00">Código</Text>
-                    <Text>{product.code}</Text>
-                </Deatail>
-                <Deatail>
-                    <Text color="#f57c00">Marca</Text>
-                    <Text>{product.brand}</Text>
-                </Deatail>
-                <Deatail>
-                    <Text color="#f57c00">Memória</Text>
-                    <Text>{product.memory}</Text>
-                </Deatail>
-                <Deatail>
-                    <Text color="#f57c00">Peso aproximado (kg)</Text>
-                    <Text>{product.weight}</Text>
-                </Deatail>
-                <Deatail>
-                    <Text color="#f57c00">Dimensões aproximadas (AxLxP)</Text>
-                    <Text>{product.dimensions}</Text>
-                </Deatail>
+                {product &&
+                    product.observations.map(p => {
+                        const [name, des] = p.split(':');
+                        return (
+                            <Detail>
+                                <Text color="#f57c00">{name}</Text>
+                                <Text>{des}</Text>
+                            </Detail>
+                        );
+                    })}
             </Modal>
         </Container>
     );

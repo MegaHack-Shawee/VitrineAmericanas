@@ -23,7 +23,6 @@ import Logo from '../../components/Logo';
 
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
-    const [qrCode, setQrCode] = useState('');
 
     useEffect(() => {
         setShouldShow(false);
@@ -47,8 +46,8 @@ export default function Home({navigation}) {
     };
 
     const handleReadSucess = e => {
-        setQrCode(e.data);
         setShouldShow(!shouldShow);
+        const qrCode = e.data;
         navigation.navigate('ScannedProductScreen', {qrCode});
     };
 

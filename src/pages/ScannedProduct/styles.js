@@ -32,8 +32,11 @@ export const PhotoView = styled.View`
 `;
 
 export const Image = styled.Image.attrs({
-    resizeMode: 'cover',
-})``;
+    resizeMode: 'stretch',
+})`
+    max-height: 180px;
+    max-width: 200px;
+`;
 
 export const Price = styled.Text`
     font-size: 20px;

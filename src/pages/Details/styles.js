@@ -16,7 +16,7 @@ export const Touch = styled.TouchableOpacity`
     padding: 5px 0;
 `;
 
-export const Deatail = styled.View`
+export const Detail = styled.View`
     margin: 5px 0;
 `;
 
