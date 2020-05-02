@@ -48,6 +48,6 @@ export const ImageQrCode = styled.Image.attrs({
 
 export const TextQrCode = styled.Text`
     color: #9e9e9e;
-    font-size: 18px;
+    font-size: 15px;
     position: absolute;
 `;

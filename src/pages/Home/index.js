@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -42,6 +42,8 @@ const handleSignOut = navigation => {
 };
 
 export default function Home({navigation}) {
+    const [shouldShow, setShouldShow] = useState(false);
+
     return (
         <Background>
             <Row align="flex-end" justify="flex-end">
@@ -55,18 +57,32 @@ export default function Home({navigation}) {
             <Logo />
             <Main>
                 <QRCodeReader>
-                    <ButtonQrCode onPress={() => handleQRCode(navigation)}>
-                        <QRCodeScanner
-                        // cameraStyle={{
-                        //     height: 330,
-                        //     marginTop: 20,
-                        //     width: 320,
-                        //     alignSelf: 'center',
-                        //     justifyContent: 'center',
-                        // }}
-                        />
-                        <TextQrCode>Leitor QR Code</TextQrCode>
-                        <ImageQrCode source={qrCodeIcon} />
+                    <ButtonQrCode
+                        onPress={
+                            shouldShow
+                                ? () => handleQRCode(navigation)
+                                : () => setShouldShow(!shouldShow)
+                        }>
+                        {shouldShow ? (
+                            <>
+                                <QRCodeScanner
+                                // cameraStyle={{
+                                //     height: 330,
+                                //     marginTop: 20,
+                                //     width: 320,
+                                //     alignSelf: 'center',
+                                //     justifyContent: 'center',
+                                // }}
+                                />
+                                <TextQrCode>Leitor QR Code</TextQrCode>
+                                <ImageQrCode source={qrCodeIcon} />
+                            </>
+                        ) : (
+                            <>
+                                <TextQrCode>Pressione para ativar</TextQrCode>
+                                <ImageQrCode source={qrCodeIcon} />
+                            </>
+                        )}
                     </ButtonQrCode>
                 </QRCodeReader>
                 <Row align="center" justify="center">
