@@ -4,7 +4,7 @@ import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import {useDispatch} from 'react-redux';
 
-import {startAddresses} from '../../store/actions/Addresses';
+import {startAddresses} from '../../store/modules/Address/actions';
 
 export default function LoadData({navigation}) {
     const dispatch = useDispatch();

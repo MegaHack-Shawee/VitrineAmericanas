@@ -20,6 +20,7 @@
         "react": "16.11.0",
         "react-native": "0.62.2",
         "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
+        "react-native-geolocation-service": "^4.0.1",
         "react-native-gesture-handler": "^1.6.1",
         "react-native-keyboard-aware-scroll-view": "^0.9.1",
         "react-native-linear-gradient": "^2.5.6",
