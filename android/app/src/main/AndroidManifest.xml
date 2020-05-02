@@ -32,4 +32,5 @@
         android:value="AIzaSyBv8nq5uFhs3ouj4VEIkg3Z1yKnn5xwEyk"/>
       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
