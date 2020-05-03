@@ -64,7 +64,7 @@ export default function Cart({navigation}) {
         setCurrentAddress(addresses[0]);
         setActiveButton('addressesList');
         setChangeAddress(false);
-    }, [addresses, products]);
+    }, [addresses]);
 
     useEffect(() => {
         setTotal(calculateTotal());
@@ -83,9 +83,7 @@ export default function Cart({navigation}) {
     }
 
     function handleAdressButton(active) {
-        if (activeButton !== active) {
-            setActiveButton(active);
-        }
+        setActiveButton(active);
     }
 
     function YourAddresses() {

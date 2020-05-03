@@ -7,16 +7,20 @@ export default function Cart(state = INITIAL_STATE, action) {
         case '@Cart/ADD_TO_CART': {
             return produce(state, draft => {
                 const {product} = action.payload;
-                draft.push(product);
+                const index = draft.findIndex(p => p.code === product.code);
+                if (index >= 0) {
+                    draft[index].amount += 1;
+                    draft[index].total =
+                        draft[index].price * (draft[index].amount + 1);
+                } else {
+                    draft.push(product);
+                }
             });
         }
         case '@Cart/REMOVE_FROM_CART':
             return produce(state, draft => {
-                const productIndex = draft.findIndex(p => p.id === action.id);
-
-                if (productIndex >= 0) {
-                    draft.splice(productIndex, 1);
-                }
+                const index = draft.findIndex(p => p.code === action.code);
+                draft.splice(index, 1);
             });
         case '@Cart/UPDATE_PRODUCT_QUANTITY': {
             return produce(state, draft => {

@@ -14,3 +14,10 @@ export const updateProductQuantity = (qtd, code) => {
         code,
     };
 };
+
+export const removeFromCart = code => {
+    return {
+        type: '@Cart/REMOVE_FROM_CART',
+        code,
+    };
+};

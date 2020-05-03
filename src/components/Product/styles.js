@@ -46,3 +46,6 @@ export const ProductPrice = styled.Text`
     color: #424242;
     font-weight: bold;
 `;
+export const TrashTouch = styled.TouchableOpacity`
+    padding: 0 10px;
+`;

@@ -1,7 +1,9 @@
 import React from 'react';
-import {Picker} from 'react-native';
+import {Picker, TouchableOpacity} from 'react-native';
 import {useDispatch} from 'react-redux';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {updateProductQuantity} from '../../store/modules/Cart/actions';
+import * as CartActions from '../../store/modules/Cart/actions';
 
 import {
     Container,
@@ -11,6 +13,7 @@ import {
     ProductTitle,
     ProductTitleView,
     ProductPrice,
+    TrashTouch,
 } from './styles';
 import {formatPrice} from '../../utils/format';
 
@@ -30,8 +33,12 @@ export default function Product({product}) {
         });
     }
 
+    function handleRemoveFromCart() {
+        dispatch(CartActions.removeFromCart(product.code));
+    }
+
     function handleQtdChanged(qtd) {
-        dispatch(updateProductQuantity(qtd, product.code));
+        dispatch(CartActions.updateProductQuantity(qtd, product.code));
     }
     return (
         <Container>
@@ -51,6 +58,9 @@ export default function Product({product}) {
                     {PickerOptions()}
                 </Picker>
                 <ProductPrice>{formatPrice(product.subtotal)}</ProductPrice>
+                <TrashTouch onPress={() => handleRemoveFromCart()}>
+                    <Icon name="ios-trash" color="#000" size={30} />
+                </TrashTouch>
             </SubtotalView>
         </Container>
     );

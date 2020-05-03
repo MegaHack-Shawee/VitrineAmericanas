@@ -5,7 +5,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import qrCodeIcon from '../../assets/Icons/QRCodeReader/qrCodeReader190pxPNG.png';
 import btnCart from '../../assets/Icons/bag/iconBagSmallPNG.png';
-import localizationIcon from '../../assets/Icons/localization/iconLocalization190px.png';
+import localizationIcon from '../../assets/Icons/localization/iconLocalization120px.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
