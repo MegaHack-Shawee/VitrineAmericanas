@@ -37,6 +37,7 @@ export default function SignIn({navigation}) {
                     },
                 ],
             );
+            setLoading(false);
             return;
         }
         try {
