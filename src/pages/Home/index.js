@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, memo} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -23,17 +23,16 @@ import {
 } from './styles';
 import Logo from '../../components/Logo';
 
-export default function Home({navigation}) {
+function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
 
     useEffect(() => {
         setShouldShow(false);
-    }, []);
 
-    //O QUE ISSO VAI FAZER??????????
-    const handleSearch = () => {
-        console.warn('search input enabled');
-    };
+        return () => {
+            setShouldShow(false);
+        };
+    }, []);
 
     const handleSignOut = () => {
         auth()
@@ -44,7 +43,7 @@ export default function Home({navigation}) {
     };
 
     const handleCartButton = () => {
-        navigation.navigate('CartScreen');
+        navigation.replace('CartScreen');
     };
 
     const handleReadSucess = e => {
@@ -93,3 +92,5 @@ export default function Home({navigation}) {
         </Background>
     );
 }
+
+export default memo(Home);
