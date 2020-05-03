@@ -1,7 +1,7 @@
 /**
  * PRODUTS THAT SHOULD BE IN AMERICANAS DATABASE
  */
-import motog from '../assets/images/phone.png';
+import motog from '../assets/images/products/motoG8/motoG8PNG.png';
 import galaxys9 from '../assets/images/products/galaxys9/galaxys9PNG.png';
 import fritadeira from '../assets/images/products/fritadeira/fritadeiraPhilco.jpg';
 import notebook from '../assets/images/products/notebook/notebookPNG.png';
@@ -15,7 +15,6 @@ const products = [
         photo: motog,
         price: 2000,
         amount: 1,
-        total: 0,
         observations: [
             'Preço:2.000,00',
             'Parcelamento:10 x 200,00 s/ juros',
@@ -32,7 +31,6 @@ const products = [
         photo: galaxys9,
         price: 1899,
         amount: 1,
-        total: 0,
         observations: [
             'Preço:1.899,00',
             'Parcelamento:10 x 189,99 s/ juros',
@@ -49,7 +47,6 @@ const products = [
         photo: fritadeira,
         price: 369.9,
         amount: 1,
-        total: 0,
         observations: [
             'Preço:369,90',
             'Parcelamento:10 x 36,90 s/ juros',
@@ -67,7 +64,6 @@ const products = [
         photo: notebook,
         price: 2299,
         amount: 1,
-        total: 0,
         observations: [
             'Preço:2.299,00',
             'Parcelamento:10 x 229,00 s/ juros',
@@ -87,7 +83,6 @@ const products = [
         photo: tablet,
         price: 2000,
         amount: 1,
-        total: 0,
         observations: [
             'Preço:1.424,00',
             'Câmera Traseira:8MP',

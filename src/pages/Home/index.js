@@ -3,8 +3,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-import qrCodeIcon from '../../assets/images/qrCode190px.png';
-import btnCart from '../../assets/images/btn_cart.png';
+import qrCodeIcon from '../../assets/Icons/QRCodeReader/qrCodeReader190pxPNG.png';
+import btnCart from '../../assets/Icons/bag/iconBagSmallPNG.png';
 import localizationIcon from '../../assets/Icons/localization/iconLocalization190px.png';
 
 import Background from '../../components/Background';
@@ -22,16 +22,13 @@ import {
     ImageIconLocalization,
 } from './styles';
 import Logo from '../../components/Logo';
-import {useSelector} from 'react-redux';
 
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
-    const products = useSelector(state => state.Cart);
 
     useEffect(() => {
-        console.log(products);
         setShouldShow(false);
-    }, [products]);
+    }, []);
 
     //O QUE ISSO VAI FAZER??????????
     const handleSearch = () => {

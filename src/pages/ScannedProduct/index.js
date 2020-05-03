@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import specifications from '../../assets/images/specifications.png';
+import specifications from '../../assets/Icons/specification/specifications.png';
 import getProduct from '../../utils/products';
 import * as CartActions from '../../store/modules/Cart/actions';
 import {formatPrice} from '../../utils/format';
@@ -43,7 +43,7 @@ export default function ScannedProduct({route, navigation}) {
 
     const handleAddToCart = () => {
         dispatch(CartActions.addToCart(product));
-        navigation.navigate('HomeScreen');
+        navigation.navigate('CartScreen');
     };
 
     return (

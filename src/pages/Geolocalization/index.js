@@ -137,10 +137,10 @@ export default function Geolocalization({navigation}) {
         <Background>
             <HeaderView>
                 <BackButton onPress={() => handleBackButton(navigation)}>
-                    <Icon name="arrow-back" size={30} color="#fff" />
+                    <Icon name="arrow-back" size={40} color="#fff" />
                 </BackButton>
                 <SearchButton onPress={() => handleSearch()}>
-                    <Icon name="search" size={35} color="#fff" />
+                    <Icon name="search" size={40} color="#fff" />
                 </SearchButton>
             </HeaderView>
             <Logo />

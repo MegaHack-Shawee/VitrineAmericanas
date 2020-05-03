@@ -5,8 +5,11 @@ export const Search = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image.attrs({
-    resizeMode: 'contain',
-})``;
+    resizeMode: 'cover',
+})`
+    height: 190px;
+    width: 190px;
+`;
 
 export const ImageIconLocalization = styled.Image.attrs({
     resizeMode: 'contain',

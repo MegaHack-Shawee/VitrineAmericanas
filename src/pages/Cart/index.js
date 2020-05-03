@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeBigPNG.png';
-import btnPay from '../../assets/Icons/payment/iconPaymentBigPNG.png';
+import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
+import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
@@ -32,6 +32,7 @@ import {
     CEPInput,
     ChangeAddress,
 } from './styles';
+import {formatPrice} from '../../utils/format';
 
 const handleSearch = () => {
     console.warn('Search input enabled');
@@ -219,10 +220,10 @@ export default function Cart({navigation}) {
                             />
                             <BottomView>
                                 <BottomText>
-                                    R$ {total} em até 12x de{' '}
-                                    {(total / 12).toFixed(2)} s/ juros no cartão
-                                    de crédito com ame e receba R${' '}
-                                    {(total / 50).toFixed(2)}
+                                    {formatPrice(total)} em até 12x de{' '}
+                                    {formatPrice(total / 12)} s/ juros no cartão
+                                    de crédito com ame e receba{' '}
+                                    {formatPrice(total / 50)}
                                     <BottomText color="orange">
                                         {' '}
                                         (2% de volta){' '}

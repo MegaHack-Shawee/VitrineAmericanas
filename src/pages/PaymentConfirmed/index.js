@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import phone from '../../assets/images/phone.png';
+import phone from '../../assets/images/products/motoG8/motoG8PNG.png';
 
 import Logo from '../../components/Logo';
 import Background from '../../components/Background';
@@ -55,10 +55,10 @@ export default function PaymentConfirmed({route, navigation}) {
         <Background>
             <HeaderView>
                 <BackButton onPress={() => handleBackButton(navigation)}>
-                    <Icon name="arrow-back" size={30} color="#fff" />
+                    <Icon name="arrow-back" size={40} color="#fff" />
                 </BackButton>
                 <SearchButton onPress={() => handleSearch()}>
-                    <Icon name="search" size={35} color="#fff" />
+                    <Icon name="search" size={40} color="#fff" />
                 </SearchButton>
             </HeaderView>
 
