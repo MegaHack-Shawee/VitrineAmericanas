@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
+import Toast from 'react-native-simple-toast';
 
 import Background from '../../components/Background';
 import Logo from '../../components/Logo';

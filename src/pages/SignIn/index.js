@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
+import Toast from 'react-native-simple-toast';
 import logoVitrineAmericanas from '../../assets/icons/logo/logo_home.png';
 import LoadingAnimation from '../../components/LoadingAnimation';
 
@@ -28,15 +29,7 @@ export default function SignIn({navigation}) {
     const handleSignIn = () => {
         setLoading(true);
         if (email === '' || password === '') {
-            Alert.alert(
-                'Email ou senha não preenchidos.',
-                'Digite os dados corretamente',
-                [
-                    {
-                        text: 'OK',
-                    },
-                ],
-            );
+            Toast.show('E-mail e senha são obrigatórios');
             setLoading(false);
             return;
         }
@@ -50,15 +43,7 @@ export default function SignIn({navigation}) {
                 })
                 .catch(e => {
                     setLoading(false);
-                    Alert.alert(
-                        'Email ou senha inválidos.',
-                        'Tente novamente.',
-                        [
-                            {
-                                text: 'OK',
-                            },
-                        ],
-                    );
+                    Toast.show('E-mail ou senha inválidos');
                     setPassword('');
                 });
         } catch (e) {
