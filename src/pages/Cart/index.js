@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-import qrCodeIcon from '../../assets/images/qrcode_icon.png';
-import btnPay from '../../assets/images/btn_pay.png';
+import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
+import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';

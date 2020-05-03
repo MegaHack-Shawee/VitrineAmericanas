@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import specifications from '../../assets/images/specifications.png';
+import specifications from '../../assets/Icons/specification/specifications.png';
 import getProduct from '../../utils/products';
 
 import {

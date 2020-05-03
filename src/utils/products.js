@@ -1,7 +1,7 @@
 /**
  * PRODUTS THAT SHOULD BE IN AMERICANAS DATABASE
  */
-import phone from '../assets/images/phone.png';
+import phone from '../assets/images/products/motoG8/motoG8PNG.png';
 
 const products = [
     {
