@@ -67,4 +67,8 @@ Depois que o merge da sua pull request for feito, você pode deletar a sua branc
 
 Thank you to all the people who have already contributed to Vitrine Americanas!
 
-[<img src="https://avatars3.githubusercontent.com/u/44821959?s=460&u=3d09f94c26b0fd9b9ed57670c62db54fa3ae0a83&v=4" width="100px;"/><br /><sub><b>Higor Martins</b></sub>]
+| [<img src="https://avatars3.githubusercontent.com/u/44821959?s=460&u=3d09f94c26b0fd9b9ed57670c62db54fa3ae0a83&v=4" width="100px;"/><br /><sub><b>Higor Martins</b></sub>] |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/51774420?s=460&u=0bc43ec463bfd512986455cfaeac0637f18f24e5&v=4" width="100px;"/><br /><sub><b>Felipe Zeba</b></sub>] |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars3.githubusercontent.com/u/44583521?s=460&u=2bb92913239de8faeb3a3902ec3593782d9b4ac6&v=4" width="100px;"/><br /><sub><b>Gabriel Portugal</b></sub>] |

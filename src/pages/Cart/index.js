@@ -4,8 +4,8 @@ import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 import auth from '@react-native-firebase/auth';
 
-import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
-import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
+import qrCodeIcon from '../../assets/icons/QRCode/iconQRCodeSmallPNG.png';
+import btnPay from '../../assets/icons/payment/iconPaymentSmallPNG.png';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
