@@ -40,30 +40,38 @@ export default function ScannedProduct({route, navigation}) {
         <Container>
             <Modal>
                 <Row>
-                    <Touch onPress={() => handleCloseButton(navigation)}>
+                    <Touch onPress={handleCloseButton}>
                         <Icon name="close" size={30} color="#9e9e9e" />
                     </Touch>
                 </Row>
-                <Title>{product?.title}</Title>
-                <Info>
-                    <PhotoView>
-                        <Image source={product?.photo} />
-                    </PhotoView>
-                    <Price>R$ {product?.price}</Price>
-                    <Text color="#9e9e9e">{product?.installment}</Text>
-                    <Button>
-                        <Text color="#fff" weight="bold">
-                            Adicionar ao carrinho
-                        </Text>
-                    </Button>
-                    <Specifications
-                        onPress={() => handleSpecificationsButton(navigation)}>
-                        <SpecificationsIcon>
-                            <Image source={specifications} />
-                        </SpecificationsIcon>
-                        <Text color="#424242">Informações Técnicas</Text>
-                    </Specifications>
-                </Info>
+                {product && (
+                    <>
+                        <Title>{product?.title}</Title>
+                        <Info>
+                            <PhotoView>
+                                <Image source={product?.photo} />
+                            </PhotoView>
+                            <Price>R$ {product?.price}</Price>
+                            <Text color="#9e9e9e">{product?.installment}</Text>
+                            <Button>
+                                <Text color="#fff" weight="bold">
+                                    Adicionar ao carrinho
+                                </Text>
+                            </Button>
+                            <Specifications
+                                onPress={() =>
+                                    handleSpecificationsButton(navigation)
+                                }>
+                                <SpecificationsIcon>
+                                    <Image source={specifications} />
+                                </SpecificationsIcon>
+                                <Text color="#424242">
+                                    Informações Técnicas
+                                </Text>
+                            </Specifications>
+                        </Info>
+                    </>
+                )}
             </Modal>
         </Container>
     );

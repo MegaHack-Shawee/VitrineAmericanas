@@ -17,7 +17,9 @@ const Stack = createStackNavigator();
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignInScreen" headerMode="none">
+            <Stack.Navigator
+                initialRouteName="LoadDataScreen"
+                headerMode="none">
                 <Stack.Screen
                     name="LoadDataScreen"
                     component={LoadData}

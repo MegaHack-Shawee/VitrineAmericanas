@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import phone from '../../assets/images/products/motoG8/motoG8PNG.png';
@@ -25,17 +26,7 @@ import {
     TextProduct,
     ButtonText,
 } from './styles';
-
-const products = {
-    cellphone: {
-        code: '647386253',
-        photo: phone,
-        title:
-            'Celular Motorola Moto G8 Plus 64GB Camêra Tripla 48MP + 5MP + 13MP',
-        qtd: 1,
-        price: '2.000,00',
-    },
-};
+import {FlatList} from 'react-native-gesture-handler';
 
 const handleSearch = () => {
     console.warn('Search input enabled');
@@ -49,7 +40,17 @@ const handleKeepBuying = navigation => {
     navigation.navigate('HomeScreen');
 };
 
-export default function PaymentConfirmed({navigation}) {
+export default function PaymentConfirmed({route, navigation}) {
+    const products = useSelector(state => state.Cart);
+    const {address} = route.params;
+
+    function calculateTotal() {
+        let total = 0;
+        products.forEach(p => {
+            total += p.total;
+        });
+        return total;
+    }
     return (
         <Background>
             <HeaderView>
@@ -80,7 +81,7 @@ export default function PaymentConfirmed({navigation}) {
                                 Endereço de entrega
                             </Text>
                             <Text color="#9e9e9e" size="12px">
-                                Casa da Vó
+                                {address.county}
                             </Text>
                             <Text color="#000" size="12px">
                                 CEP: 28930-000
@@ -89,49 +90,27 @@ export default function PaymentConfirmed({navigation}) {
                                 Entrega em até: 6 dias úteis
                             </Text>
                         </OrderInfo>
-                        <ProductOrder>
-                            <OrderViewImage>
-                                <OrderImage source={phone} />
-                            </OrderViewImage>
-                            <TextProduct color="#000" size="12px">
-                                Celular Motorola Moto G8 Plus 64GB Camêra Tripla
-                                48MP + 5MP + 13MP
-                            </TextProduct>
-                        </ProductOrder>
-                        <ProductOrder>
-                            <OrderViewImage>
-                                <OrderImage source={phone} />
-                            </OrderViewImage>
-                            <TextProduct color="#000" size="12px">
-                                Celular Motorola Moto G8 Plus 64GB Camêra Tripla
-                                48MP + 5MP + 13MP
-                            </TextProduct>
-                        </ProductOrder>
-                        <ProductOrder>
-                            <OrderViewImage>
-                                <OrderImage source={phone} />
-                            </OrderViewImage>
-                            <TextProduct color="#000" size="12px">
-                                Celular Motorola Moto G8 Plus 64GB Camêra Tripla
-                                48MP + 5MP + 13MP
-                            </TextProduct>
-                        </ProductOrder>
-                        <ProductOrder>
-                            <OrderViewImage>
-                                <OrderImage source={phone} />
-                            </OrderViewImage>
-                            <TextProduct color="#000" size="12px">
-                                Celular Motorola Moto G8 Plus 64GB Camêra Tripla
-                                48MP + 5MP + 13MP
-                            </TextProduct>
-                        </ProductOrder>
+                        <FlatList
+                            data={products}
+                            keyExtractor={item => item.code}
+                            renderItem={({item}) => (
+                                <ProductOrder>
+                                    <OrderViewImage>
+                                        <OrderImage source={item.photo} />
+                                    </OrderViewImage>
+                                    <TextProduct color="#000" size="12px">
+                                        {item.title}
+                                    </TextProduct>
+                                </ProductOrder>
+                            )}
+                        />
 
                         <OrderPrice>
                             <Text color="#000" size="18px">
                                 Total:
                             </Text>
                             <Text color="#000" size="18px">
-                                R$: 2.000,00
+                                R$ {calculateTotal()}
                             </Text>
                         </OrderPrice>
                     </OrderMainView>
