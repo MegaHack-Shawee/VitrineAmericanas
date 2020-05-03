@@ -17,7 +17,8 @@ import {
 } from './styles';
 import {formatPrice} from '../../utils/format';
 
-export default function Product({product}) {
+export default function Product({product, navigation}) {
+    const qrCode = product.code;
     const dispatch = useDispatch();
     const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -41,7 +42,10 @@ export default function Product({product}) {
         dispatch(CartActions.updateProductQuantity(qtd, product.code));
     }
     return (
-        <Container>
+        <Container
+            onTouchStart={() =>
+                navigation.navigate('ScannedProductScreen', {qrCode})
+            }>
             <MainView>
                 <ProductImage source={product.photo} />
                 <ProductTitleView>

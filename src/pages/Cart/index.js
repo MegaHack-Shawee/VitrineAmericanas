@@ -75,7 +75,7 @@ export default function Cart({navigation}) {
     }
 
     const handleBackButton = () => {
-        navigation.goBack();
+        navigation.navigate('HomeScreen');
     };
 
     const handleQRCodeButton = () => {
@@ -202,7 +202,10 @@ export default function Cart({navigation}) {
                                 data={products}
                                 keyExtractor={item => item.code}
                                 renderItem={({item}) => (
-                                    <Product product={item} />
+                                    <Product
+                                        product={item}
+                                        navigation={navigation}
+                                    />
                                 )}
                             />
                             <BottomView>

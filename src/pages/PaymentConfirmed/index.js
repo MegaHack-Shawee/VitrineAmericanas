@@ -33,9 +33,9 @@ export default function PaymentConfirmed({route, navigation}) {
     );
     const {address} = route.params;
 
-    const handleKeepBuying = () => {
+    function handleKeepBuying() {
         navigation.navigate('HomeScreen');
-    };
+    }
 
     function calculateTotal() {
         let total = 0;

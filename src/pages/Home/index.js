@@ -65,17 +65,7 @@ export default function Home({navigation}) {
                     <ButtonQrCode onPress={() => setShouldShow(!shouldShow)}>
                         {shouldShow ? (
                             <>
-                                <QRCodeScanner
-                                    onRead={handleReadSucess}
-                                    // Properties for change the camera size
-                                    // cameraStyle={{
-                                    //     height: 330,
-                                    //     marginTop: 20,
-                                    //     width: 320,
-                                    //     alignSelf: 'center',
-                                    //     justifyContent: 'center',
-                                    // }}
-                                />
+                                <QRCodeScanner onRead={handleReadSucess} />
                                 <TextQrCode>Leitor QR Code</TextQrCode>
                                 <ImageQrCode source={qrCodeIcon} />
                             </>
@@ -87,7 +77,7 @@ export default function Home({navigation}) {
                         )}
                     </ButtonQrCode>
                 </QRCodeReader>
-                <Row align="center" justify="center">
+                <Row>
                     <Button onPress={handleCartButton}>
                         <Image source={btnCart} />
                     </Button>

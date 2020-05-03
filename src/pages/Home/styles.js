@@ -18,6 +18,7 @@ export const Row = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -37,15 +38,14 @@ export const ButtonText = styled.Text`
 `;
 
 export const QRCodeReader = styled.View`
-    flex: 2;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 `;
 
 export const ButtonQrCode = styled.TouchableOpacity`
     height: 80%;
     width: 90%;
-    margin: 10px 20px 0 20px;
     align-items: center;
     justify-content: center;
 `;
