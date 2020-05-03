@@ -1,13 +1,15 @@
 <h1 align="center">
-    <img alt="VitrineAmericanas" title="#delicinha" src=".github/bethehero.svg" width="200px" background-color="#111" />
+    <img alt="VitrineAmericanas" title="#delicinha" src="src/assets/icons/logo/logo_home.png" width="200px" background-color="#333"/>
 </h1>
 
 <h4 align="center">
   🚀 Vitrine Americanas
 </h4>
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-73-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+<div align="center">
+[![All Contributors](https://img.shields.io/badge/All_contributors-3-green.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+</div>
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -20,6 +22,16 @@
 
 <p align="center">
   <img alt="VitrineAmericanas" src=".github/bethehero.png" width="100%">
+</p>
+
+## QR Codes para teste
+
+<p align="center">
+  <img alt="qr1" src="./src/assets/QRCodes/001.png" width="100%">
+  <img alt="qr2" src="./src/assets/QRCodes/002.png" width="100%">
+  <img alt="qr3" src="./src/assets/QRCodes/003.png" width="100%">
+  <img alt="qr4" src="./src/assets/QRCodes/004.png" width="100%">
+  <img alt="qr5" src="./src/assets/QRCodes/005.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias
@@ -50,3 +62,9 @@ Incluir Screenshots do projeto final
 - Faça push para a sua branch: `git push origin minha-feature`.
 
 Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+# Contributors
+
+Thank you to all the people who have already contributed to Vitrine Americanas!
+
+[<img src="https://avatars3.githubusercontent.com/u/44821959?s=460&u=3d09f94c26b0fd9b9ed57670c62db54fa3ae0a83&v=4" width="100px;"/><br /><sub><b>Higor Martins</b></sub>]
