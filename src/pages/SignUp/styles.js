@@ -55,8 +55,3 @@ export const SignLinkText = styled.Text`
     font-weight: bold;
     font-size: 16px;
 `;
-
-export const Row = styled.View`
-    flex-direction: row;
-    margin: 10px 20px 0px 20px;
-`;

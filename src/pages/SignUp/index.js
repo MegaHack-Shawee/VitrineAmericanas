@@ -1,11 +1,11 @@
 import React, {useState, useRef} from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 
 import Background from '../../components/Background';
 import Logo from '../../components/Logo';
 import Main from '../../components/Main';
+import ArrowBack from '../../components/ArrowBack';
 
 import {
     Form,
@@ -15,14 +15,12 @@ import {
     FormTitle,
     FormInputTitle,
     FormInputMasked,
-    Row,
 } from './styles';
 
 export default function Signup({navigation}) {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
-    const cpfRef = useRef();
     const birthDateRef = useRef();
     const cellphoneRef = useRef();
     const confirmEmailRef = useRef();
@@ -64,14 +62,7 @@ export default function Signup({navigation}) {
 
     return (
         <Background>
-            <Row>
-                <Icon
-                    name="arrow-back"
-                    size={30}
-                    color="#fff"
-                    onPress={handleReturn}
-                />
-            </Row>
+            <ArrowBack action={handleReturn} />
             <Logo />
             <Main>
                 <Form showsVerticalScrollIndicator={false}>
