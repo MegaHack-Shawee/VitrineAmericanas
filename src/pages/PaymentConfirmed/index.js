@@ -1,21 +1,17 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
-import phone from '../../assets/images/products/motoG8/motoG8PNG.png';
 
 import Logo from '../../components/Logo';
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
+import {formatPrice} from '../../utils/format';
+
 import {
     RowButtons,
-    BackButton,
     Text,
     Button,
     StatusView,
-    SearchButton,
-    HeaderView,
     Scroll,
     OrderViewImage,
     OrderImage,
@@ -28,40 +24,29 @@ import {
 } from './styles';
 import {FlatList} from 'react-native-gesture-handler';
 
-const handleSearch = () => {
-    console.warn('Search input enabled');
-};
-
-const handleBackButton = navigation => {
-    navigation.goBack();
-};
-
-const handleKeepBuying = navigation => {
-    navigation.navigate('HomeScreen');
-};
-
 export default function PaymentConfirmed({route, navigation}) {
-    const products = useSelector(state => state.Cart);
+    const products = useSelector(state =>
+        state.Cart.map(product => ({
+            ...product,
+            subtotal: product.price * product.amount,
+        })),
+    );
     const {address} = route.params;
+
+    const handleKeepBuying = () => {
+        navigation.navigate('HomeScreen');
+    };
 
     function calculateTotal() {
         let total = 0;
         products.forEach(p => {
-            total += p.total;
+            total += p.subtotal;
         });
         return total;
     }
+
     return (
         <Background>
-            <HeaderView>
-                <BackButton onPress={() => handleBackButton(navigation)}>
-                    <Icon name="arrow-back" size={40} color="#fff" />
-                </BackButton>
-                <SearchButton onPress={() => handleSearch()}>
-                    <Icon name="search" size={40} color="#fff" />
-                </SearchButton>
-            </HeaderView>
-
             <Logo />
 
             <Main>
@@ -110,15 +95,14 @@ export default function PaymentConfirmed({route, navigation}) {
                                 Total:
                             </Text>
                             <Text color="#000" size="18px">
-                                R$ {calculateTotal()}
+                                {formatPrice(calculateTotal())}
                             </Text>
                         </OrderPrice>
                     </OrderMainView>
 
                     <RowButtons>
                         <Button>
-                            <ButtonText
-                                onPress={() => handleKeepBuying(navigation)}>
+                            <ButtonText onPress={handleKeepBuying}>
                                 Continue Comprando
                             </ButtonText>
                         </Button>

@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import {useSelector} from 'react-redux';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
-import {ScrollView} from 'react-native';
+import {ScrollView, Alert} from 'react-native';
 
 import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
 import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
@@ -12,10 +11,12 @@ import Main from '../../components/Main';
 import Product from '../../components/Product';
 import NewAddressForm from '../../components/NewAddressForm';
 import Logo from '../../components/Logo';
+import ArrowBack from '../../components/ArrowBack';
+
+import {formatPrice} from '../../utils/format';
 
 import {
     Row,
-    Search,
     Image,
     Text,
     AddressView,
@@ -32,19 +33,6 @@ import {
     CEPInput,
     ChangeAddress,
 } from './styles';
-import {formatPrice} from '../../utils/format';
-
-const handleSearch = () => {
-    console.warn('Search input enabled');
-};
-
-const handleBackButton = navigation => {
-    navigation.goBack();
-};
-
-const handleQRCodeButton = navigation => {
-    navigation.navigate('HomeScreen');
-};
 
 export default function Cart({navigation}) {
     const [activeButton, setActiveButton] = useState('addressesList');
@@ -71,11 +59,11 @@ export default function Cart({navigation}) {
     }, [calculateTotal, products]);
 
     const calculateTotal = useCallback(() => {
-        let total = 0;
+        let subtotal = 0;
         products.forEach(p => {
-            total += p.subtotal;
+            subtotal += p.subtotal;
         });
-        return total;
+        return subtotal;
     }, [products]);
 
     function handlePaymentButton() {
@@ -85,6 +73,14 @@ export default function Cart({navigation}) {
     function handleAdressButton(active) {
         setActiveButton(active);
     }
+
+    const handleBackButton = () => {
+        navigation.goBack();
+    };
+
+    const handleQRCodeButton = () => {
+        navigation.navigate('HomeScreen');
+    };
 
     function YourAddresses() {
         if (changeAddress) {
@@ -151,14 +147,7 @@ export default function Cart({navigation}) {
     }
     return (
         <Background>
-            <Row align="flex-end" justify="space-between">
-                <Search onPress={() => handleBackButton(navigation)}>
-                    <Icon name="arrow-back" size={30} color="#fff" />
-                </Search>
-                <Search onPress={() => handleSearch()}>
-                    <Icon name="search" size={35} color="#fff" />
-                </Search>
-            </Row>
+            <ArrowBack action={handleBackButton} />
             <Logo />
             <Main>
                 <AddressView>
@@ -232,15 +221,17 @@ export default function Cart({navigation}) {
                     ) : (
                         <NewAddressForm cep={cep} />
                     )}
-                    <Row align="center" justify="center">
-                        <Button onPress={() => handleQRCodeButton(navigation)}>
-                            <Image source={qrCodeIcon} />
-                        </Button>
+                </ScrollView>
+                <Row>
+                    <Button onPress={() => handleQRCodeButton(navigation)}>
+                        <Image source={qrCodeIcon} />
+                    </Button>
+                    {products.length !== 0 && (
                         <Button onPress={() => handlePaymentButton(navigation)}>
                             <Image source={btnPay} />
                         </Button>
-                    </Row>
-                </ScrollView>
+                    )}
+                </Row>
             </Main>
         </Background>
     );

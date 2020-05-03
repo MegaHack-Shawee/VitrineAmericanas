@@ -1,25 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {Alert, PermissionsAndroid} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Marker} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
+import ArrowBack from '../../components/ArrowBack';
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
-import {
-    HeaderView,
-    SearchButton,
-    BackButton,
-    MapViewGoogle,
-    ViewAboveMap,
-    Text,
-} from './styles';
+import {MapViewGoogle, ViewAboveMap, Text} from './styles';
 import Logo from '../../components/Logo';
-
-const handleSearch = () => {
-    console.warn('search input enabled');
-};
 
 const stores = [
     {
@@ -80,8 +69,8 @@ export default function Geolocalization({navigation}) {
         longitudeDelta: 0.0421,
     });
 
-    const handleBackButton = nav => {
-        nav.navigate('HomeScreen');
+    const handleBackButton = () => {
+        navigation.goBack();
     };
 
     const RequestPermission = async () => {
@@ -135,14 +124,7 @@ export default function Geolocalization({navigation}) {
 
     return (
         <Background>
-            <HeaderView>
-                <BackButton onPress={() => handleBackButton(navigation)}>
-                    <Icon name="arrow-back" size={40} color="#fff" />
-                </BackButton>
-                <SearchButton onPress={() => handleSearch()}>
-                    <Icon name="search" size={40} color="#fff" />
-                </SearchButton>
-            </HeaderView>
+            <ArrowBack action={handleBackButton} />
             <Logo />
             <Main>
                 <Text color="#9e9e9e" size="16px">

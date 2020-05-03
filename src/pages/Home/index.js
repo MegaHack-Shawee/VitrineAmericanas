@@ -11,7 +11,7 @@ import Background from '../../components/Background';
 import Main from '../../components/Main';
 
 import {
-    Search,
+    ButtonText,
     Image,
     QRCodeReader,
     Row,
@@ -59,14 +59,6 @@ export default function Home({navigation}) {
 
     return (
         <Background>
-            <Row align="flex-end" justify="flex-end">
-                <Search onPress={handleSignOut}>
-                    <Icon name="close" size={40} color="#fff" />
-                </Search>
-                <Search onPress={handleSearch}>
-                    <Icon name="search" size={40} color="#fff" />
-                </Search>
-            </Row>
             <Logo />
             <Main>
                 <QRCodeReader>
@@ -101,6 +93,10 @@ export default function Home({navigation}) {
                     </Button>
                     <Button onPress={handleFindStore}>
                         <ImageIconLocalization source={localizationIcon} />
+                    </Button>
+                    <Button onPress={handleSignOut} shouldHaveBorder={true}>
+                        <Icon name="exit-to-app" size={35} color="#f57c00" />
+                        <ButtonText>Sair</ButtonText>
                     </Button>
                 </Row>
             </Main>

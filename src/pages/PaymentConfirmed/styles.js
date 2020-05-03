@@ -1,22 +1,5 @@
 import styled from 'styled-components/native';
 
-// Header
-
-export const HeaderView = styled.View`
-    flex-direction: row;
-    height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-`;
-
-export const BackButton = styled.TouchableOpacity`
-    flex-direction: row;
-    align-items: center;
-`;
-
-export const SearchButton = styled.TouchableOpacity``;
-
 export const LogoView = styled.View`
     height: 100px;
     width: 100px;

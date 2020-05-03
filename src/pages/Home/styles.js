@@ -1,37 +1,39 @@
 import styled from 'styled-components/native';
 
-export const Search = styled.TouchableOpacity`
-    padding: 5px 5px 0 0;
-`;
-
 export const Image = styled.Image.attrs({
     resizeMode: 'cover',
 })`
-    height: 110px;
-    width: 110px;
+    height: 115px;
+    width: 115px;
 `;
 
 export const ImageIconLocalization = styled.Image.attrs({
     resizeMode: 'contain',
 })`
-    height: 200px;
-    width: 200px;
+    height: 210px;
+    width: 210px;
 `;
 
 export const Row = styled.View`
     flex-direction: row;
-    align-items: ${props => props.align};
-    justify-content: ${props => props.justify};
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const Button = styled.TouchableOpacity`
-    height: 110px;
-    width: 110px;
-    border-radius: 55px;
-    margin: 10px 10px 0 10px;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    border: ${props => (props.shouldHaveBorder ? '1px solid #f57c00' : 'none')};
+`;
+
+export const ButtonText = styled.Text`
+    color: #f57c00;
+    font-size: 11px;
 `;
 
 export const QRCodeReader = styled.View`

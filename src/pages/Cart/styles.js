@@ -1,17 +1,11 @@
 import {TextInputMask} from 'react-native-masked-text';
 import styled from 'styled-components/native';
 
-export const Container = styled.View``;
-
 export const Row = styled.View`
+    height: 80px;
     flex-direction: row;
-    align-items: ${props => props.align};
-    justify-content: ${props => props.justify};
-    margin: 0 20px;
-`;
-
-export const Search = styled.TouchableOpacity`
-    padding: 5px 5px 0 0;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const LogoView = styled.View`
