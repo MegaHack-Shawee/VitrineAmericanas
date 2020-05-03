@@ -42,11 +42,11 @@ export default function Product({product, navigation}) {
         dispatch(CartActions.updateProductQuantity(qtd, product.code));
     }
     return (
-        <Container
-            onTouchEnd={() =>
-                navigation.navigate('ScannedProductScreen', {qrCode})
-            }>
-            <MainView>
+        <Container>
+            <MainView
+                onTouchEnd={() =>
+                    navigation.navigate('ScannedProductScreen', {qrCode})
+                }>
                 <ProductImage source={product.photo} />
                 <ProductTitleView>
                     <ProductTitle>{product.title}</ProductTitle>
