@@ -22,13 +22,16 @@ import {
     ImageIconLocalization,
 } from './styles';
 import Logo from '../../components/Logo';
+import {useSelector} from 'react-redux';
 
 export default function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
+    const products = useSelector(state => state.Cart);
 
     useEffect(() => {
+        console.log(products);
         setShouldShow(false);
-    }, []);
+    }, [products]);
 
     //O QUE ISSO VAI FAZER??????????
     const handleSearch = () => {

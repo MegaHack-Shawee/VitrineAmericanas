@@ -17,6 +17,7 @@
         "@react-navigation/native": "^5.2.0",
         "@react-navigation/stack": "^5.2.15",
         "immer": "^6.0.3",
+        "numeral": "^2.0.6",
         "react": "16.11.0",
         "react-native": "0.62.2",
         "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",

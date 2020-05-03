@@ -33,8 +33,6 @@ import {
     ChangeAddress,
 } from './styles';
 
-const lista = ['teste 1', 'teste 2', 'teste 3'];
-
 const handleSearch = () => {
     console.warn('Search input enabled');
 };
@@ -54,13 +52,18 @@ export default function Cart({navigation}) {
     const [cep, setCep] = useState('');
     const [total, setTotal] = useState(0);
     const addresses = useSelector(state => state.Address);
-    const products = useSelector(state => state.Cart);
+    const products = useSelector(state =>
+        state.Cart.map(product => ({
+            ...product,
+            subtotal: product.price * product.amount,
+        })),
+    );
 
     useEffect(() => {
         setCurrentAddress(addresses[0]);
         setActiveButton('addressesList');
         setChangeAddress(false);
-    }, [addresses]);
+    }, [addresses, products]);
 
     useEffect(() => {
         setTotal(calculateTotal());
@@ -69,12 +72,12 @@ export default function Cart({navigation}) {
     const calculateTotal = useCallback(() => {
         let total = 0;
         products.forEach(p => {
-            total += p.total;
+            total += p.subtotal;
         });
         return total;
     }, [products]);
 
-    function handlePaymentButton(navigation) {
+    function handlePaymentButton() {
         navigation.navigate('PaymentScreen', {address: currentAddress});
     }
 

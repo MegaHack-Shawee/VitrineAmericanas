@@ -13,7 +13,9 @@ const products = [
         title:
             'Celular Motorola Moto G8 Plus Cereja 64GB Camêra Tripla 48MP + 5MP + 16MP',
         photo: motog,
-        price: '2.000,00',
+        price: 2000,
+        amount: 1,
+        total: 0,
         observations: [
             'Preço:2.000,00',
             'Parcelamento:10 x 200,00 s/ juros',
@@ -28,7 +30,9 @@ const products = [
         code: '002',
         title: 'Samsung Galaxy S9 128GB Camêra 12MP + 8MP resistente a agua',
         photo: galaxys9,
-        price: '1.899,00',
+        price: 1899,
+        amount: 1,
+        total: 0,
         observations: [
             'Preço:1.899,00',
             'Parcelamento:10 x 189,99 s/ juros',
@@ -43,7 +47,9 @@ const products = [
         code: '003',
         title: 'Fritadeira Philco Air Fry Saúde Inox PH 3,2L',
         photo: fritadeira,
-        price: '369,90',
+        price: 369.9,
+        amount: 1,
+        total: 0,
         observations: [
             'Preço:369,90',
             'Parcelamento:10 x 36,90 s/ juros',
@@ -59,7 +65,9 @@ const products = [
         code: '004',
         title: 'Notebook Samsung E30 I3 7020U da 7ºGeração',
         photo: notebook,
-        price: '2.299,00',
+        price: 2299,
+        amount: 1,
+        total: 0,
         observations: [
             'Preço:2.299,00',
             'Parcelamento:10 x 229,00 s/ juros',
@@ -77,7 +85,9 @@ const products = [
         title:
             'Tablet Samsung Galaxy Tab Octa-Core 1.8GHz Wi-Fi + 4G Tela 10,1" Android Pie',
         photo: tablet,
-        price: '2.000,00',
+        price: 2000,
+        amount: 1,
+        total: 0,
         observations: [
             'Preço:1.424,00',
             'Câmera Traseira:8MP',

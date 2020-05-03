@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import specifications from '../../assets/images/specifications.png';
 import getProduct from '../../utils/products';
+import * as CartActions from '../../store/modules/Cart/actions';
+import {formatPrice} from '../../utils/format';
+
+import Modal from '../../components/Modal';
 
 import {
     Container,
@@ -18,10 +23,10 @@ import {
     Row,
     Touch,
 } from './styles';
-import Modal from '../../components/Modal';
 
 export default function ScannedProduct({route, navigation}) {
     const {qrCode} = route.params;
+    const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
@@ -34,6 +39,11 @@ export default function ScannedProduct({route, navigation}) {
 
     const handleSpecificationsButton = () => {
         navigation.navigate('DetailsScreen', {product});
+    };
+
+    const handleAddToCart = () => {
+        dispatch(CartActions.addToCart(product));
+        navigation.navigate('HomeScreen');
     };
 
     return (
@@ -51,9 +61,9 @@ export default function ScannedProduct({route, navigation}) {
                             <PhotoView>
                                 <Image source={product?.photo} />
                             </PhotoView>
-                            <Price>R$ {product?.price}</Price>
+                            <Price>{formatPrice(product?.price)}</Price>
                             <Text color="#9e9e9e">{product?.installment}</Text>
-                            <Button>
+                            <Button onPress={handleAddToCart}>
                                 <Text color="#fff" weight="bold">
                                     Adicionar ao carrinho
                                 </Text>

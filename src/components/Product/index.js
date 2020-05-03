@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Picker} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {updateProductQuantity} from '../../store/modules/Cart/actions';
@@ -12,9 +12,9 @@ import {
     ProductTitleView,
     ProductPrice,
 } from './styles';
+import {formatPrice} from '../../utils/format';
 
 export default function Product({product}) {
-    const [qtd, setQtd] = useState(1);
     const dispatch = useDispatch();
     const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -32,7 +32,6 @@ export default function Product({product}) {
 
     function handleQtdChanged(qtd) {
         dispatch(updateProductQuantity(qtd, product.code));
-        setQtd(qtd);
     }
     return (
         <Container>
@@ -44,14 +43,14 @@ export default function Product({product}) {
             </MainView>
             <SubtotalView>
                 <Picker
-                    selectedValue={qtd}
+                    selectedValue={product.amount}
                     style={{height: 50, width: 120}}
                     onValueChange={(itemValue, itemIndex) =>
                         handleQtdChanged(itemValue)
                     }>
                     {PickerOptions()}
                 </Picker>
-                <ProductPrice>R$ {product.total.toString()}</ProductPrice>
+                <ProductPrice>{formatPrice(product.subtotal)}</ProductPrice>
             </SubtotalView>
         </Container>
     );
