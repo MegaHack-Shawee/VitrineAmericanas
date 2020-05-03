@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useRef} from 'react';
+import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 import logoVitrineAmericanas from '../../assets/Icons/logo/logo_home.png';
@@ -26,6 +27,18 @@ export default function SignIn({navigation}) {
 
     const handleSignIn = () => {
         setLoading(true);
+        if (email === '' || password === '') {
+            Alert.alert(
+                'Email ou senha não preenchidos.',
+                'Digite os dados corretamente',
+                [
+                    {
+                        text: 'OK',
+                    },
+                ],
+            );
+            return;
+        }
         try {
             auth()
                 .signInWithEmailAndPassword(email, password)
@@ -36,6 +49,15 @@ export default function SignIn({navigation}) {
                 })
                 .catch(e => {
                     setLoading(false);
+                    Alert.alert(
+                        'Email ou senha inválidos.',
+                        'Tente novamente.',
+                        [
+                            {
+                                text: 'OK',
+                            },
+                        ],
+                    );
                     setPassword('');
                 });
         } catch (e) {
