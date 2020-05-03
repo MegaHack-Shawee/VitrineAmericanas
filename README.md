@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="VitrineAmericanas" title="#delicinha" src=".github/bethehero.svg" width="200px" />
+    <img alt="VitrineAmericanas" title="#delicinha" src=".github/bethehero.svg" width="200px" background-color="#111" />
 </h1>
 
 <h4 align="center">
@@ -7,9 +7,8 @@
 </h4>
 
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
+[![All Contributors](https://img.shields.io/badge/all_contributors-73-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 </p>
 
 <p align="center">
