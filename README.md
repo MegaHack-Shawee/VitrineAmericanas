@@ -27,11 +27,11 @@
 ## QR Codes para teste
 
 <p align="center">
-  <img alt="qr1" src="./src/assets/QRCodes/001.png" width="100%">
-  <img alt="qr2" src="./src/assets/QRCodes/002.png" width="100%">
-  <img alt="qr3" src="./src/assets/QRCodes/003.png" width="100%">
-  <img alt="qr4" src="./src/assets/QRCodes/004.png" width="100%">
-  <img alt="qr5" src="./src/assets/QRCodes/005.png" width="100%">
+  <img alt="qr1" src="./src/assets/QRCodes/001.png" width="150px">
+  <img alt="qr2" src="./src/assets/QRCodes/002.png" width="150px">
+  <img alt="qr3" src="./src/assets/QRCodes/003.png" width="150px">
+  <img alt="qr4" src="./src/assets/QRCodes/004.png" width="150px">
+  <img alt="qr5" src="./src/assets/QRCodes/005.png" width="150px">
 </p>
 
 ## :rocket: Tecnologias
@@ -67,8 +67,8 @@ Depois que o merge da sua pull request for feito, você pode deletar a sua branc
 
 Thank you to all the people who have already contributed to Vitrine Americanas!
 
-| [<img src="https://avatars3.githubusercontent.com/u/44821959?s=460&u=3d09f94c26b0fd9b9ed57670c62db54fa3ae0a83&v=4" width="100px;"/><br /><sub><b>Higor Martins</b></sub>] |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars0.githubusercontent.com/u/51774420?s=460&u=0bc43ec463bfd512986455cfaeac0637f18f24e5&v=4" width="100px;"/><br /><sub><b>Felipe Zeba</b></sub>] |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars3.githubusercontent.com/u/44583521?s=460&u=2bb92913239de8faeb3a3902ec3593782d9b4ac6&v=4" width="100px;"/><br /><sub><b>Gabriel Portugal</b></sub>] |
+<img src="https://avatars3.githubusercontent.com/u/44821959?s=460&u=3d09f94c26b0fd9b9ed57670c62db54fa3ae0a83&v=4" width="100px;"/><br /><sub><b>Higor Martins</b></sub>
+
+<img src="https://avatars0.githubusercontent.com/u/51774420?s=460&u=0bc43ec463bfd512986455cfaeac0637f18f24e5&v=4" width="100px;"/><br /><sub><b>Felipe Zeba</b></sub>
+
+<img src="https://avatars3.githubusercontent.com/u/44583521?s=460&u=2bb92913239de8faeb3a3902ec3593782d9b4ac6&v=4" width="100px;"/><br /><sub><b>Gabriel Portugal</b></sub>
