@@ -10,6 +10,7 @@
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalando-o-projeto">Instalando o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-rodando-o-projeto">Rodando o projeto</a>&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -40,7 +41,13 @@ O Vitrine Americanas é um projeto que visa melhorar a experiência de compras d
 
 ## 🔖 Layout
 
-Incluir Screenshots do projeto final
+Funcionalidades do Vitrine Americanas :
+
+- Leitura do QRCode de um produto (Loja virtual ou loja física)
+- Localizar Lojas Americanas próximas
+- Realizar compras em lojas físicas através do App
+
+![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80927982-d6a53f80-8d77-11ea-9791-3a4bb1a33de2.png)
 
 ## QR Codes para teste
 
@@ -51,6 +58,14 @@ Incluir Screenshots do projeto final
   <img alt="qr4" src="./src/assets/QRCodes/004.png" width="150px">
   <img alt="qr5" src="./src/assets/QRCodes/005.png" width="150px">
 </p>
+
+## 🏃‍♂️ Instalando o projeto
+
+- Clone ou baixe o repositório.
+- `yarn` para instalar todas as dependências.
+- `yarn android` para abrir o projeto no Android.
+- `yarn ios`para abrir o projeto no iPhone.
+- `yarn start` para incializar o Metro Bundler.
 
 ## 🤔 Rodando o projeto
 
