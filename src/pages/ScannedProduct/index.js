@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import auth from '@react-native-firebase/auth';
 import specifications from '../../assets/Icons/specification/specifications.png';
 import getProduct from '../../utils/products';
 import * as CartActions from '../../store/modules/Cart/actions';
@@ -28,6 +28,12 @@ export default function ScannedProduct({route, navigation}) {
     const {qrCode} = route.params;
     const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
+
+    useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
+    });
 
     useEffect(() => {
         setProduct(getProduct(qrCode));

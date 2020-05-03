@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
+import auth from '@react-native-firebase/auth';
 
 import Logo from '../../components/Logo';
 import Background from '../../components/Background';
@@ -26,6 +27,12 @@ import {FlatList} from 'react-native-gesture-handler';
 
 export default function PaymentConfirmed({route, navigation}) {
     const {address, products} = route.params;
+
+    useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
+    });
 
     function handleKeepBuying() {
         navigation.navigate('HomeScreen');

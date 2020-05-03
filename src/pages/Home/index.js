@@ -27,6 +27,12 @@ function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
 
     useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
+    });
+
+    useEffect(() => {
         setShouldShow(false);
 
         return () => {

@@ -2,6 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {RadioButton} from 'react-native-paper';
 import {ScrollView} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
 import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
@@ -49,6 +50,12 @@ export default function Cart({navigation}) {
             subtotal: product.price * product.amount,
         })),
     );
+
+    useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
+    });
 
     useEffect(() => {
         setCurrentAddress(addresses[0]);

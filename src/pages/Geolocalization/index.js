@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Alert, PermissionsAndroid} from 'react-native';
 import {Marker} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
-import ArrowBack from '../../components/ArrowBack';
+import auth from '@react-native-firebase/auth';
 
+import ArrowBack from '../../components/ArrowBack';
 import Background from '../../components/Background';
 import Main from '../../components/Main';
 
@@ -67,6 +68,12 @@ export default function Geolocalization({navigation}) {
         longitude: -42.0282557,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
+    });
+
+    useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
     });
 
     const handleBackButton = () => {

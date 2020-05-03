@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
 
 import {Container, Row, Touch, Title, Detail, Text} from './styles';
 import Modal from '../../components/Modal';
 
 export default function Details({route, navigation}) {
     const {product} = route.params;
+
+    useEffect(() => {
+        if (auth().currentUser == null) {
+            navigation.popToTop();
+        }
+    });
 
     function handleBackButton() {
         navigation.goBack();
