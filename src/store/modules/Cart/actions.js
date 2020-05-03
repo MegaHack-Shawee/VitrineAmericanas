@@ -21,3 +21,9 @@ export const removeFromCart = code => {
         code,
     };
 };
+
+export const confirmPayment = () => {
+    return {
+        type: '@Cart/PAYMENT_CONFIRMED',
+    };
+};

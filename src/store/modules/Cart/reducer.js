@@ -29,6 +29,10 @@ export default function Cart(state = INITIAL_STATE, action) {
                 draft[index].total = draft[index].price * action.qtd;
             });
         }
+        case '@Cart/PAYMENT_CONFIRMED':
+            return produce(state, draft => {
+                draft.length = 0;
+            });
         default: {
             return state;
         }

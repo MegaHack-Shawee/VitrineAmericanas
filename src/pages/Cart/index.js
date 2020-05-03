@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {RadioButton} from 'react-native-paper';
-import {ScrollView, Alert} from 'react-native';
+import {ScrollView} from 'react-native';
 
 import qrCodeIcon from '../../assets/Icons/QRCode/iconQRCodeSmallPNG.png';
 import btnPay from '../../assets/Icons/payment/iconPaymentSmallPNG.png';
@@ -14,6 +14,7 @@ import Logo from '../../components/Logo';
 import ArrowBack from '../../components/ArrowBack';
 
 import {formatPrice} from '../../utils/format';
+import * as CartActions from '../../store/modules/Cart/actions';
 
 import {
     Row,
@@ -40,9 +41,10 @@ export default function Cart({navigation}) {
     const [currentAddress, setCurrentAddress] = useState('');
     const [cep, setCep] = useState('');
     const [total, setTotal] = useState(0);
+    const dispatch = useDispatch();
     const addresses = useSelector(state => state.Address);
     const products = useSelector(state =>
-        state.Cart.map(product => ({
+        state.Cart?.map(product => ({
             ...product,
             subtotal: product.price * product.amount,
         })),
@@ -67,7 +69,11 @@ export default function Cart({navigation}) {
     }, [products]);
 
     function handlePaymentButton() {
-        navigation.navigate('PaymentScreen', {address: currentAddress});
+        dispatch(CartActions.confirmPayment());
+        navigation.navigate('PaymentScreen', {
+            address: currentAddress,
+            products: products,
+        });
     }
 
     function handleAdressButton(active) {

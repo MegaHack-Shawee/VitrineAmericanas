@@ -25,13 +25,7 @@ import {
 import {FlatList} from 'react-native-gesture-handler';
 
 export default function PaymentConfirmed({route, navigation}) {
-    const products = useSelector(state =>
-        state.Cart.map(product => ({
-            ...product,
-            subtotal: product.price * product.amount,
-        })),
-    );
-    const {address} = route.params;
+    const {address, products} = route.params;
 
     function handleKeepBuying() {
         navigation.navigate('HomeScreen');

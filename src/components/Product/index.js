@@ -43,7 +43,7 @@ export default function Product({product, navigation}) {
     }
     return (
         <Container
-            onTouchStart={() =>
+            onTouchEnd={() =>
                 navigation.navigate('ScannedProductScreen', {qrCode})
             }>
             <MainView>
