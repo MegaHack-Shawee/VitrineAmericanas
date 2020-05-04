@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import Toast from 'react-native-simple-toast';
 
 import ame from '../../assets/icons/payment/iconAme90pxPNG.png';
-import Background from '../../components/Background';
-import {ImageView, Image, Text} from './styles';
+
+import {ImageView, Image, Text, BackgroundPayment} from './styles';
 
 export default function LoadPayment({route, navigation}) {
     const {address, products} = route.params;
@@ -21,14 +21,19 @@ export default function LoadPayment({route, navigation}) {
     });
 
     return (
-        <Background>
+        <BackgroundPayment>
             <ImageView>
-                <Image source={ame} />
+                <Image
+                    source={ame}
+                    animation="pulse"
+                    iterationCount={Infinity}
+                    duration={700}
+                />
                 <Text>Pagamento com ame digital.</Text>
                 <Text>
                     Por favor aguarde enquanto confirmamos o seu pagamento...
                 </Text>
             </ImageView>
-        </Background>
+        </BackgroundPayment>
     );
 }

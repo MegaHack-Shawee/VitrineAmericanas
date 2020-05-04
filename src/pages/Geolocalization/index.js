@@ -4,12 +4,8 @@ import {Marker} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 import auth from '@react-native-firebase/auth';
 
-import ArrowBack from '../../components/ArrowBack';
-import Background from '../../components/Background';
-import Main from '../../components/Main';
-
 import {MapViewGoogle, ViewAboveMap, Text} from './styles';
-import Logo from '../../components/Logo';
+import Layout from '../Layout';
 
 const stores = [
     {
@@ -130,34 +126,30 @@ export default function Geolocalization({navigation}) {
     }, []);
 
     return (
-        <Background>
-            <ArrowBack action={handleBackButton} />
-            <Logo />
-            <Main>
-                <Text color="#9e9e9e" size="16px">
-                    Encontre uma loja perto de você
-                </Text>
-                <ViewAboveMap>
-                    <MapViewGoogle
-                        mapType="standard"
-                        followsUserLocation={true}
-                        showsPointsOfInterest={true}
-                        showsUserLocation={true}
-                        region={initialPosition}>
-                        {stores.map(store => (
-                            <Marker
-                                key={store.longitude}
-                                coordinate={{
-                                    latitude: store.latitude,
-                                    longitude: store.longitude,
-                                }}
-                                title={'Americanas'}
-                                description={'Localização da loja'}
-                            />
-                        ))}
-                    </MapViewGoogle>
-                </ViewAboveMap>
-            </Main>
-        </Background>
+        <Layout arrowBack={handleBackButton}>
+            <Text color="#9e9e9e" size="16px">
+                Encontre uma loja perto de você
+            </Text>
+            <ViewAboveMap>
+                <MapViewGoogle
+                    mapType="standard"
+                    followsUserLocation={true}
+                    showsPointsOfInterest={true}
+                    showsUserLocation={true}
+                    region={initialPosition}>
+                    {stores.map(store => (
+                        <Marker
+                            key={store.longitude}
+                            coordinate={{
+                                latitude: store.latitude,
+                                longitude: store.longitude,
+                            }}
+                            title={'Americanas'}
+                            description={'Localização da loja'}
+                        />
+                    ))}
+                </MapViewGoogle>
+            </ViewAboveMap>
+        </Layout>
     );
 }

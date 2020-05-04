@@ -3,10 +3,8 @@ import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import Toast from 'react-native-simple-toast';
 
+import Layout from '../Layout';
 import Background from '../../components/Background';
-import Logo from '../../components/Logo';
-import Main from '../../components/Main';
-import ArrowBack from '../../components/ArrowBack';
 import LoadingAnimation from '../../components/LoadingAnimation';
 
 import {
@@ -113,138 +111,134 @@ export default function Signup({navigation}) {
         <Background>
             {loading && <LoadingAnimation />}
             {!loading && (
-                <>
-                    <ArrowBack action={handleReturn} />
-                    <Logo />
-                    <Main>
-                        <Form showsVerticalScrollIndicator={false}>
-                            <FormTitle>Crie uma conta</FormTitle>
-                            <FormInputTitle>Nome e sobrenome</FormInputTitle>
-                            <FormInput
-                                autoCorrect={false}
-                                autoCapitalize="none"
-                                placeholder="Nome"
-                                value={name}
-                                onChangeText={setName}
-                            />
+                <Layout arrowBack={handleReturn}>
+                    <Form showsVerticalScrollIndicator={false}>
+                        <FormTitle>Crie uma conta</FormTitle>
+                        <FormInputTitle>Nome e sobrenome</FormInputTitle>
+                        <FormInput
+                            autoCorrect={false}
+                            autoCapitalize="none"
+                            placeholder="Nome"
+                            value={name}
+                            onChangeText={setName}
+                        />
 
-                            <FormInputTitle>CPF</FormInputTitle>
-                            <FormInputMasked
-                                placeholderTextColor="#e3e3e3"
-                                type="cpf"
-                                value={cpf}
-                                onChangeText={setCpf}
-                                placeholder={'CPF'}
-                            />
+                        <FormInputTitle>CPF</FormInputTitle>
+                        <FormInputMasked
+                            placeholderTextColor="#e3e3e3"
+                            type="cpf"
+                            value={cpf}
+                            onChangeText={setCpf}
+                            placeholder={'CPF'}
+                        />
 
-                            <FormInputTitle>Data de nascimento</FormInputTitle>
-                            <FormInputMasked
-                                placeholderTextColor="#e3e3e3"
-                                type={'datetime'}
-                                options={{
-                                    format: 'DD/MM/YYYY',
-                                }}
-                                value={birthDate}
-                                onChangeText={setBirthDate}
-                                placeholder={'Data de nascimento'}
-                            />
+                        <FormInputTitle>Data de nascimento</FormInputTitle>
+                        <FormInputMasked
+                            placeholderTextColor="#e3e3e3"
+                            type={'datetime'}
+                            options={{
+                                format: 'DD/MM/YYYY',
+                            }}
+                            value={birthDate}
+                            onChangeText={setBirthDate}
+                            placeholder={'Data de nascimento'}
+                        />
 
-                            <FormInputTitle>Telefone</FormInputTitle>
-                            <FormInputMasked
-                                type={'cel-phone'}
-                                options={{
-                                    maskType: 'BRL',
-                                    withDDD: true,
-                                    dddMask: '(99) ',
-                                }}
-                                placeholder="(22) 55555-5555"
-                                placeholderTextColor="#e3e3e3"
-                                value={cellphone}
-                                onChangeText={setCellphone}
-                                ref={input => {
-                                    inputs.phone = input;
-                                }}
-                                returnKeyType="next"
-                                onSubmitEditing={() => {
-                                    focusField('email');
-                                }}
-                                blurOnSubmit={false}
-                            />
+                        <FormInputTitle>Telefone</FormInputTitle>
+                        <FormInputMasked
+                            type={'cel-phone'}
+                            options={{
+                                maskType: 'BRL',
+                                withDDD: true,
+                                dddMask: '(99) ',
+                            }}
+                            placeholder="(22) 55555-5555"
+                            placeholderTextColor="#e3e3e3"
+                            value={cellphone}
+                            onChangeText={setCellphone}
+                            ref={input => {
+                                inputs.phone = input;
+                            }}
+                            returnKeyType="next"
+                            onSubmitEditing={() => {
+                                focusField('email');
+                            }}
+                            blurOnSubmit={false}
+                        />
 
-                            <FormInputTitle>E-mail</FormInputTitle>
-                            <FormInput
-                                icon="mail-outline"
-                                keyboardType="email-address"
-                                autoCorrect={false}
-                                autoCapitalize="none"
-                                placeholder="E-mail"
-                                value={email}
-                                onChangeText={setEmail}
-                                ref={input => {
-                                    inputs.email = input;
-                                }}
-                                returnKeyType="next"
-                                onSubmitEditing={() => {
-                                    focusField('corfirmEmail');
-                                }}
-                                blurOnSubmit={false}
-                            />
+                        <FormInputTitle>E-mail</FormInputTitle>
+                        <FormInput
+                            icon="mail-outline"
+                            keyboardType="email-address"
+                            autoCorrect={false}
+                            autoCapitalize="none"
+                            placeholder="E-mail"
+                            value={email}
+                            onChangeText={setEmail}
+                            ref={input => {
+                                inputs.email = input;
+                            }}
+                            returnKeyType="next"
+                            onSubmitEditing={() => {
+                                focusField('corfirmEmail');
+                            }}
+                            blurOnSubmit={false}
+                        />
 
-                            <FormInputTitle>Confirme seu e-mail</FormInputTitle>
-                            <FormInput
-                                icon="mail-outline"
-                                keyboardType="email-address"
-                                autoCorrect={false}
-                                autoCapitalize="none"
-                                placeholder="Confirmar e-mail"
-                                value={confirmEmail}
-                                onChangeText={setConfirmEmail}
-                                ref={input => {
-                                    inputs.corfirmEmail = input;
-                                }}
-                                returnKeyType="next"
-                                onSubmitEditing={() => {
-                                    focusField('password');
-                                }}
-                                blurOnSubmit={false}
-                            />
+                        <FormInputTitle>Confirme seu e-mail</FormInputTitle>
+                        <FormInput
+                            icon="mail-outline"
+                            keyboardType="email-address"
+                            autoCorrect={false}
+                            autoCapitalize="none"
+                            placeholder="Confirmar e-mail"
+                            value={confirmEmail}
+                            onChangeText={setConfirmEmail}
+                            ref={input => {
+                                inputs.corfirmEmail = input;
+                            }}
+                            returnKeyType="next"
+                            onSubmitEditing={() => {
+                                focusField('password');
+                            }}
+                            blurOnSubmit={false}
+                        />
 
-                            <FormInputTitle>Senha</FormInputTitle>
-                            <FormInput
-                                icon="lock-outline"
-                                secureTextEntry
-                                placeholder="Senha"
-                                value={password}
-                                onChangeText={setPassword}
-                                ref={input => {
-                                    inputs.password = input;
-                                }}
-                                returnKeyType="next"
-                                onSubmitEditing={() => {
-                                    focusField('confirmPassword');
-                                }}
-                                blurOnSubmit={false}
-                            />
+                        <FormInputTitle>Senha</FormInputTitle>
+                        <FormInput
+                            icon="lock-outline"
+                            secureTextEntry
+                            placeholder="Senha"
+                            value={password}
+                            onChangeText={setPassword}
+                            ref={input => {
+                                inputs.password = input;
+                            }}
+                            returnKeyType="next"
+                            onSubmitEditing={() => {
+                                focusField('confirmPassword');
+                            }}
+                            blurOnSubmit={false}
+                        />
 
-                            <FormInputTitle>Confirmar senha</FormInputTitle>
-                            <FormInput
-                                icon="lock-outline"
-                                secureTextEntry
-                                placeholder="Confirmar senha"
-                                value={confirmPassword}
-                                onChangeText={setConfirmPassword}
-                                ref={input => {
-                                    inputs.confirmPassword = input;
-                                }}
-                                returnKeyType="send"
-                                onSubmitEditing={handleSubmit}
-                            />
-                            <SubmitButton onPress={handleSubmit}>
-                                <SignLinkText>Enviar</SignLinkText>
-                            </SubmitButton>
-                        </Form>
-                    </Main>
-                </>
+                        <FormInputTitle>Confirmar senha</FormInputTitle>
+                        <FormInput
+                            icon="lock-outline"
+                            secureTextEntry
+                            placeholder="Confirmar senha"
+                            value={confirmPassword}
+                            onChangeText={setConfirmPassword}
+                            ref={input => {
+                                inputs.confirmPassword = input;
+                            }}
+                            returnKeyType="send"
+                            onSubmitEditing={handleSubmit}
+                        />
+                        <SubmitButton onPress={handleSubmit}>
+                            <SignLinkText>Enviar</SignLinkText>
+                        </SubmitButton>
+                    </Form>
+                </Layout>
             )}
         </Background>
     );
