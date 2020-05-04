@@ -11,10 +11,10 @@ import Routes from './routes';
 export default function App() {
     return (
         <Provider store={store}>
-            {/*<PersistGate persistor={persistor}>*/}
-            <StatusBar backgroundColor="#F57C00" barStyle="light-content" />
-            <Routes />
-            {/*</PersistGate>*/}
+            <PersistGate persistor={persistor}>
+                <StatusBar backgroundColor="#F57C00" barStyle="light-content" />
+                <Routes />
+            </PersistGate>
         </Provider>
     );
 }
