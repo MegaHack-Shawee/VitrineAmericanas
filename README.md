@@ -26,6 +26,8 @@ Agradecimento a todos os colaboradores do projeto Vitrine Americanas!
 
 O Vitrine Americanas visa integrar a experiência das lojas físicas Americanas com o ecossistema digital B2W, a solução mais obvia, diante as pesquisa é a unificação comercial dos processos. Utilizando os espaços físicos como ambientes de transformação digital do consumidor.
 
+- [Download do APK](https://drive.google.com/open?id=14NaJy8krp6ZSv6MnoJrPi2ySfs0SWguw)
+
 - [Download da Apresentação do Projeto](https://github.com/MegaHack-Shawee/VitrineAmericanas/files/4575853/Vitrine.Americanas-Time.34.pdf)
 
 - [Protótipo Navegável](https://xd.adobe.com/view/0b412d75-77d1-4469-4f0d-d15d613530f7-7d70/)
