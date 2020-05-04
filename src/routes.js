@@ -67,7 +67,7 @@ export default function Routes() {
                     options={{title: 'Geolocalização'}}
                 />
                 <Stack.Screen
-                    name="LoadPaymentScreem"
+                    name="LoadPaymentScreen"
                     component={LoadPayment}
                     options={{title: 'abrindo o ame digital'}}
                 />

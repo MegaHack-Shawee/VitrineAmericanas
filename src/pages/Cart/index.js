@@ -77,7 +77,7 @@ export default function Cart({navigation}) {
 
     function handlePaymentButton() {
         dispatch(CartActions.confirmPayment());
-        navigation.navigate('PaymentScreen', {
+        navigation.navigate('LoadPaymentScreen', {
             address: currentAddress,
             products: products,
         });
