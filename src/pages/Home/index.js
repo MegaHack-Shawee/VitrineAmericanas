@@ -20,6 +20,7 @@ import {
     ImageQrCode,
     TextQrCode,
     ImageIconLocalization,
+    ButtonExit,
 } from './styles';
 import Logo from '../../components/Logo';
 
@@ -89,10 +90,10 @@ function Home({navigation}) {
                     <Button onPress={handleFindStore}>
                         <ImageIconLocalization source={localizationIcon} />
                     </Button>
-                    <Button onPress={handleSignOut} shouldHaveBorder={true}>
+                    <ButtonExit onPress={handleSignOut} shouldHaveBorder={true}>
                         <Icon name="exit-to-app" size={35} color="#f57c00" />
                         <ButtonText>Sair</ButtonText>
-                    </Button>
+                    </ButtonExit>
                 </Row>
             </Main>
         </Background>
