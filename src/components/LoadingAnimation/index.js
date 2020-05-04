@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 import Lottie from 'lottie-react-native';
 
 import animation from '../../assets/animations/loading.json';

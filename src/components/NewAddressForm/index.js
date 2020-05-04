@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import {ScrollView} from 'react-native';
 import {useDispatch} from 'react-redux';
+
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
+
+import {addAddress} from '../../store/modules/Address/actions';
 
 import {
     FormRow,
@@ -12,8 +16,6 @@ import {
     Text,
     Form,
 } from './styles';
-import {ScrollView} from 'react-native';
-import {addAddress} from '../../store/modules/Address/actions';
 
 export default function NewAddressForm({cep}) {
     const [street, setStreet] = useState('');

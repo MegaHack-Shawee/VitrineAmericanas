@@ -1,9 +1,10 @@
 import React from 'react';
-import {Picker, TouchableOpacity} from 'react-native';
+import {Picker} from 'react-native';
 import {useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {updateProductQuantity} from '../../store/modules/Cart/actions';
+
 import * as CartActions from '../../store/modules/Cart/actions';
+import {formatPrice} from '../../utils/format';
 
 import {
     Container,
@@ -15,7 +16,6 @@ import {
     ProductPrice,
     TrashTouch,
 } from './styles';
-import {formatPrice} from '../../utils/format';
 
 export default function Product({product, navigation}) {
     const qrCode = product.code;
@@ -41,6 +41,7 @@ export default function Product({product, navigation}) {
     function handleQtdChanged(qtd) {
         dispatch(CartActions.updateProductQuantity(qtd, product.code));
     }
+
     return (
         <Container>
             <MainView

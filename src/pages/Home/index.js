@@ -73,7 +73,12 @@ function Home({navigation}) {
                         </>
                     ) : (
                         <>
-                            <TextQrCode>Pressione para ativar</TextQrCode>
+                            <TextQrCode
+                                animation="pulse"
+                                duration={1000}
+                                iterationCount={Infinity}>
+                                Pressione para ativar
+                            </TextQrCode>
                             <ImageQrCode source={qrCodeIcon} />
                         </>
                     )}
