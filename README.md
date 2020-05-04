@@ -10,7 +10,7 @@
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout e Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-instalando-o-projeto">Instalando o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalando-o-projeto">Instalando o projeto</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 # 🥇 Contribuidores
@@ -38,13 +38,17 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Vitrine Americanas é um projeto que visa melhorar a experiência de compras dos clientes das lojas Americanas e B2W.
 
+Video de apresentação do projeto:
+
+[![Video](https://img.youtube.com/vi/xXDZLFFsjAI/hqdefault.jpg)](https://www.youtube.com/watch?v=xXDZLFFsjAI)
+
 ## 🔖 Layout e Funcionalidades
 
 - Leitura do QRCode de um produto (Loja virtual ou loja física)
 - Localizar Lojas Americanas próximas
 - Realizar compras em lojas físicas através do App
 
-![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80927982-d6a53f80-8d77-11ea-9791-3a4bb1a33de2.png)
+![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80930077-4f5fc800-8d87-11ea-9429-7769c4c60aa2.png)
 
 ## 📂 QR Codes para teste
 
