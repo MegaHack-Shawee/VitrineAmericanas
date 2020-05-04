@@ -40,6 +40,8 @@ Vídeo de apresentação do projeto:
 - Localizar Lojas Americanas próximas
 - Realizar compras em lojas físicas através do App
 
+![VitrineAmericanasGif](https://user-images.githubusercontent.com/44583521/80993853-305a4800-8e12-11ea-9ff3-e6bfde8f47f4.gif)
+    
 ![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80930077-4f5fc800-8d87-11ea-9429-7769c4c60aa2.png)
 
 ## 📂 QR Codes para teste
