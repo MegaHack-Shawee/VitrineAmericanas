@@ -41,7 +41,7 @@ Vídeo de apresentação do projeto:
 - Realizar compras em lojas físicas através do App
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/44583521/80993853-305a4800-8e12-11ea-9ff3-e6bfde8f47f4.gif">
+    <img src="https://user-images.githubusercontent.com/44583521/81003652-913d4c80-8e21-11ea-9b31-bc702166b3ea.gif">
 </p>
 
 ![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80930077-4f5fc800-8d87-11ea-9429-7769c4c60aa2.png)
