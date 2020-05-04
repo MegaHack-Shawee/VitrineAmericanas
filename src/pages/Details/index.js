@@ -38,7 +38,7 @@ export default function Details({route, navigation}) {
                     product.observations.map(p => {
                         const [name, des] = p.split(':');
                         return (
-                            <Detail>
+                            <Detail key={p.code}>
                                 <Text color="#f57c00">{name}</Text>
                                 <Text>{des}</Text>
                             </Detail>

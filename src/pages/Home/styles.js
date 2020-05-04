@@ -32,6 +32,17 @@ export const Button = styled.TouchableOpacity`
     border: ${props => (props.shouldHaveBorder ? '1px solid #f57c00' : 'none')};
 `;
 
+export const ButtonExit = styled.TouchableOpacity`
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    border: ${props => (props.shouldHaveBorder ? '1px solid #f57c00' : 'none')};
+`;
+
 export const ButtonText = styled.Text`
     color: #f57c00;
     font-size: 11px;

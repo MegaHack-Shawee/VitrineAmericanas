@@ -97,11 +97,3 @@ export const ButtonText = styled.Text`
     color: #fff;
     font-size: 14px;
 `;
-
-export const RowButtons = styled.View`
-    flex-direction: row;
-    margin: 0 5px 10px;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-`;
