@@ -1,6 +1,10 @@
+import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 
-export default styled.View`
+export default styled.KeyboardAvoidingView.attrs({
+    enabled: Platform.OS === 'ios',
+    behavior: 'padding',
+})`
     background-color: #fff;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
