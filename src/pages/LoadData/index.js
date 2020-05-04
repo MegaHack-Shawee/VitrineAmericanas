@@ -37,7 +37,10 @@ export default function LoadData({navigation}) {
 
     return (
         <Background>
-            <Container>
+            <Container
+                animation="pulse"
+                duration={700}
+                iterationCount={Infinity}>
                 <Logo />
             </Container>
         </Background>

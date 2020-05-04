@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import * as Animatable from 'react-native-animatable';
 
 export const Image = styled.Image.attrs({
     resizeMode: 'cover',
@@ -68,7 +69,7 @@ export const ImageQrCode = styled.Image.attrs({
     width: 100%;
 `;
 
-export const TextQrCode = styled.Text`
+export const TextQrCode = styled(Animatable.Text)`
     color: #9e9e9e;
     font-size: 15px;
     position: absolute;

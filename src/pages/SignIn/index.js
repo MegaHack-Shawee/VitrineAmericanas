@@ -89,7 +89,7 @@ export default function SignIn({navigation}) {
                         <Logo source={logoVitrineAmericanas} />
                     </ImageView>
                     <ViewInput>
-                        <Icon name="mail" size={20} color="#ff9000" />
+                        <Icon name="mail" size={24} color="#4f4f4f" />
                         <TextInput
                             value={email}
                             onChangeText={setEmail}
@@ -102,7 +102,7 @@ export default function SignIn({navigation}) {
                         />
                     </ViewInput>
                     <ViewInput>
-                        <Icon name="lock" size={20} color="#ff9000" />
+                        <Icon name="lock" size={24} color="#4f4f4f" />
                         <TextInput
                             ref={passRef}
                             value={password}

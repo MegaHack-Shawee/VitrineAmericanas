@@ -7,15 +7,13 @@ import auth from '@react-native-firebase/auth';
 import qrCodeIcon from '../../assets/icons/QRCode/iconQRCodeSmallPNG.png';
 import btnPay from '../../assets/icons/payment/iconPaymentSmallPNG.png';
 
-import Background from '../../components/Background';
-import Main from '../../components/Main';
 import Product from '../../components/Product';
 import NewAddressForm from '../../components/NewAddressForm';
-import Logo from '../../components/Logo';
-import ArrowBack from '../../components/ArrowBack';
 
 import {formatPrice} from '../../utils/format';
 import * as CartActions from '../../store/modules/Cart/actions';
+
+import Layout from '../Layout';
 
 import {
     Row,
@@ -172,98 +170,105 @@ export default function Cart({navigation}) {
             );
         }
     }
+
     return (
-        <Background>
-            <ArrowBack action={handleBackButton} />
-            <Logo />
-            <Main>
-                <AddressView>
-                    <AddressButtonsView>
-                        <AddressButton
-                            bgColor={
-                                activeButton === 'addressesList'
-                                    ? '#f57c00'
-                                    : '#fff'
-                            }
-                            onPress={() => handleAdressButton('addressesList')}>
-                            <Text
-                                color={
-                                    activeButton == 'addressesList'
-                                        ? '#fff'
-                                        : '#f57c00'
-                                }>
-                                Seus endereços
-                            </Text>
-                        </AddressButton>
-                        <AddressButton
-                            bgColor={
-                                activeButton === 'addressesList'
+        <Layout arrowBack={handleBackButton}>
+            <AddressView>
+                <AddressButtonsView>
+                    <AddressButton
+                        bgColor={
+                            activeButton === 'addressesList'
+                                ? '#f57c00'
+                                : '#fff'
+                        }
+                        onPress={() => handleAdressButton('addressesList')}>
+                        <Text
+                            color={
+                                activeButton == 'addressesList'
                                     ? '#fff'
                                     : '#f57c00'
-                            }
-                            onPress={() => handleAdressButton('newAddress')}>
-                            <Text
-                                color={
-                                    activeButton == 'addressesList'
-                                        ? '#f57c00'
-                                        : '#fff'
-                                }>
-                                Novo endereço
-                            </Text>
-                        </AddressButton>
-                    </AddressButtonsView>
-                    {activeButton === 'addressesList' && YourAddresses()}
-                    {activeButton === 'newAddress' && (
-                        <CEPInput
-                            type={'zip-code'}
-                            value={cep}
-                            onChangeText={setCep}
-                            placeholder="digite o novo CEP de entrega"
+                            }>
+                            Seus endereços
+                        </Text>
+                    </AddressButton>
+                    <AddressButton
+                        bgColor={
+                            activeButton === 'addressesList'
+                                ? '#fff'
+                                : '#f57c00'
+                        }
+                        onPress={() => handleAdressButton('newAddress')}>
+                        <Text
+                            color={
+                                activeButton == 'addressesList'
+                                    ? '#f57c00'
+                                    : '#fff'
+                            }>
+                            Novo endereço
+                        </Text>
+                    </AddressButton>
+                </AddressButtonsView>
+                {activeButton === 'addressesList' && YourAddresses()}
+                {activeButton === 'newAddress' && (
+                    <CEPInput
+                        type={'zip-code'}
+                        value={cep}
+                        onChangeText={setCep}
+                        placeholder="digite o novo CEP de entrega"
+                    />
+                )}
+            </AddressView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {activeButton === 'addressesList' ? (
+                    <>
+                        <ProductsList
+                            data={products}
+                            keyExtractor={item => item.code}
+                            renderItem={({item}) => (
+                                <Product
+                                    product={item}
+                                    navigation={navigation}
+                                />
+                            )}
                         />
-                    )}
-                </AddressView>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    {activeButton === 'addressesList' ? (
-                        <>
-                            <ProductsList
-                                data={products}
-                                keyExtractor={item => item.code}
-                                renderItem={({item}) => (
-                                    <Product
-                                        product={item}
-                                        navigation={navigation}
-                                    />
-                                )}
-                            />
-                            <BottomView>
+                        <BottomView>
+                            {products.length !== 0 ? (
                                 <BottomText>
-                                    {formatPrice(total)} em até 12x de{' '}
-                                    {formatPrice(total / 12)} s/ juros no cartão
-                                    de crédito com ame e receba{' '}
-                                    {formatPrice(total / 50)}
+                                    Sua compra será no valor de{' '}
+                                    {formatPrice(total)} a vista, ou em até 12x
+                                    de {formatPrice(total / 12)} s/ juros no
+                                    cartão de crédito. Pague com o Ame Digital e
+                                    receba de volta {formatPrice(total / 50)}
                                     <BottomText color="orange">
                                         {' '}
-                                        (2% de volta){' '}
+                                        (2%)
                                     </BottomText>
                                 </BottomText>
-                            </BottomView>
-                        </>
-                    ) : (
-                        <NewAddressForm cep={cep} />
-                    )}
-                    <Row>
-                        <Button onPress={() => handleQRCodeButton(navigation)}>
-                            <Image source={qrCodeIcon} />
+                            ) : (
+                                <BottomText>
+                                    A sua sacola está vazia,
+                                    <BottomText color="orange">
+                                        {' '}
+                                        tente escanear um de nossos produtos !
+                                    </BottomText>
+                                </BottomText>
+                            )}
+                        </BottomView>
+                    </>
+                ) : (
+                    <NewAddressForm cep={cep} />
+                )}
+                <Row>
+                    <Button onPress={() => handleQRCodeButton(navigation)}>
+                        <Image source={qrCodeIcon} />
+                    </Button>
+                    {products.length !== 0 && (
+                        <Button onPress={() => handlePaymentButton(navigation)}>
+                            <Image source={btnPay} />
                         </Button>
-                        {products.length !== 0 && (
-                            <Button
-                                onPress={() => handlePaymentButton(navigation)}>
-                                <Image source={btnPay} />
-                            </Button>
-                        )}
-                    </Row>
-                </ScrollView>
-            </Main>
-        </Background>
+                    )}
+                </Row>
+            </ScrollView>
+        </Layout>
     );
 }

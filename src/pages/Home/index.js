@@ -7,8 +7,7 @@ import qrCodeIcon from '../../assets/icons/QRCodeReader/qrCodeReader190pxPNG.png
 import btnCart from '../../assets/icons/bag/iconBagSmallPNG.png';
 import localizationIcon from '../../assets/icons/localization/iconLocalization120px.png';
 
-import Background from '../../components/Background';
-import Main from '../../components/Main';
+import Layout from '../Layout';
 
 import {
     ButtonText,
@@ -22,7 +21,6 @@ import {
     ImageIconLocalization,
     ButtonExit,
 } from './styles';
-import Logo from '../../components/Logo';
 
 function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);
@@ -64,39 +62,41 @@ function Home({navigation}) {
     };
 
     return (
-        <Background>
-            <Logo />
-            <Main>
-                <QRCodeReader>
-                    <ButtonQrCode onPress={() => setShouldShow(!shouldShow)}>
-                        {shouldShow ? (
-                            <>
-                                <QRCodeScanner onRead={handleReadSucess} />
-                                <TextQrCode>Leitor QR Code</TextQrCode>
-                                <ImageQrCode source={qrCodeIcon} />
-                            </>
-                        ) : (
-                            <>
-                                <TextQrCode>Pressione para ativar</TextQrCode>
-                                <ImageQrCode source={qrCodeIcon} />
-                            </>
-                        )}
-                    </ButtonQrCode>
-                </QRCodeReader>
-                <Row>
-                    <Button onPress={handleCartButton}>
-                        <Image source={btnCart} />
-                    </Button>
-                    <Button onPress={handleFindStore}>
-                        <ImageIconLocalization source={localizationIcon} />
-                    </Button>
-                    <ButtonExit onPress={handleSignOut} shouldHaveBorder={true}>
-                        <Icon name="exit-to-app" size={35} color="#f57c00" />
-                        <ButtonText>Sair</ButtonText>
-                    </ButtonExit>
-                </Row>
-            </Main>
-        </Background>
+        <Layout>
+            <QRCodeReader>
+                <ButtonQrCode onPress={() => setShouldShow(!shouldShow)}>
+                    {shouldShow ? (
+                        <>
+                            <QRCodeScanner onRead={handleReadSucess} />
+                            <TextQrCode>Leitor QR Code</TextQrCode>
+                            <ImageQrCode source={qrCodeIcon} />
+                        </>
+                    ) : (
+                        <>
+                            <TextQrCode
+                                animation="pulse"
+                                duration={1000}
+                                iterationCount={Infinity}>
+                                Pressione para ativar
+                            </TextQrCode>
+                            <ImageQrCode source={qrCodeIcon} />
+                        </>
+                    )}
+                </ButtonQrCode>
+            </QRCodeReader>
+            <Row>
+                <Button onPress={handleCartButton}>
+                    <Image source={btnCart} />
+                </Button>
+                <Button onPress={handleFindStore}>
+                    <ImageIconLocalization source={localizationIcon} />
+                </Button>
+                <ButtonExit onPress={handleSignOut} shouldHaveBorder={true}>
+                    <Icon name="exit-to-app" size={35} color="#f57c00" />
+                    <ButtonText>Sair</ButtonText>
+                </ButtonExit>
+            </Row>
+        </Layout>
     );
 }
 

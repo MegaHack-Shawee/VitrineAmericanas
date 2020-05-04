@@ -2,15 +2,15 @@ import React, {useEffect} from 'react';
 import Toast from 'react-native-simple-toast';
 
 import ame from '../../assets/icons/payment/iconAme90pxPNG.png';
-import Background from '../../components/Background';
-import {ImageView, Image, Text} from './styles';
+
+import {ImageView, Image, Text, BackgroundPayment} from './styles';
 
 export default function LoadPayment({route, navigation}) {
     const {address, products} = route.params;
     useEffect(() => {
         setTimeout(() => {
             Toast.show(
-                'Pagamento com ame efetuiado com sucesso, obrigado por escolher a vitrine americanas :)',
+                'Pagamento com ame efetuado com sucesso, obrigado por escolher a vitrine americanas :)',
                 Toast.LONG,
             );
             navigation.navigate('PaymentScreen', {
@@ -21,12 +21,18 @@ export default function LoadPayment({route, navigation}) {
     });
 
     return (
-        <Background>
+        <BackgroundPayment>
             <ImageView>
-                <Image source={ame} />
-                <Text>Fazendo pagamento com ame digital.</Text>
-                <Text>Aguarde...</Text>
+                <Image
+                    source={ame}
+                    animation="pulse"
+                    iterationCount={Infinity}
+                    duration={700}
+                />
+                <Text>
+                    Por favor aguarde enquanto confirmamos o seu pagamento...
+                </Text>
             </ImageView>
-        </Background>
+        </BackgroundPayment>
     );
 }

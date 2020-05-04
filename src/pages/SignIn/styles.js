@@ -67,6 +67,7 @@ export const Logo = styled.Image.attrs({
 export const TextInput = styled.TextInput`
     flex: 1;
     color: #4f4f4f;
+    background: #eee;
     font-size: 16px;
     font-family: sans-serif;
     align-items: center;
@@ -76,11 +77,11 @@ export const ViewInput = styled.View`
     width: 100%;
     height: 50px;
     padding: 0 16px;
-    background: #fff;
+    background: #eee;
     border-radius: 40px;
     margin-bottom: 8px;
     border-width: 2px;
-    border-color: #fff;
+    border-color: #eee;
 
     flex-direction: row;
     align-items: center;

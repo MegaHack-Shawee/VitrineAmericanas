@@ -4,6 +4,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
 import {StatusBar} from 'react-native';
 
+import './utils/configs';
 import {store, persistor} from './store';
 import Routes from './routes';
 
