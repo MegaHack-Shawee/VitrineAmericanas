@@ -35,7 +35,7 @@ export default function PaymentConfirmed({route, navigation}) {
     });
 
     function handleKeepBuying() {
-        navigation.navigate('HomeScreen');
+        navigation.replace('HomeScreen');
     }
 
     function calculateTotal() {
@@ -101,13 +101,9 @@ export default function PaymentConfirmed({route, navigation}) {
                         </OrderPrice>
                     </OrderMainView>
 
-                    <RowButtons>
-                        <Button>
-                            <ButtonText onPress={handleKeepBuying}>
-                                Continue Comprando
-                            </ButtonText>
-                        </Button>
-                    </RowButtons>
+                    <Button onPress={handleKeepBuying}>
+                        <ButtonText>Continue Comprando</ButtonText>
+                    </Button>
                 </Scroll>
             </Main>
         </Background>
