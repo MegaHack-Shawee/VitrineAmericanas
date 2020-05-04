@@ -68,6 +68,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [QRCode Scanner](https://www.npmjs.com/package/react-native-qrcode-scanner)
 - [React Native Maps](https://www.npmjs.com/package/react-native-maps)
 - [Lottie](https://lottiefiles.com/)
+- [React Native Animatable](https://www.npmjs.com/package/react-native-animatable)
 
 ## 🏃‍♂️ Instalando o projeto
 
