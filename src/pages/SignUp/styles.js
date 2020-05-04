@@ -1,6 +1,5 @@
 import {TextInputMask} from 'react-native-masked-text';
 import styled from 'styled-components/native';
-import {TextInput} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 
 export const FormInputTitle = styled.Text`
@@ -31,7 +30,7 @@ export const FormInputMasked = styled(TextInputMask)`
     border-radius: 50px;
 `;
 
-export const FormInput = styled(TextInput).attrs({
+export const FormInput = styled.TextInput.attrs({
     placeholderTextColor: '#e3e3e3',
 })`
     padding-left: 20px;

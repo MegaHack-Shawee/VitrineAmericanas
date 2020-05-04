@@ -1,7 +1,6 @@
 import {produce} from 'immer';
-import getProduct from '../../../utils/products';
 
-const INITIAL_STATE = [getProduct('001'), getProduct('002')];
+const INITIAL_STATE = [];
 
 export default function Cart(state = INITIAL_STATE, action) {
     switch (action.type) {

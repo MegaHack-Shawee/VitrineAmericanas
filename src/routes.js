@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import PaymentConfirmed from './pages/PaymentConfirmed';
 import LoadData from './pages/LoadData';
 import Geolocalization from './pages/Geolocalization';
+import LoadPayment from './pages/LoadPayment';
 
 const Stack = createStackNavigator();
 
@@ -64,6 +65,11 @@ export default function Routes() {
                     name="GeolocalizationScreen"
                     component={Geolocalization}
                     options={{title: 'Geolocalização'}}
+                />
+                <Stack.Screen
+                    name="LoadPaymentScreem"
+                    component={LoadPayment}
+                    options={{title: 'abrindo o ame digital'}}
                 />
             </Stack.Navigator>
         </NavigationContainer>

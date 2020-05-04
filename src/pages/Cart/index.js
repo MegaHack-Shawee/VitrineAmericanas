@@ -237,17 +237,18 @@ export default function Cart({navigation}) {
                     ) : (
                         <NewAddressForm cep={cep} />
                     )}
-                </ScrollView>
-                <Row>
-                    <Button onPress={() => handleQRCodeButton(navigation)}>
-                        <Image source={qrCodeIcon} />
-                    </Button>
-                    {products.length !== 0 && (
-                        <Button onPress={() => handlePaymentButton(navigation)}>
-                            <Image source={btnPay} />
+                    <Row>
+                        <Button onPress={() => handleQRCodeButton(navigation)}>
+                            <Image source={qrCodeIcon} />
                         </Button>
-                    )}
-                </Row>
+                        {products.length !== 0 && (
+                            <Button
+                                onPress={() => handlePaymentButton(navigation)}>
+                                <Image source={btnPay} />
+                            </Button>
+                        )}
+                    </Row>
+                </ScrollView>
             </Main>
         </Background>
     );

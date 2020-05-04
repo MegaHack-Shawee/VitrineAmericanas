@@ -9,6 +9,8 @@ import Main from '../../components/Main';
 import ArrowBack from '../../components/ArrowBack';
 import LoadingAnimation from '../../components/LoadingAnimation';
 
+import {TextInput} from 'react-native';
+
 import {
     Form,
     FormInput,
@@ -27,7 +29,6 @@ export default function Signup({navigation}) {
     const cellphoneRef = useRef();
     const confirmEmailRef = useRef();
     const confirmPasswordRef = useRef();
-    const [loading, setLoading] = useState(false);
 
     const [name, setName] = useState('');
     const [cpf, setCpf] = useState('');
@@ -37,8 +38,50 @@ export default function Signup({navigation}) {
     const [cellphone, setCellphone] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    function emailsMatch() {
+        if (email !== confirmEmail) {
+            return false;
+        }
+        return true;
+    }
+
+    function passwordsMatch() {
+        if (password !== confirmPassword) {
+            return false;
+        }
+        return true;
+    }
+
+    function isAnyInputEmpty() {
+        if (
+            name === '' ||
+            cpf === '' ||
+            email === '' ||
+            confirmEmail === '' ||
+            password === '' ||
+            confirmPassword === '' ||
+            cellphone === ''
+        ) {
+            return true;
+        }
+        return false;
+    }
 
     function handleSubmit() {
+        if (isAnyInputEmpty()) {
+            Toast.show('Todos os campos são obrigatórios');
+            return;
+        }
+        if (!emailsMatch()) {
+            Toast.show('Os e-mails não coincidem');
+            return;
+        }
+        if (!passwordsMatch()) {
+            Toast.show('As senhas não coincidem');
+            return;
+        }
         setLoading(true);
         try {
             auth()
@@ -53,7 +96,7 @@ export default function Signup({navigation}) {
                         .ref('/users')
                         .push({uId, name, cpf, birthDate, cellphone});
 
-                    console.warn('Cadastro realizado com sucesso');
+                    Toast.show('Cadastro realizado com sucesso');
                     setLoading(false);
                     navigation.replace('LoadDataScreen');
                 })
@@ -68,6 +111,12 @@ export default function Signup({navigation}) {
 
     function handleReturn() {
         navigation.navigate('SignInScreen');
+    }
+
+    const inputs = [];
+
+    function focusField(index) {
+        inputs[index].focus();
     }
 
     return (
@@ -85,11 +134,6 @@ export default function Signup({navigation}) {
                                 autoCorrect={false}
                                 autoCapitalize="none"
                                 placeholder="Nome"
-                                ref={nameRef}
-                                returnKeyType="next"
-                                // onSubmitEditing={() => cpfRef.current.focus()}
-                                //Problemas ao direcionar para o input de CPF automaticamente
-                                //Resolvendo: Como incluir a REF na tag TextInputMask
                                 value={name}
                                 onChangeText={setName}
                             />
@@ -101,10 +145,6 @@ export default function Signup({navigation}) {
                                 value={cpf}
                                 onChangeText={setCpf}
                                 placeholder={'CPF'}
-                                // ref={cpfRef}
-                                onSubmitEditing={() =>
-                                    birthDateRef.current.focus()
-                                }
                             />
 
                             <FormInputTitle>Data de nascimento</FormInputTitle>
@@ -117,10 +157,6 @@ export default function Signup({navigation}) {
                                 value={birthDate}
                                 onChangeText={setBirthDate}
                                 placeholder={'Data de nascimento'}
-                                // ref={birthDateRef}
-                                onSubmitEditing={() =>
-                                    cellphoneRef.current.focus()
-                                }
                             />
 
                             <FormInputTitle>Telefone</FormInputTitle>
@@ -135,7 +171,14 @@ export default function Signup({navigation}) {
                                 placeholderTextColor="#e3e3e3"
                                 value={cellphone}
                                 onChangeText={setCellphone}
-                                onSubmitEditing={() => emailRef.current.focus()}
+                                ref={input => {
+                                    inputs.phone = input;
+                                }}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    focusField('email');
+                                }}
+                                blurOnSubmit={false}
                             />
 
                             <FormInputTitle>E-mail</FormInputTitle>
@@ -145,13 +188,16 @@ export default function Signup({navigation}) {
                                 autoCorrect={false}
                                 autoCapitalize="none"
                                 placeholder="E-mail"
-                                returnKeyType="next"
-                                ref={emailRef}
-                                onSubmitEditing={() =>
-                                    confirmEmailRef.current.focus()
-                                }
                                 value={email}
                                 onChangeText={setEmail}
+                                ref={input => {
+                                    inputs.email = input;
+                                }}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    focusField('corfirmEmail');
+                                }}
+                                blurOnSubmit={false}
                             />
 
                             <FormInputTitle>Confirme seu e-mail</FormInputTitle>
@@ -161,13 +207,16 @@ export default function Signup({navigation}) {
                                 autoCorrect={false}
                                 autoCapitalize="none"
                                 placeholder="Confirmar e-mail"
-                                returnKeyType="next"
-                                ref={confirmEmailRef}
-                                onSubmitEditing={() =>
-                                    passwordRef.current.focus()
-                                }
                                 value={confirmEmail}
                                 onChangeText={setConfirmEmail}
+                                ref={input => {
+                                    inputs.corfirmEmail = input;
+                                }}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    focusField('password');
+                                }}
+                                blurOnSubmit={false}
                             />
 
                             <FormInputTitle>Senha</FormInputTitle>
@@ -175,13 +224,16 @@ export default function Signup({navigation}) {
                                 icon="lock-outline"
                                 secureTextEntry
                                 placeholder="Senha"
-                                ref={passwordRef}
-                                returnKeyType="send"
-                                onSubmitEditing={() =>
-                                    confirmPasswordRef.current.focus()
-                                }
                                 value={password}
                                 onChangeText={setPassword}
+                                ref={input => {
+                                    inputs.password = input;
+                                }}
+                                returnKeyType="next"
+                                onSubmitEditing={() => {
+                                    focusField('confirmPassword');
+                                }}
+                                blurOnSubmit={false}
                             />
 
                             <FormInputTitle>Confirmar senha</FormInputTitle>
@@ -189,11 +241,13 @@ export default function Signup({navigation}) {
                                 icon="lock-outline"
                                 secureTextEntry
                                 placeholder="Confirmar senha"
-                                ref={confirmPasswordRef}
-                                returnKeyType="send"
-                                onSubmitEditing={handleSubmit}
                                 value={confirmPassword}
                                 onChangeText={setConfirmPassword}
+                                ref={input => {
+                                    inputs.confirmPassword = input;
+                                }}
+                                returnKeyType="send"
+                                onSubmitEditing={handleSubmit}
                             />
                             <SubmitButton onPress={handleSubmit}>
                                 <SignLinkText>Enviar</SignLinkText>

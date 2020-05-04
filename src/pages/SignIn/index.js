@@ -60,6 +60,12 @@ export default function SignIn({navigation}) {
         console.log('Clicou login facebook');
     };
 
+    const inputs = [];
+
+    function focusField(index) {
+        inputs[index].focus();
+    }
+
     return (
         <Container>
             {loading && <LoadingAnimation />}
