@@ -24,7 +24,7 @@ Agradecimento a todos os colaboradores do projeto Vitrine Americanas!
 
 ## 💻 Projeto
 
-O Vitrine Americanas é um projeto que visa melhorar a experiência de compras dos clientes das lojas Americanas e B2W.
+O Vitrine Americanas visa integrar a experiência das lojas físicas Americanas com o ecossistema digital B2W, a solução mais obvia, diante as pesquisa é a unificação comercial dos processos. Utilizando os espaços físicos como ambientes de transformação digital do consumidor.
 
 Video de apresentação do projeto:
 
