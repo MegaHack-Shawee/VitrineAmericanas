@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useSelector} from 'react-redux';
+import {FlatList} from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 
 import Logo from '../../components/Logo';
@@ -9,7 +9,6 @@ import Main from '../../components/Main';
 import {formatPrice} from '../../utils/format';
 
 import {
-    RowButtons,
     Text,
     Button,
     StatusView,
@@ -23,7 +22,6 @@ import {
     TextProduct,
     ButtonText,
 } from './styles';
-import {FlatList} from 'react-native-gesture-handler';
 
 export default function PaymentConfirmed({route, navigation}) {
     const {address, products} = route.params;

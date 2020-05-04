@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import Toast from 'react-native-simple-toast';
@@ -8,8 +8,6 @@ import Logo from '../../components/Logo';
 import Main from '../../components/Main';
 import ArrowBack from '../../components/ArrowBack';
 import LoadingAnimation from '../../components/LoadingAnimation';
-
-import {TextInput} from 'react-native';
 
 import {
     Form,
@@ -22,14 +20,6 @@ import {
 } from './styles';
 
 export default function Signup({navigation}) {
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const birthDateRef = useRef();
-    const cellphoneRef = useRef();
-    const confirmEmailRef = useRef();
-    const confirmPasswordRef = useRef();
-
     const [name, setName] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');

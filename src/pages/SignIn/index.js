@@ -1,8 +1,8 @@
 import React, {useState, useRef} from 'react';
-import {Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import auth from '@react-native-firebase/auth';
 import Toast from 'react-native-simple-toast';
+
 import logoVitrineAmericanas from '../../assets/icons/logo/logo_home.png';
 import LoadingAnimation from '../../components/LoadingAnimation';
 
@@ -59,12 +59,6 @@ export default function SignIn({navigation}) {
     const handleSignInFacebook = () => {
         console.log('Clicou login facebook');
     };
-
-    const inputs = [];
-
-    function focusField(index) {
-        inputs[index].focus();
-    }
 
     return (
         <Container>
