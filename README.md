@@ -59,6 +59,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Firebase](https://firebase.google.com/)
 - [QRCode Scanner](https://www.npmjs.com/package/react-native-qrcode-scanner)
 - [React Native Maps](https://www.npmjs.com/package/react-native-maps)
+- [Lottie](https://lottiefiles.com/)
 
 ## 🏃‍♂️ Instalando o projeto
 
