@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
+import Toast from 'react-native-simple-toast';
 
 import {
     FormRow,
@@ -34,6 +35,14 @@ export default function NewAddressForm({cep}) {
         setState('Rio De Janeiro');
     }
 
+    function resetInputs() {
+        setStreet('');
+        setNumber('');
+        setCounty('');
+        setExtra('');
+        setState('');
+    }
+
     async function handleFormSubmit() {
         const uId = auth().currentUser.uid;
         const key = database()
@@ -53,7 +62,8 @@ export default function NewAddressForm({cep}) {
         database()
             .ref(`/addresses/${uId}/${key}`)
             .set(address);
-
+        Toast.show('Endereço cadastrado com sucesso !');
+        resetInputs();
         dispatch(addAddress(address));
     }
 

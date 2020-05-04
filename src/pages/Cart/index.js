@@ -39,7 +39,7 @@ import {
 export default function Cart({navigation}) {
     const [activeButton, setActiveButton] = useState('addressesList');
     const [changeAddress, setChangeAddress] = useState(false);
-    const [currentAddress, setCurrentAddress] = useState('');
+    const [currentAddress, setCurrentAddress] = useState(null);
     const [cep, setCep] = useState('');
     const [total, setTotal] = useState(0);
     const dispatch = useDispatch();
@@ -58,7 +58,9 @@ export default function Cart({navigation}) {
     });
 
     useEffect(() => {
-        setCurrentAddress(addresses[0]);
+        if (addresses != null) {
+            setCurrentAddress(addresses[0]);
+        }
         setActiveButton('addressesList');
         setChangeAddress(false);
     }, [addresses]);
@@ -140,20 +142,32 @@ export default function Cart({navigation}) {
         } else {
             return (
                 <CurrentAddressView>
-                    <Address width="70%">
-                        <Text color="#000" size="10px">
-                            {currentAddress.county}
-                        </Text>
-                        <Text color="#000" weight="bold">
-                            CEP {currentAddress.zipCode}
-                        </Text>
-                        <Text color="#000" size="10px">
-                            {currentAddress.street}, {currentAddress.number}
-                        </Text>
-                    </Address>
-                    <ChangeAddress onPress={() => setChangeAddress(true)}>
-                        <Text color="#f57c00">TROCAR</Text>
-                    </ChangeAddress>
+                    {currentAddress == null ? (
+                        <Address width="100%">
+                            <Text color="#000" size="10px">
+                                Cadastre um endereço
+                            </Text>
+                        </Address>
+                    ) : (
+                        <>
+                            <Address width="70%">
+                                <Text color="#000" size="10px">
+                                    {currentAddress.county}
+                                </Text>
+                                <Text color="#000" weight="bold">
+                                    CEP {currentAddress.zipCode}
+                                </Text>
+                                <Text color="#000" size="10px">
+                                    {currentAddress.street},{' '}
+                                    {currentAddress.number}
+                                </Text>
+                            </Address>
+                            <ChangeAddress
+                                onPress={() => setChangeAddress(true)}>
+                                <Text color="#f57c00">TROCAR</Text>
+                            </ChangeAddress>
+                        </>
+                    )}
                 </CurrentAddressView>
             );
         }

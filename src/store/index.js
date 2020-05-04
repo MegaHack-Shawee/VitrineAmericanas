@@ -4,7 +4,10 @@ import {createStore} from 'redux';
 import persistReducer from './modules/persistReducers';
 import rootReducer from './modules/rootReducers';
 
-const store = createStore(persistReducer(rootReducer));
-const persistor = persistStore(store);
+// const store = createStore(persistReducer(rootReducer));
+// const persistor = persistStore(store);
 
-export {store, persistor};
+// export {store, persistor};
+
+const store = createStore(rootReducer);
+export {store};

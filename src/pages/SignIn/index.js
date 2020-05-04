@@ -57,7 +57,27 @@ export default function SignIn({navigation}) {
     };
 
     const handleSignInFacebook = () => {
-        console.log('Clicou login facebook');
+        setLoading(true);
+        try {
+            auth()
+                .signInWithEmailAndPassword(
+                    'felipezeba@outlook.com',
+                    'senhateste',
+                )
+                .then(user => {
+                    if (user) {
+                        navigation.replace('LoadDataScreen');
+                    }
+                })
+                .catch(e => {
+                    setLoading(false);
+                    Toast.show('Erro ao logar com facebook');
+                    setPassword('');
+                });
+        } catch (e) {
+            setLoading(false);
+            console.warn(e);
+        }
     };
 
     return (
