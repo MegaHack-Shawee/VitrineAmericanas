@@ -13,7 +13,7 @@ export const Image = styled(Animatable.Image)`
 `;
 
 export const Text = styled.Text`
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     color: #f57c00;
 `;

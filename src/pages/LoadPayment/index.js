@@ -29,7 +29,6 @@ export default function LoadPayment({route, navigation}) {
                     iterationCount={Infinity}
                     duration={700}
                 />
-                <Text>Pagamento com ame digital.</Text>
                 <Text>
                     Por favor aguarde enquanto confirmamos o seu pagamento...
                 </Text>
