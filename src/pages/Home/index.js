@@ -9,6 +9,7 @@ import localizationIcon from '../../assets/icons/localization/iconLocalization12
 
 import Background from '../../components/Background';
 import Main from '../../components/Main';
+import Logo from '../../components/Logo';
 
 import {
     ButtonText,
@@ -22,7 +23,6 @@ import {
     ImageIconLocalization,
     ButtonExit,
 } from './styles';
-import Logo from '../../components/Logo';
 
 function Home({navigation}) {
     const [shouldShow, setShouldShow] = useState(false);

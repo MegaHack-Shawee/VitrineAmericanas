@@ -10,7 +10,7 @@ export default function LoadPayment({route, navigation}) {
     useEffect(() => {
         setTimeout(() => {
             Toast.show(
-                'Pagamento com ame efetuiado com sucesso, obrigado por escolher a vitrine americanas :)',
+                'Pagamento com ame efetuado com sucesso, obrigado por escolher a vitrine americanas :)',
                 Toast.LONG,
             );
             navigation.navigate('PaymentScreen', {
@@ -24,8 +24,10 @@ export default function LoadPayment({route, navigation}) {
         <Background>
             <ImageView>
                 <Image source={ame} />
-                <Text>Fazendo pagamento com ame digital.</Text>
-                <Text>Aguarde...</Text>
+                <Text>Pagamento com ame digital.</Text>
+                <Text>
+                    Por favor aguarde enquanto confirmamos o seu pagamento...
+                </Text>
             </ImageView>
         </Background>
     );

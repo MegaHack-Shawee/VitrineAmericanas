@@ -158,6 +158,7 @@ export default function Cart({navigation}) {
             );
         }
     }
+
     return (
         <Background>
             <ArrowBack action={handleBackButton} />
@@ -222,16 +223,29 @@ export default function Cart({navigation}) {
                                 )}
                             />
                             <BottomView>
-                                <BottomText>
-                                    {formatPrice(total)} em até 12x de{' '}
-                                    {formatPrice(total / 12)} s/ juros no cartão
-                                    de crédito com ame e receba{' '}
-                                    {formatPrice(total / 50)}
-                                    <BottomText color="orange">
-                                        {' '}
-                                        (2% de volta){' '}
+                                {products.length !== 0 ? (
+                                    <BottomText>
+                                        Sua compra será no valor de{' '}
+                                        {formatPrice(total)} a vista, ou em até
+                                        12x de {formatPrice(total / 12)} s/
+                                        juros no cartão de crédito. Pague com o
+                                        Ame Digital e receba de volta{' '}
+                                        {formatPrice(total / 50)}
+                                        <BottomText color="orange">
+                                            {' '}
+                                            (2%)
+                                        </BottomText>
                                     </BottomText>
-                                </BottomText>
+                                ) : (
+                                    <BottomText>
+                                        A sua sacola está vazia,
+                                        <BottomText color="orange">
+                                            {' '}
+                                            tente escanear um de nossos produtos
+                                            !
+                                        </BottomText>
+                                    </BottomText>
+                                )}
                             </BottomView>
                         </>
                     ) : (
