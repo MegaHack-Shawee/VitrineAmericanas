@@ -24,7 +24,7 @@ Agradecimento a todos os colaboradores do projeto Vitrine Americanas!
 
 ## 💻 Projeto
 
-O Vitrine Americanas visa integrar a experiência das lojas físicas Americanas com o ecossistema digital B2W, a solução mais obvia, diante as pesquisa é a unificação comercial dos processos. Utilizando os espaços físicos como ambientes de transformação digital do consumidor.
+Criação de espaços físicos, e adaptação das Americanas Express, como vitrines físicas de eletrodomésticos e eletroeletrônicos para compra desses produtos por meio de aplicativos. Utilizando-os como locais de transformação digital do consumidor, além da substituição de vendedores para Assistentes de transformação digital, auxiliando os clientes na compra por meio de QR Code de produtos. A entrega será feita a domicílio, utilizando as lojas hiper americanas e parceiros como distribuidores, mapeando pelo CEP do cliente o local mais próximo de entrega e permitindo que essa seja feita de forma rápida e pratica, evitando que o cliente carregue sacolas e dando a ele maior integração entre as plataformas digitais do ecossistema americanas/B2W.
 
 - [Download do APK](https://drive.google.com/open?id=14NaJy8krp6ZSv6MnoJrPi2ySfs0SWguw)
 
@@ -79,3 +79,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - `yarn android` para abrir o projeto no Android.
 - `yarn ios`para abrir o projeto no iPhone.
 - `yarn start` para incializar o Metro Bundler.
+
+# 🥇 TOP 10 FINALISTAS
+
+![9º Lugar](https://user-images.githubusercontent.com/44821959/81459645-6c294080-9177-11ea-926f-f476a97ff148.png)
