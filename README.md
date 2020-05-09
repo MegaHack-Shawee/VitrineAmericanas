@@ -80,6 +80,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - `yarn ios`para abrir o projeto no iPhone.
 - `yarn start` para incializar o Metro Bundler.
 
-## 🥇 9º FINALISTA
+## 🥇 9º Finalista
 
 ![9º Lugar](https://user-images.githubusercontent.com/44821959/81459645-6c294080-9177-11ea-926f-f476a97ff148.png)
